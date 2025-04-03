@@ -9,10 +9,10 @@ namespace caobaModeloFabricacion.Data
            : base(options)
         {
         }
-       // public DbSet<>  { get; set; }
-        //public DbSet<>  { get; set; }
-        //public DbSet<>  { get; set; }
-        //public DbSet<>  { get; set; }
+          public DbSet<Material> Material { get; set; }
+          public DbSet<Producto> Producto  { get; set; }
+          public DbSet<CategoriaProducto> CategoriaProducto  { get; set; }
+          public DbSet<DetalleProductoMaterial> DetalleProductoMaterial  { get; set; }
         //public DbSet<>  { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
