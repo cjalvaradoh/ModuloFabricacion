@@ -1,0 +1,54 @@
+﻿@model IEnumerable<caobaModeloFabricacion.Models.OrdenProduccion>
+@{
+    ViewData["Title"] = "Órdenes de Producción";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Órdenes de Producción</h2>
+        <a asp-action="Create" class="btn btn-outline-primary">+ Crear Nuevo</a>
+    </div>
+
+    <form asp-action="Index" method="get" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="searchString" class="form-control" placeholder="Buscar por número de orden..." value="@Context.Request.Query["searchString"]" />
+            <button class="btn btn-primary" type="submit">
+                <i class="bi bi-search"></i> Buscar
+            </button>
+        </div>
+    </form>
+
+    <table class="table table-hover shadow-sm rounded">
+        <thead class="table-light">
+            <tr>
+                <th>Código Producto</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Estado</th>
+                <th>Fecha inicio</th>
+                <th>Fecha entrega</th>
+                <th class="text-center">CRUD</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Producto.Codigo</td>
+                    <td>@item.Producto.Nombre</td>
+                    <td>@item.Cantidad.ToString("0.##") uds.</td>
+                    <td>
+                        <span class="badge bg-primary">@item.Estado</span>
+                    </td>
+                    <td>@item.FechaInicio?.ToString("yyyy-MM-dd")</td>
+                    <td>@item.FechaEntrega?.ToString("yyyy-MM-dd")</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-warning me-2"><i class="bi bi-pencil-square"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="text-info me-2"><i class="bi bi-eye"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

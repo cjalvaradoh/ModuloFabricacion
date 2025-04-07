@@ -1,0 +1,69 @@
+﻿@model caobaModeloFabricacion.Models.SeguimientoProduccion
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SeguimientoProduccion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="OrdenProduccionId" class="control-label"></label>
+                <select asp-for="OrdenProduccionId" class="form-control" asp-items="ViewBag.OrdenProduccionId"></select>
+                <span asp-validation-for="OrdenProduccionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OperarioId" class="control-label"></label>
+                <select asp-for="OperarioId" class="form-control" asp-items="ViewBag.OperarioId"></select>
+                <span asp-validation-for="OperarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avance" class="control-label"></label>
+                <input asp-for="Avance" class="form-control" />
+                <span asp-validation-for="Avance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TiempoTrabajado" class="control-label"></label>
+                <input asp-for="TiempoTrabajado" class="form-control" />
+                <span asp-validation-for="TiempoTrabajado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaterialConsumido" class="control-label"></label>
+                <input asp-for="MaterialConsumido" class="form-control" />
+                <span asp-validation-for="MaterialConsumido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaActualizacion" class="control-label"></label>
+                <input asp-for="FechaActualizacion" class="form-control" />
+                <span asp-validation-for="FechaActualizacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comentarios" class="control-label"></label>
+                <input asp-for="Comentarios" class="form-control" />
+                <span asp-validation-for="Comentarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
