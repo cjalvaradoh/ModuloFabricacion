@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 html {
-  font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -18,5 +21,109 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    height: 100vh;
 }
+
+.sidebar {
+    min-width: 250px;
+    background-color: #ffffff;
+}
+
+.text-custom-gray {
+    color: #747474 !important;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.sidebar .nav-link span {
+    color: #747474;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar .nav-link {
+    position: relative;
+    padding-left: 12px; /* da espacio para la línea a la izquierda */
+}
+
+    .sidebar .nav-link:hover span {
+        color: #000000;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Línea indicadora a la izquierda */
+    .sidebar .nav-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 4px;
+        background-color: transparent;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+.custom-nav-link {
+    color: #747474;
+    transition: all 0.3s ease;
+    padding-left: 10px;
+    position: relative;
+}
+
+.icon-hover {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(4%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(85%);
+    transition: filter 0.3s ease;
+}
+
+.nav-link:hover .icon-hover {
+    filter: none;
+}
+
+
+/* Al pasar el mouse sobre el enlace que contiene el ícono */
+.nav-link:hover .icon {
+    color: #000000;
+}
+
+.dashboard-label {
+    color: #747474;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover .dashboard-label {
+    color: #000000;
+}
+
+
+/* Opcional: Si deseas cambiar también el color del texto al pasar el cursor */
+.nav-link:hover span {
+    color: #000000; /* Negro */
+}
+
+.cls-1 {
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+
+.custom-nav-link:hover {
+    color: #000;
+}
+
+    .custom-nav-link:hover::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 20%;
+        bottom: 20%;
+        width: 4px;
+        background-color: #4C2F27;
+        border-radius: 2px;
+    }

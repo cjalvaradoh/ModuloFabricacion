@@ -26,7 +26,7 @@ namespace caobaModeloFabricacion.Models
         public decimal Stock { get; set; }
 
         [Column("costo_por_unidad")]
-        public decimal Precio { get; set; }
+        public decimal PrecioUnidad { get; set; }
 
         [Column("ancho")]
         public decimal? Ancho { get; set; }

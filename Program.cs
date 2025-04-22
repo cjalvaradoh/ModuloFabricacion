@@ -1,3 +1,8 @@
+using caobaModeloFabricacion.Data;
+using caobaModeloFabricacion.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 namespace caobaModeloFabricacion
 {
     public class Program
@@ -5,6 +10,24 @@ namespace caobaModeloFabricacion
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Configuración de la cadena de conexión desde secrets.json
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(connectionString));
+
+
+            // Agregar Identity
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireLowercase = true;
+            })
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -28,7 +51,7 @@ namespace caobaModeloFabricacion
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Auth}/{action=Login}/{id?}");
 
             app.Run();
         }

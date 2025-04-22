@@ -13,6 +13,46 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-114x114.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-114x114.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-120x120.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-120x120.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-144x144.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-144x144.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-152x152.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-152x152.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-180x180.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-180x180.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-57x57.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-57x57.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-72x72.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-72x72.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-76x76.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon-76x76.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\icons\\apple-touch-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\images\\caobalogo.png",
+      "PackagePath": "staticwebassets\\images\\caobalogo.png"
+    },
+    {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -243,6 +283,30 @@
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\casaNegro.png",
+      "PackagePath": "staticwebassets\\spanIconos\\casaNegro.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\cerrarSesion.png",
+      "PackagePath": "staticwebassets\\spanIconos\\cerrarSesion.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\grafico.png",
+      "PackagePath": "staticwebassets\\spanIconos\\grafico.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\material.png",
+      "PackagePath": "staticwebassets\\spanIconos\\material.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\ordenesProduccion.png",
+      "PackagePath": "staticwebassets\\spanIconos\\ordenesProduccion.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\seguimientoProduccion.png",
+      "PackagePath": "staticwebassets\\spanIconos\\seguimientoProduccion.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.caobaModeloFabricacion.props",

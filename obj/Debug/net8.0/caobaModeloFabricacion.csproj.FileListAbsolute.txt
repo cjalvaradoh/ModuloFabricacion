@@ -225,3 +225,5 @@ C:\Users\Ces\source\repos\caobaModeloFabricacion\obj\Debug\net8.0\refint\caobaMo
 C:\Users\Ces\source\repos\caobaModeloFabricacion\obj\Debug\net8.0\caobaModeloFabricacion.pdb
 C:\Users\Ces\source\repos\caobaModeloFabricacion\obj\Debug\net8.0\caobaModeloFabricacion.genruntimeconfig.cache
 C:\Users\Ces\source\repos\caobaModeloFabricacion\obj\Debug\net8.0\ref\caobaModeloFabricacion.dll
+C:\Users\Ces\source\repos\caobaModeloFabricacion\obj\Debug\net8.0\caobaModeloFabricacion.sourcelink.json
+C:\Users\Ces\source\repos\caobaModeloFabricacion\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutLogged.cshtml.rz.scp.css

@@ -9,11 +9,17 @@ namespace caobaModeloFabricacion.Data
            : base(options)
         {
         }
-          public DbSet<Material> Material { get; set; }
-          public DbSet<Producto> Producto  { get; set; }
-          public DbSet<CategoriaProducto> CategoriaProducto  { get; set; }
-          public DbSet<DetalleProductoMaterial> DetalleProductoMaterial  { get; set; }
-        //public DbSet<>  { get; set; }
+        public DbSet<CategoriaProducto> CategoriaProducto { get; set; }
+        public DbSet<CategoriaProducto> Departamento { get; set; }
+        public DbSet<DetalleProductoMaterial> DetalleProductoMaterial { get; set; }
+        public DbSet<DetalleProductoMaterial> Maquina { get; set; }
+        public DbSet<Material> Material { get; set; }
+        public DbSet<Material> Operario { get; set; }
+        public DbSet<Material> OrdenMaterial { get; set; }
+        public DbSet<Material> OrdenProduccion { get; set; }
+        public DbSet<Producto> Producto  { get; set; }
+        public DbSet<Material> Reporte { get; set; }
+        public DbSet<Material> SeguiminetoProduccion { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
