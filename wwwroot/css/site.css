@@ -6,18 +6,18 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -66,7 +66,7 @@ body {
         width: 4px;
         background-color: transparent;
         border-radius: 4px;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.0s ease;
     }
 
 .custom-nav-link {
@@ -120,10 +120,36 @@ body {
     .custom-nav-link:hover::before {
         content: '';
         position: absolute;
-        left: 0;
+        left: -32px;
         top: 20%;
         bottom: 20%;
         width: 4px;
         background-color: #4C2F27;
         border-radius: 2px;
     }
+
+/* Color INICIAL (sin hover) - #4C2F27 */
+.custom-special-link .icon-hover,
+.custom-special-link .Cerrar-label {
+    color: #000000 !important;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(14%) saturate(1203%) hue-rotate(338deg) brightness(91%) contrast(88%) !important;
+}
+
+/* Color AL HACER HOVER - #B83225 */
+.custom-special-link:hover .icon-hover,
+.custom-special-link:hover .Cerrar-label {
+    color: #B83225 !important;
+    filter: brightness(0) saturate(100%) invert(19%) sepia(63%) saturate(3553%) hue-rotate(347deg) brightness(96%) contrast(91%) !important;
+}
+
+/* Barra lateral roja SOLO para Cerrar Sesión al hacer hover */
+.custom-special-link:hover::before {
+    content: '';
+    position: absolute;
+    left: -32px; /* Posición igual que el original */
+    top: 20%;
+    bottom: 20%;
+    width: 4px;
+    background-color: #B83225 !important; /* Color rojo */
+    border-radius: 2px;
+}

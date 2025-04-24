@@ -285,6 +285,26 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonCrearNuevo.png",
+      "PackagePath": "staticwebassets\\spanIconos\\botonCrearNuevo.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonEditar.png",
+      "PackagePath": "staticwebassets\\spanIconos\\botonEditar.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonEliminar.png",
+      "PackagePath": "staticwebassets\\spanIconos\\botonEliminar.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonSearch.png",
+      "PackagePath": "staticwebassets\\spanIconos\\botonSearch.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonVistaPrevia.png",
+      "PackagePath": "staticwebassets\\spanIconos\\botonVistaPrevia.png"
+    },
+    {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\casaNegro.png",
       "PackagePath": "staticwebassets\\spanIconos\\casaNegro.png"
     },
@@ -295,6 +315,10 @@
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\grafico.png",
       "PackagePath": "staticwebassets\\spanIconos\\grafico.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\iconoUsuario.png",
+      "PackagePath": "staticwebassets\\spanIconos\\iconoUsuario.png"
     },
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\material.png",

@@ -12,6 +12,9 @@
             display: flex;
             height: 100vh;
         }
+        .no-caret::after {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -21,49 +24,49 @@
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 sidebar">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-dark min-vh-100">
                     <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                        <img src="~/images/caobalogo.png" alt="Logo" class="img-fluid d-none d-sm-inline mt-4" style="max-width: 120px;" />
+                        <img src="~/images/caobalogo.png" alt="Logo" class="img-fluid d-none d-sm-inline mt-4 mb-4 ms-3 " style="max-width: 100px;" />
 
                     </a>
 
                     <!-- Lista del Menú -->
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0  align-items-center align-items-sm-start" id="menu">
                         <!-- Menú Superior -->
-                        <li class="nav-item mb-4">
+                        <li class="nav-item mb-4 ms-2">
                            
                             <a href="@Url.Action("Index", "Home")" class="nav-link custom-nav-link d-flex align-items-center">
                                 <img src="~/spanIconos/casaNegro.png" alt="Dashboard" class="icon icon-hover me-2" width="24" height="24">
                                 <span class="dashboard-label">Dashboard</span>
                             </a>
                         </li>
-                        <li class="mb-4">
+                        <li class="mb-4 ms-2">
                             <a href="@Url.Action("Index", "Ordenes")" class="nav-link custom-nav-link d-flex align-items-center">
                                 <img src="~/spanIconos/ordenesProduccion.png" alt="Orden" class="icon icon-hover me-2" width="24" height="24">
                                 <span class="Orden-label">Ordenes</span>
                             </a>
                         </li>
-                        <li class="mb-4">
+                        <li class="mb-4 ms-2">
                             <a href="@Url.Action("Index", "Produccion")" class="nav-link custom-nav-link d-flex align-items-center">
                                 <img src="~/spanIconos/seguimientoProduccion.png" alt="Produccion" class="icon icon-hover me-2" width="24" height="24">
                                 <span class="Produccion-label">Produccion</span>
                             </a>
                         </li>
-                        <li class="mb-4">
+                        <li class="mb-4 ms-2">
                             <a href="@Url.Action("Index", "Materiales")" class="nav-link custom-nav-link d-flex align-items-center">
                                 <img src="~/spanIconos/material.png" alt="Material" class="icon icon-hover me-2" width="24" height="24">
                                 <span class="Material-label">Materiales</span>
                             </a>
                         </li>
-                        <li class="mb-4">
+                        <li class="mb-4 ms-2">
                             
                             <a href="@Url.Action("Index", "Reportes")" class="nav-link custom-nav-link d-flex align-items-center">
                                 <img src="~/spanIconos/grafico.png" alt="Reporte" class="icon icon-hover me-2" width="24" height="24">
                                 <span class="Reporte-label">Reportes</span>
                             </a>
                         </li>
-                        <li style="margin-top: 5rem;">
-                            <a href="@Url.Action("Index", "Cerrar")" class="nav-link custom-nav-link d-flex align-items-center">
+                        <li style="margin-top: 8rem;" class="ms-2">
+                            <a href="@Url.Action("Index", "Cerrar")" class="nav-link custom-nav-link custom-special-link d-flex align-items-center">
                                 <img src="~/spanIconos/cerrarSesion.png" alt="Cerrar" class="icon icon-hover me-2" width="24" height="24">
-                                <span class="Cerrar-label">Cerrar Sesion</span>
+                                <span class="Cerrar-label">Cerrar Sesión</span>
                             </a>
                         </li>
 
@@ -74,15 +77,15 @@
             <!-- Main content -->
             <div class="col py-3">
                 <!-- Header -->
-                <div class="d-flex justify-content-end align-items-center mb-3">
-                    <div class="dropdown">
-                        <button class="dropdown-toggle d-flex align-items-center bg-transparent border-0"
+                <div class="d-flex justify-content-end align-items-center mb-3 mt-2 me-4">
+                    <div class="dropdown mb-4">
+                        <button class="dropdown-toggle no-caret d-flex align-items-center bg-transparent border-0"
                                 style="font-size: 1.1rem; color: #3E3E3E;"
                                 type="button"
                                 id="userDropdown"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                            <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
+                            <img src="~/spanIconos/iconoUsuario.png" alt="User Icon" class="me-2" style="width: 32px; height: 32px; border-radius: 50%;">
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <span>@User.Identity.Name</span>
