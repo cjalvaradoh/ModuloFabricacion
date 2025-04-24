@@ -6,11 +6,13 @@
     <title>@ViewData["Title"] - WebPOS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <style>
         body {
             display: flex;
             height: 100vh;
+            font-family: 'Poppins', sans-serif;
         }
         .no-caret::after {
             display: none !important;
@@ -51,7 +53,7 @@
                             </a>
                         </li>
                         <li class="mb-4 ms-2">
-                            <a href="@Url.Action("Index", "Materiales")" class="nav-link custom-nav-link d-flex align-items-center">
+                            <a href="@Url.Action("Index", "Materials")" class="nav-link custom-nav-link d-flex align-items-center">
                                 <img src="~/spanIconos/material.png" alt="Material" class="icon icon-hover me-2" width="24" height="24">
                                 <span class="Material-label">Materiales</span>
                             </a>
@@ -64,7 +66,7 @@
                             </a>
                         </li>
                         <li style="margin-top: 8rem;" class="ms-2">
-                            <a href="@Url.Action("Index", "Cerrar")" class="nav-link custom-nav-link custom-special-link d-flex align-items-center">
+                            <a href="@Url.Action("Logout", "Auth")" class="nav-link custom-nav-link custom-special-link d-flex align-items-center">
                                 <img src="~/spanIconos/cerrarSesion.png" alt="Cerrar" class="icon icon-hover me-2" width="24" height="24">
                                 <span class="Cerrar-label">Cerrar Sesión</span>
                             </a>
@@ -85,7 +87,7 @@
                                 id="userDropdown"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                            <img src="~/spanIconos/iconoUsuario.png" alt="User Icon" class="me-2" style="width: 32px; height: 32px; border-radius: 50%;">
+                            <img src="~/spanIconos/iconoUsuario.png" alt="User Icon" class="me-2" style="width: 30px; height: 30px; border-radius: 50%;">
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <span>@User.Identity.Name</span>

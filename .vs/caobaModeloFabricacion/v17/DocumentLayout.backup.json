@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\views\\shared\\_layoutlogged.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:views\\shared\\_layoutlogged.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\views\\materials\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:views\\materials\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +43,49 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-24T01:20:35.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Materials\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Materials\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Materials\\Index.cshtml",
+              "RelativeToolTip": "Views\\Materials\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T00:55:59.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LayoutLogged.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Shared\\_LayoutLogged.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutLogged.cshtml",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Shared\\_LayoutLogged.cshtml*",
+              "RelativeToolTip": "Views\\Shared\\_LayoutLogged.cshtml*",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEQAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T00:54:10.11Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<caobaModeloFabricacion.Models.Material>
+
+@{
+    ViewData["Title"] = "Materiales";
+    Layout = "_LayoutLogged";
+}
+
+<h2 class="mb-2 mt-2 fw-bold">Control de Materiales</h2>
+
+<div class="d-flex justify-content-end mb-2 mt-2">
+    <a asp-action="Create" class="create-new-link btn bg-white border-0 p-2">
+        Create New
+        <img src="~/spanIconos/botonCrearNuevo.png" alt="Material" class="icon icon-hover ms-2" width="24" height="24">
+    </a>
+</div>
+
+<style>
+    /* Estilo para el enlace "Create New" */
+    .create-new-link {
+        color: #747474 !important; /* Color gris en estado normal */
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        background-color: white !important; /* Fondo blanco */
+    }
+
+        .create-new-link:hover {
+            color: #00AEFF !important; /* Color azul al hacer hover */
+            background-color: white !important; /* Mantener fondo blanco en hover */
+        }
+
+    /* Estilo para el ícono */
+    .icon-hover {
+        filter: brightness(0) saturate(100%) invert(40%) sepia(4%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(85%);
+        transition: filter 0.3s ease;
+    }
+
+    .create-new-link:hover .icon-hover {
+        filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(2476%) hue-rotate(176deg) brightness(100%) contrast(101%);
+    }
+
+    /* Estilos para la tabla (mantenerlos) */
+    .tabla-con-fondo {
+        background-color: #F3F3F3;
+    }
+
+        .tabla-con-fondo .table {
+            background-color: #F3F3F3;
+            margin-bottom: 0;
+        }
+</style>
+
+<div class="table-responsive tabla-con-fondo" style="max-height: 500px; overflow-y: auto;">
+    <table class="table table-condensed table-striped" style="font-size: 0.9em;">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Ancho</th>
+                <th>Largo</th>
+                <th>Alto</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Codigo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td class="text-truncate" style="max-width: 150px;" title="@item.Descripcion">
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.Stock)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PrecioUnidad)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ancho)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Largo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Alto)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <a asp-action="Edit" asp-route-id="@item.MaterialId" class="btn btn-sm btn-outline-primary">Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.MaterialId" class="btn btn-sm btn-outline-info">Detalles</a>
+                            <a asp-action="Delete" asp-route-id="@item.MaterialId" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
