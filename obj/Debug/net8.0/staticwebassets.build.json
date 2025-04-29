@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A3X7f7tGH1T3XD/J00OUJBcbFyAoFP5cynakgM//Va8=",
+  "Hash": "PsurxrvVMPuJ0kddbX7BoOpABHoSgqfni8TRm8t5JMY=",
   "Source": "caobaModeloFabricacion",
   "BasePath": "_content/caobaModeloFabricacion",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\style.css",
+      "SourceId": "caobaModeloFabricacion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "BasePath": "_content/caobaModeloFabricacion",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\favicon.ico",

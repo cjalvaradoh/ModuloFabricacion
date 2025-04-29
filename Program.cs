@@ -1,5 +1,7 @@
 using caobaModeloFabricacion.Data;
 using caobaModeloFabricacion.Models;
+using CloudinaryDotNet;
+using dotenv.net;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +11,7 @@ namespace caobaModeloFabricacion
     {
         public static void Main(string[] args)
         {
+            DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
             var builder = WebApplication.CreateBuilder(args);
 
             // Configuración de la cadena de conexión desde secrets.json
@@ -28,6 +31,13 @@ namespace caobaModeloFabricacion
             })
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
+
+            var cloudinaryAccount = new Account(Environment.GetEnvironmentVariable("CLOUDINARY_NAME"),
+                Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
+                Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET")
+            );
+
+            builder.Services.AddSingleton(new Cloudinary(cloudinaryAccount));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

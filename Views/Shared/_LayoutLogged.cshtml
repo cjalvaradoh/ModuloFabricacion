@@ -12,10 +12,21 @@
         body {
             display: flex;
             height: 100vh;
+            overflow: hidden;
             font-family: 'Poppins', sans-serif;
         }
         .no-caret::after {
             display: none !important;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden; /* Evita scroll global */
+        }
+
+        .col.py-3 {
+            height: 100vh;
+            overflow-y: auto; /* Scroll solo en esta sección */
         }
     </style>
 </head>

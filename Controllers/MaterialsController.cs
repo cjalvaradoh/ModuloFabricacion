@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using caobaModeloFabricacion.Data;
 using caobaModeloFabricacion.Models;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 namespace caobaModeloFabricacion.Controllers
 {
     public class MaterialsController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly Cloudinary _cloudinary;
 
-        public MaterialsController(AppDbContext context)
+        public MaterialsController(AppDbContext context, Cloudinary cloudinary)
         {
             _context = context;
+            _cloudinary = cloudinary;
         }
 
         // GET: Materials
@@ -54,14 +58,29 @@ namespace caobaModeloFabricacion.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaterialId,Codigo,Nombre,Descripcion,Stock,PrecioUnidad,Ancho,Largo,Alto,Tipo,ThumbnailUrl,FotoUrl")] Material material)
+        public async Task<IActionResult> Create([Bind("MaterialId,Codigo,Nombre,Descripcion,Stock,PrecioUnidad,Ancho,Largo,Alto,Tipo,ThumbnailUrl,FotoUrl")] Material material, IFormFile FotoUrl)
         {
             if (ModelState.IsValid)
             {
+                if (FotoUrl != null)
+                {
+                    var uploadParams = new ImageUploadParams()
+                    {
+                        File = new FileDescription(FotoUrl.FileName, FotoUrl.OpenReadStream()),
+                        Transformation = new Transformation().Width(500).Height(500).Crop("fill")
+                    };
+
+                    var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+                    material.FotoUrl = uploadResult.SecureUrl.ToString();
+
+                    var thumbnailParams = new Transformation().Width(150).Height(150).Crop("thumb");
+                    material.ThumbnailUrl = _cloudinary.Api.UrlImgUp.Transform(thumbnailParams).BuildUrl(uploadResult.PublicId);
+                }
                 _context.Add(material);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(material);
         }
 
@@ -86,7 +105,7 @@ namespace caobaModeloFabricacion.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MaterialId,Codigo,Nombre,Descripcion,Stock,PrecioUnidad,Ancho,Largo,Alto,Tipo,ThumbnailUrl,FotoUrl")] Material material)
+        public async Task<IActionResult> Edit(int id, [Bind("MaterialId,Codigo,Nombre,Descripcion,Stock,PrecioUnidad,Ancho,Largo,Alto,Tipo,ThumbnailUrl,FotoUrl")] Material material, IFormFile FotoUrl)
         {
             if (id != material.MaterialId)
             {
@@ -97,8 +116,26 @@ namespace caobaModeloFabricacion.Controllers
             {
                 try
                 {
+                    if (FotoUrl != null)
+                    {
+                        // Subir la nueva imagen a Cloudinary
+                        var uploadParams = new ImageUploadParams()
+                        {
+                            File = new FileDescription(FotoUrl.FileName, FotoUrl.OpenReadStream()),
+                            Transformation = new Transformation().Width(500).Height(500).Crop("fill")
+                        };
+
+                        var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+                        material.FotoUrl = uploadResult.SecureUrl.ToString();
+
+                        // Generar la miniatura
+                        var thumbnailParams = new Transformation().Width(150).Height(150).Crop("thumb");
+                        material.ThumbnailUrl = _cloudinary.Api.UrlImgUp.Transform(thumbnailParams).BuildUrl(uploadResult.PublicId);
+                    }
+
+                    // Actualizar el producto en la base de datos
                     _context.Update(material);
-                    await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();               
                 }
                 catch (DbUpdateConcurrencyException)
                 {

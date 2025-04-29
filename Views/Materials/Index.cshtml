@@ -1,92 +1,80 @@
 ﻿@model IEnumerable<caobaModeloFabricacion.Models.Material>
 
+
 @{
     ViewData["Title"] = "Materiales";
     Layout = "_LayoutLogged";
 }
-
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 <h2 class="mb-2 mt-2 fw-bold">Control de Materiales</h2>
 
 <div class="d-flex justify-content-end mb-2 mt-2">
-    <a asp-action="Create" class="create-new-link btn bg-white border-0 p-2">
+    <a href="#" class="create-new-link btn bg-white border-0 p-2"
+       data-bs-toggle="modal" data-bs-target="#crearNuevo">
         Create New
         <img src="~/spanIconos/botonCrearNuevo.png" alt="Material" class="icon icon-hover ms-2" width="24" height="24">
     </a>
+
 </div>
 
-<style>
-    /* Estilo para el enlace "Create New" */
-    .create-new-link {
-        color: #747474 !important; /* Color gris en estado normal */
-        text-decoration: none;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        background-color: white !important; /* Fondo blanco */
-    }
+<!-- Input de búsqueda -->
+<div class="row">
+    <div class="col-12 mb-2">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar por Número de Órden" id="searchInput" />
+        </div>
+    </div>
+</div>
 
-        .create-new-link:hover {
-            color: #00AEFF !important; /* Color azul al hacer hover */
-            background-color: white !important; /* Mantener fondo blanco en hover */
-        }
 
-    /* Estilo para el ícono */
-    .icon-hover {
-        filter: brightness(0) saturate(100%) invert(40%) sepia(4%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(85%);
-        transition: filter 0.3s ease;
-    }
-
-    .create-new-link:hover .icon-hover {
-        filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(2476%) hue-rotate(176deg) brightness(100%) contrast(101%);
-    }
-
-    /* Estilos para la tabla (mantenerlos) */
-    .tabla-con-fondo {
-        background-color: #F3F3F3;
-    }
-
-        .tabla-con-fondo .table {
-            background-color: #F3F3F3;
-            margin-bottom: 0;
-        }
-</style>
-
-<div class="table-responsive tabla-con-fondo" style="max-height: 500px; overflow-y: auto;">
-    <table class="table table-condensed table-striped" style="font-size: 0.9em;">
-        <thead>
+<!-- Tabla -->
+<div class="tabla-con-fondo table-responsive" style="max-height: 500px; overflow-y: auto;">
+    <table class="table table-striped table-hover" style="font-size: 0.9em;">
+        <thead class="table-light sticky-top">
             <tr>
-                <th>Código</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Stock</th>
-                <th>Precio</th>
-                <th>Ancho</th>
-                <th>Largo</th>
-                <th>Alto</th>
-                <th>Tipo</th>
-                <th>Acciones</th>
+                <th scope="col">Código Material</th>
+                <th scope="col">Nombre Material</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Costo por Unidad</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">CRUD</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.Codigo)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <tr class="material" data-nombre="@item.Nombre" data-codigo_material="@item.Codigo">
+                    <td>@item.Codigo</td>
+                    <td>@item.Nombre</td>
                     <td class="text-truncate" style="max-width: 150px;" title="@item.Descripcion">
-                        @Html.DisplayFor(modelItem => item.Descripcion)
+                        @item.Descripcion
                     </td>
-                    <td>@Html.DisplayFor(modelItem => item.Stock)</td>
-                    <td>@Html.DisplayFor(modelItem => item.PrecioUnidad)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Ancho)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Largo)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Alto)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+                    <td>@item.Stock</td>
+                    <td>@item.PrecioUnidad</td>
+                    <td>
+                        <img src="@item.FotoUrl" alt="Material" class="img-thumbnail" style="max-width: 100px; max-height: 50px;" />
+                    </td>
                     <td>
                         <div class="btn-group btn-group-sm">
-                            <a asp-action="Edit" asp-route-id="@item.MaterialId" class="btn btn-sm btn-outline-primary">Editar</a>
-                            <a asp-action="Details" asp-route-id="@item.MaterialId" class="btn btn-sm btn-outline-info">Detalles</a>
-                            <a asp-action="Delete" asp-route-id="@item.MaterialId" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                            <a href="#" class="edit-button btn p-1"
+                               data-bs-toggle="modal" data-bs-target="#editarNuevo"
+                               data-codigo="@item.Codigo"
+                               data-nombre="@item.Nombre"
+                               data-descripcion="@item.Descripcion"
+                               data-stock="@item.Stock"
+                               data-precio="@item.PrecioUnidad"
+                               data-ancho="@item.Ancho"
+                               data-largo="@item.Largo"
+                               data-tipo="@item.Tipo">
+                                <img src="~/spanIconos/botonEditar.png" alt="Editar" class="icon icon-hover" width="24" height="24">
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.MaterialId" class="vista-button btn p-1">
+                                <img src="~/spanIconos/botonVistaPrevia.png" alt="Vista" class="icon icon-hover" width="24" height="24">
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.MaterialId" class="eliminar-button btn p-1">
+                                <img src="~/spanIconos/botonEliminar.png" alt="Eliminar" class="icon icon-hover" width="24" height="24">
+                            </a>
                         </div>
                     </td>
                 </tr>
@@ -94,3 +82,223 @@
         </tbody>
     </table>
 </div>
+
+<!-- Modal Crear Nuevo -->
+<div class="modal fade" id="crearNuevo" tabindex="-1" aria-labelledby="crearNuevoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #EAEAEA;">
+                <h1 class="modal-title fs-5 text-dark" id="crearNuevoLabel">Nueva Orden</h1>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Create" method="post" enctype="multipart/form-data">
+
+                    <!-- Código y Nombre -->
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label for="codigo" class="form-label small">Código Material</label>
+                            <input type="text" id="codigo" name="Codigo" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label small">Nombre del Material</label>
+                            <input type="text" id="nombre" name="Nombre" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <!-- Descripcion, Stock y Costo -->
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="descripcion" class="form-label small">Descripción</label>
+                            <input type="text" id="descripcion" name="Descripcion" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="stock" class="form-label small">Stock</label>
+                            <input type="text" id="stock" name="Stock" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="costo" class="form-label small">Costo por Unidad</label>
+                            <input type="text" id="costo" name="PrecioUnidad" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+
+                    <!-- Ancho, Largo, Alto -->
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="ancho" class="form-label small">Ancho</label>
+                            <input type="text" id="ancho" name="Ancho" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="largo" class="form-label small">Largo</label>
+                            <input type="text" id="largo" name="Largo" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="alto" class="form-label small">Alto</label>
+                            <input type="text" id="alto" name="Alto" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <!-- Tipo -->
+                    <div class="mb-2">
+                        <label for="tipo" class="form-label small">Tipo</label>
+                        <input type="text" id="tipo" name="Tipo" class="form-control form-control-sm">
+                    </div>
+
+                    <!-- Imagen -->
+                    <div class="mb-2">
+                        <label for="FotoUrl" class="form-label small">Subir Imagen</label>
+                        <input type="file" class="form-control form-control-sm" name="FotoUrl" id="FotoUrl">
+                    </div>
+
+                    <!-- Footer con botones -->
+                    <div class="modal-footer">
+                        <div class="w-100 d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Finalizar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Editar Nuevo -->
+<div class="modal fade" id="editarNuevo" tabindex="-1" aria-labelledby="editarNuevoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #EAEAEA;">
+                <h1 class="modal-title fs-5 text-dark" id="editarNuevo">Editar</h1>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+
+                    <!-- Código y Nombre -->
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label for="codigo" class="form-label small">Código Material</label>
+                            <input type="text" id="editar-codigo" name="Codigo" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label small">Nombre del Material</label>
+                            <input type="text" id="nombre" name="Nombre" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <!-- Descripcion, Stock y Costo -->
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="descripcion" class="form-label small">Descripción</label>
+                            <input type="text" id="descripcion" name="Descripcion" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="stock" class="form-label small">Stock</label>
+                            <input type="text" id="stock" name="Stock" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="costo" class="form-label small">Costo por Unidad</label>
+                            <input type="text" id="costo" name="PrecioUnidad" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+
+                    <!-- Ancho, Largo, Alto -->
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="ancho" class="form-label small">Ancho</label>
+                            <input type="text" id="ancho" name="Ancho" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="largo" class="form-label small">Largo</label>
+                            <input type="text" id="largo" name="Largo" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="alto" class="form-label small">Alto</label>
+                            <input type="text" id="alto" name="Alto" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <!-- Tipo -->
+                    <div class="mb-2">
+                        <label for="tipo" class="form-label small">Tipo</label>
+                        <input type="text" id="tipo" name="Tipo" class="form-control form-control-sm">
+                    </div>
+
+                    <!-- Imagen -->
+                    <div class="mb-2">
+                        <label for="FotoUrl" class="form-label small">Subir Imagen</label>
+                        <input type="file" class="form-control form-control-sm" name="FotoUrl" id="FotoUrl">
+                    </div>
+
+                    <!-- Footer con botones -->
+                    <div class="modal-footer">
+                        <div class="w-100 d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Finalizar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Script funcional -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const materialesFilas = Array.from(document.querySelectorAll('.material'));
+    const maxFilas = 6;
+
+    // Mostrar solo las primeras 6 filas al inicio
+    function mostrarFilasIniciales() {
+        materialesFilas.forEach((fila, index) => {
+            fila.style.display = index < maxFilas ? '' : 'none';
+        });
+    }
+
+    // Filtrar según búsqueda
+    function filtrarMateriales() {
+        const searchTerm = searchInput.value.toLowerCase();
+        let resultados = 0;
+
+        materialesFilas.forEach(producto => {
+            const nombre = producto.getAttribute('data-nombre').toLowerCase();
+            const codigo = producto.getAttribute('data-codigo_material').toLowerCase();
+
+            if (nombre.includes(searchTerm) || codigo.includes(searchTerm)) {
+                producto.style.display = '';
+                resultados++;
+            } else {
+                producto.style.display = 'none';
+            }
+        });
+
+        // Si no hay búsqueda activa, mostrar solo las primeras 7 filas
+        if (searchTerm === '') {
+            mostrarFilasIniciales();
+        }
+    }
+
+    // Ejecutar al cargar la página
+    window.addEventListener('DOMContentLoaded', mostrarFilasIniciales);
+    searchInput.addEventListener('input', filtrarMateriales);
+
+
+    document.querySelectorAll('.edit-button').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const modal = document.querySelector('#editarNuevo');
+            modal.querySelector('#codigo').value = boton.getAttribute('data-codigo');
+            document.getElementById('nombre').value = boton.getAttribute('data-nombre');
+            document.getElementById('descripcion').value = boton.getAttribute('data-descripcion');
+            document.getElementById('stock').value = boton.getAttribute('data-stock');
+            document.getElementById('costo').value = boton.getAttribute('data-precio');
+            document.getElementById('ancho').value = boton.getAttribute('data-ancho');
+            document.getElementById('largo').value = boton.getAttribute('data-largo');
+            document.getElementById('tipo').value = boton.getAttribute('data-tipo');
+        });
+    });
+
+</script>
