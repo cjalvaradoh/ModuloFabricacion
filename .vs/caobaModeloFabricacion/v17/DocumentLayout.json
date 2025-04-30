@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\views\\materials\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:views\\materials\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +47,62 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-30T02:40:23.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MaterialsController.cs",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Controllers\\MaterialsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MaterialsController.cs",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Controllers\\MaterialsController.cs",
+              "RelativeToolTip": "Controllers\\MaterialsController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA3wC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T00:37:58.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Material.cs",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Models\\Material.cs",
+              "RelativeDocumentMoniker": "Models\\Material.cs",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Models\\Material.cs",
+              "RelativeToolTip": "Models\\Material.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:19:48.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Materials\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Materials\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Materials\\Index.cshtml",
+              "RelativeToolTip": "Views\\Materials\\Index.cshtml",
+              "ViewState": "AgIAANMAAAAAAAAAAAAAAAwBAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T00:08:00.149Z",
+              "EditorCaption": ""
             }
           ]
         }

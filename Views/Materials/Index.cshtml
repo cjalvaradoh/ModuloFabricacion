@@ -58,23 +58,41 @@
                     <td>
                         <div class="btn-group btn-group-sm">
                             <a href="#" class="edit-button btn p-1"
-                               data-bs-toggle="modal" data-bs-target="#editarNuevo"
-                               data-codigo="@item.Codigo"
-                               data-nombre="@item.Nombre"
-                               data-descripcion="@item.Descripcion"
-                               data-stock="@item.Stock"
-                               data-precio="@item.PrecioUnidad"
-                               data-ancho="@item.Ancho"
-                               data-largo="@item.Largo"
-                               data-tipo="@item.Tipo">
-                                <img src="~/spanIconos/botonEditar.png" alt="Editar" class="icon icon-hover" width="24" height="24">
-                            </a>
-                            <a asp-action="Details" asp-route-id="@item.MaterialId" class="vista-button btn p-1">
-                                <img src="~/spanIconos/botonVistaPrevia.png" alt="Vista" class="icon icon-hover" width="24" height="24">
-                            </a>
-                            <a asp-action="Delete" asp-route-id="@item.MaterialId" class="eliminar-button btn p-1">
-                                <img src="~/spanIconos/botonEliminar.png" alt="Eliminar" class="icon icon-hover" width="24" height="24">
-                            </a>
+                             data-bs-toggle="modal" data-bs-target="#editarNuevo"
+                             data-id="@item.MaterialId" 
+                             data-codigo="@item.Codigo"
+                             data-nombre="@item.Nombre"
+                             data-descripcion="@item.Descripcion"
+                             data-stock="@item.Stock"
+                             data-precio="@item.PrecioUnidad"
+                             data-ancho="@item.Ancho"
+                             data-largo="@item.Largo"
+                             data-alto="@item.Alto"
+                             data-tipo="@item.Tipo"
+                             data-fotourl="@item.FotoUrl">
+                            <img src="~/spanIconos/botonEditar.png" alt="Editar" class="icon icon-hover" width="24" height="24">
+                             </a>
+                            <a href="#" class="vista-button btn p-1" 
+                             data-bs-toggle="modal" data-bs-target="#vistaModal"
+                             data-id="@item.MaterialId" 
+                             data-codigo="@item.Codigo"
+                             data-nombre="@item.Nombre"
+                             data-descripcion="@item.Descripcion"
+                             data-stock="@item.Stock"
+                             data-precio="@item.PrecioUnidad"
+                             data-ancho="@item.Ancho"
+                             data-largo="@item.Largo"
+                             data-alto="@item.Alto"
+                             data-tipo="@item.Tipo"
+                             data-fotourl="@item.FotoUrl">
+                            <img src="~/spanIconos/botonVistaPrevia.png" alt="Vista" class="icon icon-hover" width="24" height="24">
+</a>
+                              <a href="#" class="eliminar-button btn p-1" 
+                                 data-bs-toggle="modal" 
+                                 data-bs-target="#eliminarModal"
+                                 data-id="@item.MaterialId">
+                              <img src="~/spanIconos/botonEliminar.png" alt="Eliminar" class="icon icon-hover" width="24" height="24">
+                                </a>
                         </div>
                     </td>
                 </tr>
@@ -88,11 +106,10 @@
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #EAEAEA;">
-                <h1 class="modal-title fs-5 text-dark" id="crearNuevoLabel">Nueva Orden</h1>
+                <h1 class="modal-title fs-5 text-dark" id="crearNuevoLabel">Nuevo Material</h1>
             </div>
             <div class="modal-body">
                 <form asp-action="Create" method="post" enctype="multipart/form-data">
-
                     <!-- Código y Nombre -->
                     <div class="row mb-2">
                         <div class="col-md-6">
@@ -144,111 +161,210 @@
                         <input type="text" id="tipo" name="Tipo" class="form-control form-control-sm">
                     </div>
 
+
                     <!-- Imagen -->
                     <div class="mb-2">
                         <label for="FotoUrl" class="form-label small">Subir Imagen</label>
                         <input type="file" class="form-control form-control-sm" name="FotoUrl" id="FotoUrl">
                     </div>
 
+
                     <!-- Footer con botones -->
                     <div class="modal-footer">
                         <div class="w-100 d-flex justify-content-between">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Finalizar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal Editar Nuevo -->
-<div class="modal fade" id="editarNuevo" tabindex="-1" aria-labelledby="editarNuevoLabel" aria-hidden="true">
+<!-- Modal Editar -->
+<div class="modal fade" id="editarNuevo" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #EAEAEA;">
-                <h1 class="modal-title fs-5 text-dark" id="editarNuevo">Editar</h1>
+                <h1 class="modal-title fs-5 text-dark" id="editarNuevoLabel">Editar Material</h1>
             </div>
             <div class="modal-body">
-                <form asp-action="Edit" method="post" enctype="multipart/form-data">
-
+                  <form asp-action="Edit" asp-controller="Materials" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="MaterialId" id="editar-materialid" required>
                     <!-- Código y Nombre -->
                     <div class="row mb-2">
                         <div class="col-md-6">
-                            <label for="codigo" class="form-label small">Código Material</label>
-                            <input type="text" id="editar-codigo" name="Codigo" class="form-control">
+                            <label for="editar-codigo" class="form-label small">Código Material</label>
+                            <input type="text" id="editar-codigo" name="Codigo" class="form-control form-control-sm" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="nombre" class="form-label small">Nombre del Material</label>
-                            <input type="text" id="nombre" name="Nombre" class="form-control form-control-sm">
+                            <label for="editar-nombre" class="form-label small">Nombre del Material</label>
+                            <input type="text" id="editar-nombre" name="Nombre" class="form-control form-control-sm" required>
                         </div>
                     </div>
 
                     <!-- Descripcion, Stock y Costo -->
                     <div class="row mb-2">
                         <div class="col-md-4">
-                            <label for="descripcion" class="form-label small">Descripción</label>
-                            <input type="text" id="descripcion" name="Descripcion" class="form-control form-control-sm">
+                            <label for="editar-descripcion" class="form-label small">Descripción</label>
+                            <input type="text" id="editar-descripcion" name="Descripcion" class="form-control form-control-sm" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="stock" class="form-label small">Stock</label>
-                            <input type="text" id="stock" name="Stock" class="form-control form-control-sm">
+                            <label for="editar-stock" class="form-label small">Stock</label>
+                            <input type="text" id="editar-stock" name="Stock" class="form-control form-control-sm" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="costo" class="form-label small">Costo por Unidad</label>
-                            <input type="text" id="costo" name="PrecioUnidad" class="form-control form-control-sm">
+                            <label for="editar-costo" class="form-label small">Costo por Unidad</label>
+                            <input type="text" id="editar-costo" name="PrecioUnidad" class="form-control form-control-sm" required>
                         </div>
                     </div>
-
 
                     <!-- Ancho, Largo, Alto -->
                     <div class="row mb-2">
                         <div class="col-md-4">
-                            <label for="ancho" class="form-label small">Ancho</label>
-                            <input type="text" id="ancho" name="Ancho" class="form-control form-control-sm">
+                            <label for="editar-ancho" class="form-label small">Ancho</label>
+                            <input type="text" id="editar-ancho" name="Ancho" class="form-control form-control-sm" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="largo" class="form-label small">Largo</label>
-                            <input type="text" id="largo" name="Largo" class="form-control form-control-sm">
+                            <label for="editar-largo" class="form-label small">Largo</label>
+                            <input type="text" id="editar-largo" name="Largo" class="form-control form-control-sm" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="alto" class="form-label small">Alto</label>
-                            <input type="text" id="alto" name="Alto" class="form-control form-control-sm">
+                            <label for="editar-alto" class="form-label small">Alto</label>
+                            <input type="text" id="editar-alto" name="Alto" class="form-control form-control-sm" required>
                         </div>
                     </div>
 
                     <!-- Tipo -->
                     <div class="mb-2">
-                        <label for="tipo" class="form-label small">Tipo</label>
-                        <input type="text" id="tipo" name="Tipo" class="form-control form-control-sm">
+                        <label for="editar-tipo" class="form-label small">Tipo</label>
+                        <input type="text" id="editar-tipo" name="Tipo" class="form-control form-control-sm" required>
                     </div>
-
-                    <!-- Imagen -->
+                    
+                  <!-- Imagen con validación manual -->
                     <div class="mb-2">
-                        <label for="FotoUrl" class="form-label small">Subir Imagen</label>
-                        <input type="file" class="form-control form-control-sm" name="FotoUrl" id="FotoUrl">
+                        <label class="form-label small">Cambiar imagen</label>
+                        <input type="file" class="form-control form-control-sm" name="FotoUrl" id="editar-FotoUrl" required>
                     </div>
 
                     <!-- Footer con botones -->
                     <div class="modal-footer">
                         <div class="w-100 d-flex justify-content-between">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Finalizar</button>
+                              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Modal Vista -->
+<div class="modal fade" id="vistaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> 
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #EAEAEA;"> 
+                <h1 class="modal-title fs-5">Detalles del Material</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- Columna izquierda - Datos -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Código Material</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-codigo"></p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nombre</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-nombre"></p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Descripción</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-descripcion"></p>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Stock</label>
+                                <p class="form-control-plaintext border-bottom pb-2" id="vista-stock"></p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Precio Unitario</label>
+                                <p class="form-control-plaintext border-bottom pb-2" id="vista-precio"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna derecha - Dimensiones e Imagen -->
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label fw-bold">Ancho</label>
+                                <p class="form-control-plaintext border-bottom pb-2" id="vista-ancho"></p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label fw-bold">Largo</label>
+                                <p class="form-control-plaintext border-bottom pb-2" id="vista-largo"></p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label fw-bold">Alto</label>
+                                <p class="form-control-plaintext border-bottom pb-2" id="vista-alto"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Tipo</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-tipo"></p>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <img id="vista-imagen" src="" class="img-thumbnail shadow" style="max-width: 100%; max-height: 200px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-1"></i> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Script funcional -->
+
+<!-- Modal Eliminar -->
+<div class="modal fade" id="eliminarModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #EAEAEA;">
+                <h5 class="modal-title">Confirmar Eliminación</h5>
+            </div>
+            <div class="modal-body">
+                <p class="fw-bold text-center">¿Estás seguro de eliminar este material?</p>
+                <p class="text-center">Se eliminarán los datos del material completo. Esta acción es irreversible y no se podrán recuperar.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form id="formEliminar" asp-action="Delete" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" id="materialIdEliminar" name="id" />
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script  -->
 <script>
-    const searchInput = document.getElementById('searchInput');
+      const searchInput = document.getElementById('searchInput');
     const materialesFilas = Array.from(document.querySelectorAll('.material'));
     const maxFilas = 6;
 
@@ -276,7 +392,7 @@
             }
         });
 
-        // Si no hay búsqueda activa, mostrar solo las primeras 7 filas
+        // Si no hay búsqueda activa, mostrar solo las primeras 6 filas
         if (searchTerm === '') {
             mostrarFilasIniciales();
         }
@@ -286,18 +402,86 @@
     window.addEventListener('DOMContentLoaded', mostrarFilasIniciales);
     searchInput.addEventListener('input', filtrarMateriales);
 
-
+ // EDITAR
     document.querySelectorAll('.edit-button').forEach(boton => {
-        boton.addEventListener('click', () => {
-            const modal = document.querySelector('#editarNuevo');
-            modal.querySelector('#codigo').value = boton.getAttribute('data-codigo');
-            document.getElementById('nombre').value = boton.getAttribute('data-nombre');
-            document.getElementById('descripcion').value = boton.getAttribute('data-descripcion');
-            document.getElementById('stock').value = boton.getAttribute('data-stock');
-            document.getElementById('costo').value = boton.getAttribute('data-precio');
-            document.getElementById('ancho').value = boton.getAttribute('data-ancho');
-            document.getElementById('largo').value = boton.getAttribute('data-largo');
-            document.getElementById('tipo').value = boton.getAttribute('data-tipo');
+    boton.addEventListener('click', () => {
+        
+        document.getElementById('editar-materialid').value = boton.getAttribute('data-id');
+        
+        // Resto de campos
+        document.getElementById('editar-codigo').value = boton.getAttribute('data-codigo');
+        document.getElementById('editar-nombre').value = boton.getAttribute('data-nombre');
+        document.getElementById('editar-descripcion').value = boton.getAttribute('data-descripcion');
+        document.getElementById('editar-stock').value = boton.getAttribute('data-stock');
+        document.getElementById('editar-costo').value = boton.getAttribute('data-precio');
+        document.getElementById('editar-ancho').value = boton.getAttribute('data-ancho');
+        document.getElementById('editar-largo').value = boton.getAttribute('data-largo');
+        document.getElementById('editar-alto').value = boton.getAttribute('data-alto');
+        document.getElementById('editar-tipo').value = boton.getAttribute('data-tipo');
+        
+        // Imagen actual
+        const imgPreview = document.getElementById('current-image-preview');
+        if (imgPreview) {
+            imgPreview.src = boton.getAttribute('data-fotourl');
+            imgPreview.style.display = 'block';
+        }
+    });
+});
+
+ // VISTA
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurar todos los botones de vista
+    document.querySelectorAll('.vista-button').forEach(button => {
+        button.addEventListener('click', function() {
+            // Obtener todos los atributos data
+            const data = {
+                id: this.getAttribute('data-id'),
+                codigo: this.getAttribute('data-codigo'),
+                nombre: this.getAttribute('data-nombre'),
+                descripcion: this.getAttribute('data-descripcion'),
+                stock: this.getAttribute('data-stock'),
+                precio: this.getAttribute('data-precio'),
+                ancho: this.getAttribute('data-ancho'),
+                largo: this.getAttribute('data-largo'),
+                alto: this.getAttribute('data-alto'),
+                tipo: this.getAttribute('data-tipo'),
+                fotoUrl: this.getAttribute('data-fotourl')
+            };
+            
+            // Asignar valores a los elementos del modal
+            document.getElementById('vista-codigo').textContent = data.codigo || 'N/A';
+            document.getElementById('vista-nombre').textContent = data.nombre || 'N/A';
+            document.getElementById('vista-descripcion').textContent = data.descripcion || 'N/A';
+            document.getElementById('vista-stock').textContent = data.stock || '0';
+            document.getElementById('vista-precio').textContent = data.precio ? `$${data.precio}` : '$0';
+            document.getElementById('vista-ancho').textContent = data.ancho || 'N/A';
+            document.getElementById('vista-largo').textContent = data.largo || 'N/A';
+            document.getElementById('vista-alto').textContent = data.alto || 'N/A';
+            document.getElementById('vista-tipo').textContent = data.tipo || 'N/A';
+            
+            // Manejar la imagen
+            const imagenElement = document.getElementById('vista-imagen');
+            if (data.fotoUrl) {
+                imagenElement.src = data.fotoUrl;
+                imagenElement.style.display = 'block';
+            } else {
+                imagenElement.style.display = 'none';
+            }
+        });
+    });
+});
+
+ // ELIMINAR
+ document.addEventListener("DOMContentLoaded", function () {
+        const eliminarModal = document.getElementById("eliminarModal");
+        const materialIdInput = document.getElementById("materialIdEliminar");
+
+        // Escucha cuando se abre el modal
+        eliminarModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget;
+            const materialId = button.getAttribute("data-id");
+
+            materialIdInput.value = materialId;
         });
     });
 

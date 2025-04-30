@@ -105,17 +105,34 @@ namespace caobaModeloFabricacion.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MaterialId,Codigo,Nombre,Descripcion,Stock,PrecioUnidad,Ancho,Largo,Alto,Tipo,ThumbnailUrl,FotoUrl")] Material material, IFormFile FotoUrl)
+        public async Task<IActionResult> Edit(Material material, IFormFile FotoUrl)
         {
-            if (id != material.MaterialId)
+
+            var materialExistente = await _context.Material.FindAsync(material.MaterialId);
+
+            if (materialExistente == null)
             {
-                return NotFound();
+                TempData["Error"] = "Material no encontrado";
+                return RedirectToAction(nameof(Index));
             }
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                    // Actualizar propiedades manualmente
+                    materialExistente.Codigo = material.Codigo;
+                    materialExistente.Nombre = material.Nombre;
+                    materialExistente.Descripcion = material.Descripcion;
+                    materialExistente.Stock = material.Stock;
+                    materialExistente.PrecioUnidad = material.PrecioUnidad;
+                    materialExistente.Ancho = material.Ancho;
+                    materialExistente.Largo = material.Largo;
+                    materialExistente.Alto = material.Alto;
+                    materialExistente.Tipo = material.Tipo;
+                    materialExistente.ThumbnailUrl = material.ThumbnailUrl;
+                    materialExistente.FotoUrl = material.FotoUrl;
+
                     if (FotoUrl != null)
                     {
                         // Subir la nueva imagen a Cloudinary
@@ -126,31 +143,28 @@ namespace caobaModeloFabricacion.Controllers
                         };
 
                         var uploadResult = await _cloudinary.UploadAsync(uploadParams);
-                        material.FotoUrl = uploadResult.SecureUrl.ToString();
+                        materialExistente.FotoUrl = uploadResult.SecureUrl.ToString();
 
                         // Generar la miniatura
                         var thumbnailParams = new Transformation().Width(150).Height(150).Crop("thumb");
-                        material.ThumbnailUrl = _cloudinary.Api.UrlImgUp.Transform(thumbnailParams).BuildUrl(uploadResult.PublicId);
+                        materialExistente.ThumbnailUrl = _cloudinary.Api.UrlImgUp.Transform(thumbnailParams).BuildUrl(uploadResult.PublicId);
                     }
 
-                    // Actualizar el producto en la base de datos
-                    _context.Update(material);
-                    await _context.SaveChangesAsync();               
+
+                    await _context.SaveChangesAsync();
+                    TempData["Success"] = "¡Guardado correctamente!";
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    if (!MaterialExists(material.MaterialId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    TempData["Error"] = $"Error: {ex.Message}";
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(material);
+            else
+            {
+                TempData["Error"] = "Error en los datos";
+            }
+
+            return RedirectToAction(nameof(Index)); // Siempre redirige al Index
         }
 
         // GET: Materials/Delete/5
