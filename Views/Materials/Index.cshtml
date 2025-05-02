@@ -102,11 +102,11 @@
 </div>
 
 <!-- Modal Crear Nuevo -->
-<div class="modal fade" id="crearNuevo" tabindex="-1" aria-labelledby="crearNuevoLabel" aria-hidden="true">
+<div class="modal fade poppins-font" id="crearNuevo" tabindex="-1" aria-labelledby="crearNuevoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #EAEAEA;">
-                <h1 class="modal-title fs-5 text-dark" id="crearNuevoLabel">Nuevo Material</h1>
+                <h4 class="modal-title titulo-material" id="crearNuevoLabel">Nuevo Material</h4>
             </div>
             <div class="modal-body">
                 <form asp-action="Create" method="post" enctype="multipart/form-data">
@@ -172,8 +172,8 @@
                     <!-- Footer con botones -->
                     <div class="modal-footer">
                         <div class="w-100 d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary btn-guardar">Guardar</button>
                         </div>
                     </div>
                 </form>
@@ -183,11 +183,11 @@
 </div>
 
 <!-- Modal Editar -->
-<div class="modal fade" id="editarNuevo" tabindex="-1" aria-hidden="true">
+<div class="modal fade poppins-font" id="editarNuevo" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #EAEAEA;">
-                <h1 class="modal-title fs-5 text-dark" id="editarNuevoLabel">Editar Material</h1>
+                <h4 class="modal-title titulo-material" id="editarNuevoLabel">Editar Material</h4>
             </div>
             <div class="modal-body">
                   <form asp-action="Edit" asp-controller="Materials" method="post" enctype="multipart/form-data">
@@ -252,8 +252,8 @@
                     <!-- Footer con botones -->
                     <div class="modal-footer">
                         <div class="w-100 d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                            <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary btn-guardar">Guardar</button>
                         </div>
                     </div>
                 </form>
@@ -262,101 +262,106 @@
     </div>
 </div>
 
+
 <!-- Modal Vista -->
-<div class="modal fade" id="vistaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg"> 
+<div class="modal fade poppins-font" id="vistaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
-            <div class="modal-header" style="background-color: #EAEAEA;"> 
-                <h1 class="modal-title fs-5">Detalles del Material</h1>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header" style="background-color: #EAEAEA;">
+                <h4 class="modal-title titulo-material">Detalles del Material</h4>
+                <button type="button" class="btn-close btn-close-gray" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <!-- Columna izquierda - Datos -->
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Código Material</label>
+                <div class="container-fluid">
+
+                    <!-- Código y Nombre -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label small">Código Material</label>
                             <p class="form-control-plaintext border-bottom pb-2" id="vista-codigo"></p>
                         </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Nombre</label>
+                        <div class="col-md-6">
+                            <label class="form-label small">Nombre del Material</label>
                             <p class="form-control-plaintext border-bottom pb-2" id="vista-nombre"></p>
                         </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Descripción</label>
-                            <p class="form-control-plaintext border-bottom pb-2" id="vista-descripcion"></p>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-bold">Stock</label>
-                                <p class="form-control-plaintext border-bottom pb-2" id="vista-stock"></p>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-bold">Precio Unitario</label>
-                                <p class="form-control-plaintext border-bottom pb-2" id="vista-precio"></p>
-                            </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label class="form-label small">Descripción</label>
+                            <p class="form-control-plaintext border-bottom pb-2 text-truncate" id="vista-descripcion"
+                               style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></p>
                         </div>
                     </div>
-                    
-                    <!-- Columna derecha - Dimensiones e Imagen -->
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label fw-bold">Ancho</label>
-                                <p class="form-control-plaintext border-bottom pb-2" id="vista-ancho"></p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label fw-bold">Largo</label>
-                                <p class="form-control-plaintext border-bottom pb-2" id="vista-largo"></p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label fw-bold">Alto</label>
-                                <p class="form-control-plaintext border-bottom pb-2" id="vista-alto"></p>
-                            </div>
+
+                    <!-- Stock, Costo y Ancho -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label small">Stock</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-stock"></p>
                         </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Tipo</label>
+                        <div class="col-md-4">
+                            <label class="form-label small">Costo por Unidad</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-precio"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">Ancho</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-ancho"></p>
+                        </div>
+                    </div>
+
+                    <!-- Largo, Alto y Tipo -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label small">Largo</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-largo"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">Alto</label>
+                            <p class="form-control-plaintext border-bottom pb-2" id="vista-alto"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">Tipo</label>
                             <p class="form-control-plaintext border-bottom pb-2" id="vista-tipo"></p>
                         </div>
-                        
-                        <div class="text-center mt-4">
-                            <img id="vista-imagen" src="" class="img-thumbnail shadow" style="max-width: 100%; max-height: 200px;">
+                    </div>
+
+                    <!-- Imagen centrada -->
+                    <div class="row mb-3">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img id="vista-imagen" src="" class="img-thumbnail shadow"
+                                 style="width: 200px; height: 50px; object-fit: cover;">
                         </div>
                     </div>
+
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                    <i class="bi bi-x-circle me-1"></i> Cerrar
-                </button>
             </div>
         </div>
     </div>
 </div>
+
 
 
 <!-- Modal Eliminar -->
-<div class="modal fade" id="eliminarModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade poppins-font" id="eliminarModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #EAEAEA;">
-                <h5 class="modal-title">Confirmar Eliminación</h5>
+                <h4 class="modal-title titulo-material">¿Estás Seguro?</h4>
             </div>
             <div class="modal-body">
-                <p class="fw-bold text-center">¿Estás seguro de eliminar este material?</p>
                 <p class="text-center">Se eliminarán los datos del material completo. Esta acción es irreversible y no se podrán recuperar.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <div class="w-100 d-flex justify-content-between">
+                <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
                 <form id="formEliminar" asp-action="Delete" method="post">
                     @Html.AntiForgeryToken()
                     <input type="hidden" id="materialIdEliminar" name="id" />
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <button type="submit" class="btn btn-primary btn-eliminar">Eliminar</button>
                 </form>
+                </div>
             </div>
         </div>
     </div>
@@ -366,9 +371,9 @@
 <script>
       const searchInput = document.getElementById('searchInput');
     const materialesFilas = Array.from(document.querySelectorAll('.material'));
-    const maxFilas = 6;
+    const maxFilas = 5;
 
-    // Mostrar solo las primeras 6 filas al inicio
+    // Mostrar solo las primeras 5 filas al inicio
     function mostrarFilasIniciales() {
         materialesFilas.forEach((fila, index) => {
             fila.style.display = index < maxFilas ? '' : 'none';
@@ -476,7 +481,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const eliminarModal = document.getElementById("eliminarModal");
         const materialIdInput = document.getElementById("materialIdEliminar");
 
-        // Escucha cuando se abre el modal
         eliminarModal.addEventListener("show.bs.modal", function (event) {
             const button = event.relatedTarget;
             const materialId = button.getAttribute("data-id");

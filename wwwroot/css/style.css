@@ -1,4 +1,71 @@
-﻿/* ======== TABLA GENERAL ======== */
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+}
+
+.text-gray-custom {
+    color: #747474;
+}
+
+.btn-guardar {
+    background-color: #00AEFF;
+    border-color: #00AEFF;
+}
+
+    .btn-guardar:hover {
+        background-color: #0095db; 
+        border-color: #0095db;
+    }
+
+
+.btn-eliminar {
+    background-color: #B83225;
+    border-color: #B83225;
+}
+
+    .btn-eliminar:hover {
+        background-color: #982A1F; /* un poco más oscuro para el efecto hover */
+        border-color: #982A1F;
+    }
+
+.btn-cancelar {
+    background-color: #B4B4B4;
+    border-color: #B4B4B4;
+}
+
+    .btn-cancelar:hover {
+        background-color: #a0a0a0; /* un poco más oscuro para el efecto hover */
+        border-color: #a0a0a0;
+    }
+
+.btn-cancelar,
+.btn-eliminar {
+    height: auto;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    font-size: 0.875rem;
+}
+
+.titulo-material {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+    color: #747474;
+    font-size: 18px; 
+}
+
+
+    /* ======== TABLA GENERAL ======== */
+
+    .text-gray-custom {
+    color: #747474;
+}
+
 .table {
     font-family: 'Poppins', sans-serif !important;
 }
