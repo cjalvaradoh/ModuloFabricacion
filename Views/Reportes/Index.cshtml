@@ -1,25 +1,27 @@
 ﻿@model IEnumerable<caobaModeloFabricacion.Models.Reporte>
 
+
 @{
     ViewData["Title"] = "Reportes";
     Layout = "_LayoutLogged";
 }
 
 <link rel="stylesheet" href="~/css/estilos.css" asp-append-version="true" />
-<h2 class="mb-2 mt-2 fw-bold">Reportes</h2>
+<h3 class="mb-2 mt-2 fw-bold ms-4">Reportes</h3>
 
-<div class="row align-items-center mt-3 mb-2 g-0">
-    <div class="col-md-9 col-12 mb-2 mb-md-0">
-        <div class="input-group w-100">
-            <input type="text" class="form-control search-input-reportes" placeholder="Buscar por Número de Órden" id="searchInput" />
+<div class="px-4">
+    <div class="row align-items-center mt-3 mb-2 g-0">
+        <div class="col-md-9 col-12 mb-2 mb-md-0">
+            <div class="input-group w-100">
+                <input type="text" class="form-control search-input-reportes" placeholder="Buscar por Número de Órden" id="searchInput" />
+            </div>
         </div>
-    </div>
-    <div class="col-md-3 col-12 d-flex justify-content-md-end justify-content-start">
-        <a href="#" class="generar-new-link p-2"
-           data-bs-toggle="modal" data-bs-target="#generarPdf">
-            Generar PDF
-            <img src="~/spanIconos/botonCrearNuevo.png" alt="Material" class="icon icon-hover ms-2" width="24" height="24">
-        </a>
+        <div class="col-md-3 col-12 d-flex justify-content-md-end justify-content-start">
+            <a href="#" class="generar-new-link">
+                Generar PDF
+                <img src="~/spanIconos/botonGenerarPdf.png" alt="generarPdf" class="icon icon-hover ms-2" width="24" height="24">
+            </a>
+        </div>
     </div>
 </div>
 
@@ -216,6 +218,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 

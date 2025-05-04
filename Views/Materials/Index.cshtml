@@ -5,20 +5,21 @@
     Layout = "_LayoutLogged";
 }
 <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-<h2 class="mb-2 mt-2 fw-bold">Control de Materiales</h2>
+<h3 class="mb-2 mt-2 fw-bold ms-4">Control de Materiales</h3>
 
+<div class="px-4">
 <div class="d-flex justify-content-end mb-2 mt-2">
     <a href="#" class="create-new-link btn bg-white border-0 p-2"
        data-bs-toggle="modal" data-bs-target="#crearNuevo">
         Create New
-        <img src="~/spanIconos/botonCrearNuevo.png" alt="Material" class="icon icon-hover ms-2" width="24" height="24">
+        <img src="~/spanIconos/botonCrearNuevo.png" alt="Reporte" class="icon icon-hover ms-2" width="24" height="24">
     </a>
 
 </div>
 
 <!-- Input de búsqueda -->
 <div class="row">
-    <div class="col-12 mb-2">
+    <div class="col-12 mb-3 ">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Buscar por Número de Órden" id="searchInput" />
         </div>
@@ -365,6 +366,8 @@
         </div>
     </div>
 </div>
+</div>
+
 
 <!-- Script  -->
 <script>
