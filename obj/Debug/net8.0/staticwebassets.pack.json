@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\caobaModeloFabricacion.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\estilos.css",
+      "PackagePath": "staticwebassets\\css\\estilos.css"
+    },
+    {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -299,6 +303,10 @@
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonEliminar.png",
       "PackagePath": "staticwebassets\\spanIconos\\botonEliminar.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonGenerarPdf.png",
+      "PackagePath": "staticwebassets\\spanIconos\\botonGenerarPdf.png"
     },
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonSearch.png",

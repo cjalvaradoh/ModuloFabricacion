@@ -21,7 +21,7 @@ namespace caobaModeloFabricacion.Models
         public decimal Cantidad { get; set; }
 
         [Column("tiempo_produccion")]
-        public int TiempoProduccion { get; set; }
+        public decimal TiempoProduccion { get; set; }
 
         [Column("estado")]
         public string Estado { get; set; } = string.Empty;

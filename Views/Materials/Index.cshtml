@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<caobaModeloFabricacion.Models.Material>
 
-
 @{
     ViewData["Title"] = "Materiales";
     Layout = "_LayoutLogged";
@@ -58,41 +57,41 @@
                     <td>
                         <div class="btn-group btn-group-sm">
                             <a href="#" class="edit-button btn p-1"
-                             data-bs-toggle="modal" data-bs-target="#editarNuevo"
-                             data-id="@item.MaterialId" 
-                             data-codigo="@item.Codigo"
-                             data-nombre="@item.Nombre"
-                             data-descripcion="@item.Descripcion"
-                             data-stock="@item.Stock"
-                             data-precio="@item.PrecioUnidad"
-                             data-ancho="@item.Ancho"
-                             data-largo="@item.Largo"
-                             data-alto="@item.Alto"
-                             data-tipo="@item.Tipo"
-                             data-fotourl="@item.FotoUrl">
-                            <img src="~/spanIconos/botonEditar.png" alt="Editar" class="icon icon-hover" width="24" height="24">
-                             </a>
-                            <a href="#" class="vista-button btn p-1" 
-                             data-bs-toggle="modal" data-bs-target="#vistaModal"
-                             data-id="@item.MaterialId" 
-                             data-codigo="@item.Codigo"
-                             data-nombre="@item.Nombre"
-                             data-descripcion="@item.Descripcion"
-                             data-stock="@item.Stock"
-                             data-precio="@item.PrecioUnidad"
-                             data-ancho="@item.Ancho"
-                             data-largo="@item.Largo"
-                             data-alto="@item.Alto"
-                             data-tipo="@item.Tipo"
-                             data-fotourl="@item.FotoUrl">
-                            <img src="~/spanIconos/botonVistaPrevia.png" alt="Vista" class="icon icon-hover" width="24" height="24">
-</a>
-                              <a href="#" class="eliminar-button btn p-1" 
-                                 data-bs-toggle="modal" 
-                                 data-bs-target="#eliminarModal"
-                                 data-id="@item.MaterialId">
-                              <img src="~/spanIconos/botonEliminar.png" alt="Eliminar" class="icon icon-hover" width="24" height="24">
-                                </a>
+                               data-bs-toggle="modal" data-bs-target="#editarNuevo"
+                               data-id="@item.MaterialId"
+                               data-codigo="@item.Codigo"
+                               data-nombre="@item.Nombre"
+                               data-descripcion="@item.Descripcion"
+                               data-stock="@item.Stock"
+                               data-precio="@item.PrecioUnidad"
+                               data-ancho="@item.Ancho"
+                               data-largo="@item.Largo"
+                               data-alto="@item.Alto"
+                               data-tipo="@item.Tipo"
+                               data-fotourl="@item.FotoUrl">
+                                <img src="~/spanIconos/botonEditar.png" alt="Editar" class="icon icon-hover" width="24" height="24">
+                            </a>
+                            <a href="#" class="vista-button btn p-1"
+                               data-bs-toggle="modal" data-bs-target="#vistaModal"
+                               data-id="@item.MaterialId"
+                               data-codigo="@item.Codigo"
+                               data-nombre="@item.Nombre"
+                               data-descripcion="@item.Descripcion"
+                               data-stock="@item.Stock"
+                               data-precio="@item.PrecioUnidad"
+                               data-ancho="@item.Ancho"
+                               data-largo="@item.Largo"
+                               data-alto="@item.Alto"
+                               data-tipo="@item.Tipo"
+                               data-fotourl="@item.FotoUrl">
+                                <img src="~/spanIconos/botonVistaPrevia.png" alt="Vista" class="icon icon-hover" width="24" height="24">
+                            </a>
+                            <a href="#" class="eliminar-button btn p-1"
+                               data-bs-toggle="modal"
+                               data-bs-target="#eliminarModal"
+                               data-id="@item.MaterialId">
+                                <img src="~/spanIconos/botonEliminar.png" alt="Eliminar" class="icon icon-hover" width="24" height="24">
+                            </a>
                         </div>
                     </td>
                 </tr>
@@ -190,7 +189,7 @@
                 <h4 class="modal-title titulo-material" id="editarNuevoLabel">Editar Material</h4>
             </div>
             <div class="modal-body">
-                  <form asp-action="Edit" asp-controller="Materials" method="post" enctype="multipart/form-data">
+                <form asp-action="Edit" asp-controller="Materials" method="post" enctype="multipart/form-data">
                     @Html.AntiForgeryToken()
                     <input type="hidden" name="MaterialId" id="editar-materialid" required>
                     <!-- Código y Nombre -->
@@ -242,8 +241,8 @@
                         <label for="editar-tipo" class="form-label small">Tipo</label>
                         <input type="text" id="editar-tipo" name="Tipo" class="form-control form-control-sm" required>
                     </div>
-                    
-                  <!-- Imagen con validación manual -->
+
+                    <!-- Imagen con validación manual -->
                     <div class="mb-2">
                         <label class="form-label small">Cambiar imagen</label>
                         <input type="file" class="form-control form-control-sm" name="FotoUrl" id="editar-FotoUrl" required>
@@ -355,12 +354,12 @@
             </div>
             <div class="modal-footer">
                 <div class="w-100 d-flex justify-content-between">
-                <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
-                <form id="formEliminar" asp-action="Delete" method="post">
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" id="materialIdEliminar" name="id" />
-                    <button type="submit" class="btn btn-primary btn-eliminar">Eliminar</button>
-                </form>
+                    <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                    <form id="formEliminar" asp-action="Delete" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" id="materialIdEliminar" name="id" />
+                        <button type="submit" class="btn btn-primary btn-eliminar">Eliminar</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -369,7 +368,7 @@
 
 <!-- Script  -->
 <script>
-      const searchInput = document.getElementById('searchInput');
+    const searchInput = document.getElementById('searchInput');
     const materialesFilas = Array.from(document.querySelectorAll('.material'));
     const maxFilas = 5;
 
@@ -407,77 +406,77 @@
     window.addEventListener('DOMContentLoaded', mostrarFilasIniciales);
     searchInput.addEventListener('input', filtrarMateriales);
 
- // EDITAR
+    // EDITAR
     document.querySelectorAll('.edit-button').forEach(boton => {
-    boton.addEventListener('click', () => {
-        
-        document.getElementById('editar-materialid').value = boton.getAttribute('data-id');
-        
-        // Resto de campos
-        document.getElementById('editar-codigo').value = boton.getAttribute('data-codigo');
-        document.getElementById('editar-nombre').value = boton.getAttribute('data-nombre');
-        document.getElementById('editar-descripcion').value = boton.getAttribute('data-descripcion');
-        document.getElementById('editar-stock').value = boton.getAttribute('data-stock');
-        document.getElementById('editar-costo').value = boton.getAttribute('data-precio');
-        document.getElementById('editar-ancho').value = boton.getAttribute('data-ancho');
-        document.getElementById('editar-largo').value = boton.getAttribute('data-largo');
-        document.getElementById('editar-alto').value = boton.getAttribute('data-alto');
-        document.getElementById('editar-tipo').value = boton.getAttribute('data-tipo');
-        
-        // Imagen actual
-        const imgPreview = document.getElementById('current-image-preview');
-        if (imgPreview) {
-            imgPreview.src = boton.getAttribute('data-fotourl');
-            imgPreview.style.display = 'block';
-        }
-    });
-});
+        boton.addEventListener('click', () => {
 
- // VISTA
-document.addEventListener('DOMContentLoaded', function() {
-    // Configurar todos los botones de vista
-    document.querySelectorAll('.vista-button').forEach(button => {
-        button.addEventListener('click', function() {
-            // Obtener todos los atributos data
-            const data = {
-                id: this.getAttribute('data-id'),
-                codigo: this.getAttribute('data-codigo'),
-                nombre: this.getAttribute('data-nombre'),
-                descripcion: this.getAttribute('data-descripcion'),
-                stock: this.getAttribute('data-stock'),
-                precio: this.getAttribute('data-precio'),
-                ancho: this.getAttribute('data-ancho'),
-                largo: this.getAttribute('data-largo'),
-                alto: this.getAttribute('data-alto'),
-                tipo: this.getAttribute('data-tipo'),
-                fotoUrl: this.getAttribute('data-fotourl')
-            };
-            
-            // Asignar valores a los elementos del modal
-            document.getElementById('vista-codigo').textContent = data.codigo || 'N/A';
-            document.getElementById('vista-nombre').textContent = data.nombre || 'N/A';
-            document.getElementById('vista-descripcion').textContent = data.descripcion || 'N/A';
-            document.getElementById('vista-stock').textContent = data.stock || '0';
-            document.getElementById('vista-precio').textContent = data.precio ? `$${data.precio}` : '$0';
-            document.getElementById('vista-ancho').textContent = data.ancho || 'N/A';
-            document.getElementById('vista-largo').textContent = data.largo || 'N/A';
-            document.getElementById('vista-alto').textContent = data.alto || 'N/A';
-            document.getElementById('vista-tipo').textContent = data.tipo || 'N/A';
-            
-            // Manejar la imagen
-            const imagenElement = document.getElementById('vista-imagen');
-            if (data.fotoUrl) {
-                imagenElement.src = data.fotoUrl;
-                imagenElement.style.display = 'block';
-            } else {
-                imagenElement.style.display = 'none';
+            document.getElementById('editar-materialid').value = boton.getAttribute('data-id');
+
+            // Resto de campos
+            document.getElementById('editar-codigo').value = boton.getAttribute('data-codigo');
+            document.getElementById('editar-nombre').value = boton.getAttribute('data-nombre');
+            document.getElementById('editar-descripcion').value = boton.getAttribute('data-descripcion');
+            document.getElementById('editar-stock').value = boton.getAttribute('data-stock');
+            document.getElementById('editar-costo').value = boton.getAttribute('data-precio');
+            document.getElementById('editar-ancho').value = boton.getAttribute('data-ancho');
+            document.getElementById('editar-largo').value = boton.getAttribute('data-largo');
+            document.getElementById('editar-alto').value = boton.getAttribute('data-alto');
+            document.getElementById('editar-tipo').value = boton.getAttribute('data-tipo');
+
+            // Imagen actual
+            const imgPreview = document.getElementById('current-image-preview');
+            if (imgPreview) {
+                imgPreview.src = boton.getAttribute('data-fotourl');
+                imgPreview.style.display = 'block';
             }
         });
     });
-});
 
- // ELIMINAR
- document.addEventListener("DOMContentLoaded", function () {
+    // VISTA
+    document.addEventListener('DOMContentLoaded', function () {
+        // Configurar todos los botones de vista
+        document.querySelectorAll('.vista-button').forEach(button => {
+            button.addEventListener('click', function () {
+                // Obtener todos los atributos data
+                const data = {
+                    id: this.getAttribute('data-id'),
+                    codigo: this.getAttribute('data-codigo'),
+                    nombre: this.getAttribute('data-nombre'),
+                    descripcion: this.getAttribute('data-descripcion'),
+                    stock: this.getAttribute('data-stock'),
+                    precio: this.getAttribute('data-precio'),
+                    ancho: this.getAttribute('data-ancho'),
+                    largo: this.getAttribute('data-largo'),
+                    alto: this.getAttribute('data-alto'),
+                    tipo: this.getAttribute('data-tipo'),
+                    fotoUrl: this.getAttribute('data-fotourl')
+                };
+
+                // Asignar valores a los elementos del modal
+                document.getElementById('vista-codigo').textContent = data.codigo || 'N/A';
+                document.getElementById('vista-nombre').textContent = data.nombre || 'N/A';
+                document.getElementById('vista-descripcion').textContent = data.descripcion || 'N/A';
+                document.getElementById('vista-stock').textContent = data.stock || '0';
+                document.getElementById('vista-precio').textContent = data.precio ? `$${data.precio}` : '$0';
+                document.getElementById('vista-ancho').textContent = data.ancho || 'N/A';
+                document.getElementById('vista-largo').textContent = data.largo || 'N/A';
+                document.getElementById('vista-alto').textContent = data.alto || 'N/A';
+                document.getElementById('vista-tipo').textContent = data.tipo || 'N/A';
+
+                // Manejar la imagen
+                const imagenElement = document.getElementById('vista-imagen');
+                if (data.fotoUrl) {
+                    imagenElement.src = data.fotoUrl;
+                    imagenElement.style.display = 'block';
+                } else {
+                    imagenElement.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ELIMINAR
+    document.addEventListener("DOMContentLoaded", function () {
         const eliminarModal = document.getElementById("eliminarModal");
         const materialIdInput = document.getElementById("materialIdEliminar");
 

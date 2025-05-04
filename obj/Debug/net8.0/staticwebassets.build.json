@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PsurxrvVMPuJ0kddbX7BoOpABHoSgqfni8TRm8t5JMY=",
+  "Hash": "Swl/7SyGkDvviKIIrEoKEK0ayr0OiFLk3HMXnJ+DlbU=",
   "Source": "caobaModeloFabricacion",
   "BasePath": "_content/caobaModeloFabricacion",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\caobaModeloFabricacion.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\estilos.css",
+      "SourceId": "caobaModeloFabricacion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "BasePath": "_content/caobaModeloFabricacion",
+      "RelativePath": "css/estilos.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\estilos.css"
     },
     {
       "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\site.css",
@@ -1459,6 +1478,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\spanIconos\\botonEliminar.png"
+    },
+    {
+      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonGenerarPdf.png",
+      "SourceId": "caobaModeloFabricacion",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "BasePath": "_content/caobaModeloFabricacion",
+      "RelativePath": "spanIconos/botonGenerarPdf.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\spanIconos\\botonGenerarPdf.png"
     },
     {
       "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonSearch.png",

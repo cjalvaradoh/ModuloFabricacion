@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\views\\reportes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:views\\reportes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,14 +39,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".env",
-              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\.env",
-              "RelativeDocumentMoniker": ".env",
-              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\.env",
-              "RelativeToolTip": ".env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-02T03:28:21.85Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Reportes\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reportes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Views\\Reportes\\Index.cshtml",
+              "RelativeToolTip": "Views\\Reportes\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T02:45:43.332Z",
               "EditorCaption": ""
             }
           ]

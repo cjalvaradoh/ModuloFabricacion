@@ -26,6 +26,7 @@ namespace caobaModeloFabricacion.Data
             base.OnModelCreating(modelBuilder);
 
         }
+        public DbSet<caobaModeloFabricacion.Models.Reporte> Reporte_1 { get; set; } = default!;
 
     }
 }
