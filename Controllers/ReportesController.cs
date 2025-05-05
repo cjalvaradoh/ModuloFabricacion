@@ -189,6 +189,55 @@ namespace caobaModeloFabricacion.Controllers
 
             return Json(data);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDesempenoOrdenes()
+        {
+            var data = await _context.OrdenProduccion
+                .Include(o => o.Producto)
+                .ThenInclude(p => p.CategoriaProducto)
+                .GroupBy(o => o.Producto.Nombre)
+                .Select(g => new {
+                    Producto = g.Key,
+                    TiempoTotal = g.Select(o => _context.Reporte
+                        .Where(r => r.OrdenId == o.Ordenid)
+                        .Select(r => r.TiempoProduccion)
+                        .FirstOrDefault()).Sum()
+                })
+                .ToListAsync();
+
+            return Json(data);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<EstadoOrdenProduccionReporteDTO>>> ObtenerReporteEstadoOrdenes()
+        {
+            var resultado = await _context.OrdenProduccion
+                .GroupBy(o => o.Estado)
+                .Select(g => new EstadoOrdenProduccionReporteDTO
+                {
+                    Estado = g.Key,
+                    CantidadOrdenes = g.Count()
+                })
+                .ToListAsync();
+
+            return Ok(resultado);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<TiempoPromedioProduccionReporteDTO>>> ObtenerReporteTiempoPromedio()
+        {
+            var resultado = await _context.OrdenProduccion
+                .GroupBy(o => o.Producto.Nombre) // Asumiendo que tienes un campo Producto.Nombre
+                .Select(g => new TiempoPromedioProduccionReporteDTO
+                {
+                    Producto = g.Key,
+                    TiempoPromedioHoras = g.Average(o => EF.Functions.DateDiffHour(o.FechaInicio, o.FechaEntrega)) // Calcula el tiempo promedio de cada producto
+                })
+                .ToListAsync();
+
+            return Ok(resultado);
+        }
     }
 }
 

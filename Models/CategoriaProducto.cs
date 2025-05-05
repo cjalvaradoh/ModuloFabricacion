@@ -13,7 +13,7 @@ namespace caobaModeloFabricacion.Models
         [Required]
         [StringLength(100)]
         [Column("nombre")]
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         public ICollection<Producto>? Productos { get; set; }
     }

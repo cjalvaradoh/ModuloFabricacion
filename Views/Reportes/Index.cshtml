@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<caobaModeloFabricacion.Models.Reporte>
 
-
-
 @{
     ViewData["Title"] = "Reportes";
     Layout = "_LayoutLogged";
@@ -9,6 +7,7 @@
 }
 
 <link rel="stylesheet" href="~/css/estilos.css" asp-append-version="true" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <h3 class="mb-2 mt-2 fw-bold ms-4">Reportes</h3>
 
 
@@ -52,6 +51,25 @@
         </div>
         <div class="iconBox">
             <img src="~/spanIconos/pausa.png" alt="pausa" class="icon icon-hover ms-2" width="40" height="40">
+        </div>
+    </div>
+</div>
+
+<!-- Graphs -->
+<div class="row px-4">
+    <div class="col-md-4">
+        <div style="width: 328px; height: 164px; margin-bottom: 0; padding-bottom: 0;" class="mb-3">
+            <canvas id="graficoAvance" style="display: block; margin: 0; padding: 0;"></canvas>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div style="width: 328px; height: 164px; margin-bottom: 0; padding-bottom: 0;" class="mb-3">
+            <canvas id="graficoEstados" style="display: block; margin: 0; padding: 0;"></canvas>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div style="width: 328px; height: 169px; margin-bottom: 0; padding-bottom: 0;" class="mb-3">
+            <canvas id="graficoTiempo" style="display: block; margin: 0; padding: 0;"></canvas>
         </div>
     </div>
 </div>
@@ -360,7 +378,7 @@
         });
     });
 
-    //TARJETA ORDENES PROCESO
+    //TARJETAS
              document.addEventListener('DOMContentLoaded', function() {
         fetch('/Reportes/GetData')
             .then(response => {
@@ -383,5 +401,249 @@
                 document.getElementById('indiceRetrasos').textContent = "Error";
             });
     });
+
+//GRAFICA DE BARRAS
+
+document.addEventListener('DOMContentLoaded', function () {
+    function generarAcronimo(nombre) {
+        return nombre
+            .split(' ')
+            .map(palabra => palabra.charAt(0).toUpperCase())
+            .join('');
+    }
+
+    fetch('/Reportes/GetDesempenoOrdenes')
+        .then(response => response.json())
+        .then(data => {
+            const labels = data.map(item => generarAcronimo(item.producto));
+            const tiempos = data.map(item => item.tiempoTotal);
+
+            const ctx = document.getElementById('graficoAvance').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: ' Avance de Producción por Producto',
+                        data: tiempos,
+                        backgroundColor: '#FFA322',
+                        borderColor: '#BD7004',
+                        borderWidth: 0,
+                        borderRadius: 4,        
+                        borderSkipped: false 
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: ' Avance de Producción por Producto',
+                            color: '#747474',
+                            font: {
+                                size: 14,
+                                weight: '580'
+                            },
+                            padding: {
+                                top: 10,
+                                bottom: 20
+                            }
+                        },
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function (tooltipItems) {
+                                    const index = tooltipItems[0].dataIndex;
+                                    return data[index].producto;
+                                },
+                                label: function(context) {
+                                    return `Tiempo: ${context.parsed.y} hrs`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            display: false,
+                            grid: {
+                                display: false
+                            }
+                        },
+                        x: {
+                            display: false,
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: 0
+                    }
+                } // Cierre correcto de options
+            }); // Cierre correcto de new Chart
+        })
+        .catch(error => console.error('Error al obtener los datos:', error));
+});
+
+// GRAFICA DE DONA (Versión corregida)
+document.addEventListener('DOMContentLoaded', function () {
+    function generarAcronimo(nombre) {
+        return nombre
+            .split(' ')
+            .map(palabra => palabra.charAt(0).toUpperCase())
+            .join('');
+    }
+
+    fetch('/Reportes/ObtenerReporteEstadoOrdenes')
+        .then(response => response.json())
+        .then(data => {
+            const labels = data.map(item => item.estado);
+            const valores = data.map(item => item.cantidadOrdenes);
+
+            const colores = [
+                'rgba(75, 192, 192, 0.7)',   // Finalizada
+                'rgba(255, 99, 132, 0.7)',   // Cancelada
+                'rgba(255, 205, 86, 0.7)',    // En proceso
+                'rgba(54, 162, 235, 0.7)'     // Pendiente
+            ];
+
+            const ctx = document.getElementById('graficoEstados').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Estado de Órdenes en Producción',
+                        data: valores,
+                        backgroundColor: colores,
+                        borderColor: 'white',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Estado de Órdenes de Producción', // Título único
+                            color: '#747474',
+                            font: {
+                                size: 14,
+                                weight: '600' // Valor correcto para semibold
+                            },
+                            padding: {
+                                top: 10,
+                                bottom: 20
+                            }
+                        },
+                        legend: {
+                            position: 'right'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.label}: ${context.parsed}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error al obtener los datos:', error));
+});
+
+
+// GRAFICA DE TIEMPO PRODUCCION 
+document.addEventListener('DOMContentLoaded', function () {
+    function generarAcronimo(nombre) {
+        return nombre
+            .split(' ')
+            .map(palabra => palabra.charAt(0).toUpperCase())
+            .join('');
+    }
+
+    fetch('/Reportes/ObtenerReporteTiempoPromedio')
+        .then(response => response.json())
+        .then(data => {
+            const labels = data.map(item => generarAcronimo(item.producto));
+            const valores = data.map(item => item.tiempoPromedioHoras);
+
+            const ctx = document.getElementById('graficoTiempo').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Tiempo Promedio (hrs)',
+                        data: valores,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                        pointHoverRadius: 6
+                    }]
+                },
+	options: {
+    	responsive: true,
+    	maintainAspectRatio: false,
+   	 plugins: {
+        	title: {  // Configuración ÚNICA del título (elimina la otra)
+            	display: true,
+            	text: 'Tiempos Promedio de Producción',
+            	color: '#747474',
+            	 font: {
+                      size: 14,
+                      weight: '600' // Valor correcto para semibold
+                 },
+                 padding: {
+                        top: 10,
+                        bottom: 20
+                  }
+        	},
+        	legend: {
+            	display: false
+        	},
+        	tooltip: {
+            	enabled: true,
+            	callbacks: {
+                	title: function(context) {
+                    	const index = context[0].dataIndex;
+                    	return data[index].producto;
+                	},
+                	label: function(context) {
+                    	return `Tiempo: ${context.parsed.y.toFixed(2)} hrs`;
+                	}
+            	}
+        	}
+    	},
+    	scales: {
+        	y: {
+            	display: false,
+            	grid: {
+                	display: false
+            	}
+        	},
+        	x: {
+            	display: false,
+            	grid: {
+                	display: false
+            	}
+        	}
+    	},
+    	layout: {
+        	padding: 0
+    	}
+	}
+            	});
+        	})
+        	.catch(error => console.error('Error al obtener los datos:', error));
+});
 
 </script>

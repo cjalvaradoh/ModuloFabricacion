@@ -13,20 +13,20 @@ namespace caobaModeloFabricacion.Models
         [Required]
         [StringLength(10)]  
         [Column("codigo")]
-        public string Codigo { get; set; }
+        public string? Codigo { get; set; }
 
         [Required]
         [StringLength(255)]  
         [Column("nombre")]
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         [Column("descripcion")]
-        public string Descripcion { get; set; } 
+        public string? Descripcion { get; set; } 
 
         [Required]
         [StringLength(50)]  
         [Column("unidad_medida")]
-        public string UnidadMedida { get; set; }  
+        public string? UnidadMedida { get; set; }  
 
         [Column("tiempo_estimado_produccion")]
         public decimal TiempoEstimadoProduccion { get; set; } 

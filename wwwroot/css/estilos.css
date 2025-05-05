@@ -307,3 +307,12 @@ body {
         width: 38px;
         height: 38px;
     }
+
+/* ======== GRAFICAS======== */
+
+#graficoAvance,
+#graficoEstados,
+#graficoTiempo {
+    background-color: #EFEFEF; /* Fondo blanco */
+    border-radius: 4px; /* Bordes redondeados */
+}
