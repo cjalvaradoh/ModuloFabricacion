@@ -24,7 +24,7 @@ namespace caobaModeloFabricacion.Models
         public decimal TiempoProduccion { get; set; }
 
         [Column("estado")]
-        public string Estado { get; set; } = string.Empty;
+        public string? Estado { get; set; } = string.Empty;
 
         [Column("fecha_generacion")]
         public DateTime? FechaGeneracion { get; set; }

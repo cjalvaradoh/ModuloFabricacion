@@ -1,16 +1,62 @@
 ﻿@model IEnumerable<caobaModeloFabricacion.Models.Reporte>
 
 
+
 @{
     ViewData["Title"] = "Reportes";
     Layout = "_LayoutLogged";
+   
 }
 
 <link rel="stylesheet" href="~/css/estilos.css" asp-append-version="true" />
 <h3 class="mb-2 mt-2 fw-bold ms-4">Reportes</h3>
 
-<div class="px-4">
-    <div class="row align-items-center mt-3 mb-2 g-0">
+
+<!-- Cards-->
+<div class="cardBox px-4 mb-3">
+    <div class="card">
+        <div class="textBox">
+            <div class="numbers" id="ordenesEnProceso">0</div>
+            <div class="cardName">Ordenes en Proceso</div>
+        </div>
+        <div class="iconBox">
+            <img src="~/spanIconos/obrero.png" alt="obrero" class="icon icon-hover ms-2" width="100" height="100">
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="textBox">
+            <div class="numbers" id="ordenesFinalizadas">0</div>
+            <div class="cardName">Ordenes finalizadas</div>
+        </div>
+        <div class="iconBox">
+            <img src="~/spanIconos/relojArena.png" alt="reloj" class="icon icon-hover ms-2" width="100" height="100">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="textBox">
+            <div class="numbers" id="indiceRetrasos">0</div>
+            <div class="cardName">Indice Retrasos</div>
+        </div>
+        <div class="iconBox">
+            <img src="~/spanIconos/graficaFlecha.png" alt="graficaFlecha" class="icon icon-hover ms-2" width="40" height="40">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="textBox">
+            <div class="numbers" id="ordenesPendientes">0</div>
+            <div class="cardName">Ordenes Pendientes</div>
+        </div>
+        <div class="iconBox">
+            <img src="~/spanIconos/pausa.png" alt="pausa" class="icon icon-hover ms-2" width="40" height="40">
+        </div>
+    </div>
+</div>
+
+<div class="row align-items-center px-4 mb-3">
         <div class="col-md-9 col-12 mb-2 mb-md-0">
             <div class="input-group w-100">
                 <input type="text" class="form-control search-input-reportes" placeholder="Buscar por Número de Órden" id="searchInput" />
@@ -22,11 +68,12 @@
                 <img src="~/spanIconos/botonGenerarPdf.png" alt="generarPdf" class="icon icon-hover ms-2" width="24" height="24">
             </a>
         </div>
-    </div>
 </div>
 
+
+<div class="px-4">
 <div class="tabla-con-fondo table-responsive" style="max-height: 500px; overflow-y: auto;">
-    <table class="table table-striped table-hover" style="font-size: 0.9em;">
+    <table class="table table-striped table-hover " style="font-size: 0.9em;">
         <thead class="table-light sticky-top">
             <tr>
                 <th scope="col">Fecha</th>
@@ -90,7 +137,7 @@
         </tbody>
     </table>
 </div>
-
+</div>
 
 <!-- Modal Editar -->
 <div class="modal fade poppins-font" id="editarNuevo" tabindex="-1" aria-hidden="true">
@@ -311,6 +358,30 @@
 
             materialIdInput.value = materialId;
         });
+    });
+
+    //TARJETA ORDENES PROCESO
+             document.addEventListener('DOMContentLoaded', function() {
+        fetch('/Reportes/GetData')
+            .then(response => {
+                if (!response.ok) throw new Error('Error en la red');
+                return response.json();
+            })
+            .then(data => {
+                console.log('Datos recibidos:', data); // Para depuración
+
+                document.getElementById('ordenesEnProceso').textContent = data.ordenesEnProceso;
+                document.getElementById('ordenesFinalizadas').textContent = data.ordenesFinalizadas;
+                document.getElementById('ordenesPendientes').textContent = data.ordenesPendientes;
+                document.getElementById('indiceRetrasos').textContent = data.indiceRetrasos;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('ordenesEnProceso').textContent = "Error";
+                document.getElementById('ordenesFinalizadas').textContent = "Error";
+                document.getElementById('ordenesPendientes').textContent = "Error";
+                document.getElementById('indiceRetrasos').textContent = "Error";
+            });
     });
 
 </script>

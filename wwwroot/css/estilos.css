@@ -241,3 +241,69 @@ body {
 .eliminar-button:hover .icon-hover {
     filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(2889%) hue-rotate(351deg) brightness(95%) contrast(101%);
 }
+
+/* ======== CARDS ======== */
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    min-height: 50px;
+    background: #EFEFEF;
+    position: relative;
+    border: none;
+}
+
+    .card .textBox {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+    }
+
+.cardBox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 10px 10px;
+}
+
+    .cardBox .card {
+        background: #EFEFEF;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: row; /* Cambiado a fila para alinear horizontalmente */
+        align-items: center; /* Centra verticalmente todo el contenido */
+        padding: 8px 12px;
+        min-height: 70px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        position: relative; /* Necesario para el posicionamiento absoluto del icono */
+    }
+
+.card .numbers {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-right: 8px; /* Espacio entre número y texto */
+}
+
+.card .cardName {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.9em;
+    color: #555;
+    margin-right: auto; /* Empuja el iconBox a la derecha */
+}
+
+.card .iconBox {
+    position: absolute;
+    right: 12px; /* Distancia desde el borde derecho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+    .card .iconBox img {
+        width: 38px;
+        height: 38px;
+    }

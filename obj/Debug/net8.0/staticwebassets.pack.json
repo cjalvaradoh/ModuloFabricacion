@@ -325,6 +325,10 @@
       "PackagePath": "staticwebassets\\spanIconos\\cerrarSesion.png"
     },
     {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\graficaFlecha.png",
+      "PackagePath": "staticwebassets\\spanIconos\\graficaFlecha.png"
+    },
+    {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\grafico.png",
       "PackagePath": "staticwebassets\\spanIconos\\grafico.png"
     },
@@ -337,8 +341,20 @@
       "PackagePath": "staticwebassets\\spanIconos\\material.png"
     },
     {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\obrero.png",
+      "PackagePath": "staticwebassets\\spanIconos\\obrero.png"
+    },
+    {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\ordenesProduccion.png",
       "PackagePath": "staticwebassets\\spanIconos\\ordenesProduccion.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\pausa.png",
+      "PackagePath": "staticwebassets\\spanIconos\\pausa.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\relojArena.png",
+      "PackagePath": "staticwebassets\\spanIconos\\relojArena.png"
     },
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\seguimientoProduccion.png",

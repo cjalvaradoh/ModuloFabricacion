@@ -20,7 +20,7 @@ namespace caobaModeloFabricacion.Models
         [Required]
         [StringLength(10)]
         [Column("estado")]
-        public string Estado { get; set; }
+        public string Estado { get; set; } = "Pendiente";
 
         [Required]
         [Column("fecha_inicio")]

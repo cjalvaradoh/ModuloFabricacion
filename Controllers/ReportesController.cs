@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using caobaModeloFabricacion.Data;
 using caobaModeloFabricacion.Models;
+using caobaModeloFabricacion.DTOs;
 
 namespace caobaModeloFabricacion.Controllers
 {
@@ -170,5 +171,24 @@ namespace caobaModeloFabricacion.Controllers
         {
             return _context.Reporte_1.Any(e => e.ReporteId == id);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetData()
+        {
+            var data = new ReporteDataDto
+            {
+                OrdenesEnProceso = await _context.OrdenProduccion
+                    .CountAsync(o => o.Estado == "En proceso"),
+                OrdenesFinalizadas = await _context.OrdenProduccion
+                    .CountAsync(o => o.Estado == "Finalizada" || o.Estado == "Completada"), // Incluye ambos posibles estados
+                OrdenesPendientes = await _context.OrdenProduccion
+                    .CountAsync(o => o.Estado == "Pendiente"), // Cambiado de "Pendientes" a "Pendiente"
+                IndiceRetrasos = await _context.OrdenProduccion
+                    .CountAsync(o => o.FechaEntrega < DateTime.Now && o.Estado != "Finalizada" && o.Estado != "Completada")
+            };
+
+            return Json(data);
+        }
     }
 }
+
