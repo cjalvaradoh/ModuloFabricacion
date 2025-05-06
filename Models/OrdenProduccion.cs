@@ -32,5 +32,8 @@ namespace caobaModeloFabricacion.Models
 
         [ForeignKey("Productoid")]
         public Producto? Producto { get; set; }
+
+        public ICollection<SeguimientoProduccion> Seguimientos { get; set; }
+        public ICollection<OrdenMaterial> Materiales { get; set; }
     }
 }

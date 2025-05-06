@@ -1,4 +1,4 @@
-﻿namespace caobaModeloFabricacion.DTOs
+﻿namespace caobaModeloFabricacion.DTOs.Graficas
 {
     public class AvanceProduccionReporteDTO
     {

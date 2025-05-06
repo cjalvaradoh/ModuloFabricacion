@@ -39,5 +39,7 @@ namespace caobaModeloFabricacion.Models
 
         [ForeignKey("OperarioId")]
         public Operario? Operario { get; set; }
+
+
     }
 }

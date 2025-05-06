@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="col-md-3 col-12 d-flex justify-content-md-end justify-content-start">
-            <a href="#" class="generar-new-link">
+        <a href="#" class="generar-new-link" data-bs-toggle="modal" data-bs-target="#generar">
                 Generar PDF
                 <img src="~/spanIconos/botonGenerarPdf.png" alt="generarPdf" class="icon icon-hover ms-2" width="24" height="24">
             </a>
@@ -284,9 +284,51 @@
     </div>
 </div>
 
+<!-- Modal Generar PDF -->
+<div class="modal fade poppins-font" id="generar" tabindex="-1" aria-labelledby="generarLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #EAEAEA;">
+                <h4 class="modal-title titulo-generar"> Generar Reporte de Producción</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formularioGenerarPdf">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="reportMonth" class="form-label">Seleccione el Mes</label>
+                            <select class="form-select" id="reportMonth" name="mes" required>
+                                <option value="" disabled selected>Seleccione...</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                        </div>
 
-
-
+                        <div class="col-md-6">
+                            <label for="reportYear" class="form-label">Seleccione el Año</label>
+                            <input type="number" id="reportYear" class="form-control" name="year" min="2020" max="2030" value="2025" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100 d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary btn-generar-pdf">Generar PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script>
@@ -328,7 +370,7 @@
     window.addEventListener('DOMContentLoaded', mostrarFilasIniciales);
     searchInput.addEventListener('input', filtrarReporte);
 
-    // EDITAR
+    // MODAL EDITAR
     document.querySelectorAll('.edit-button').forEach(boton => {
         boton.addEventListener('click', () => {
             document.getElementById('editar-reporteid').value = boton.getAttribute('data-id-reporte');
@@ -340,7 +382,7 @@
         });
     });
 
-    // VISTA
+    //MODAL VISTA
     document.addEventListener('DOMContentLoaded', function () {
         // Configurar todos los botones de vista
         document.querySelectorAll('.vista-button').forEach(button => {
@@ -365,7 +407,7 @@
         });
     });
 
-    // ELIMINAR
+    // MODAL ELIMINAR
     document.addEventListener("DOMContentLoaded", function () {
         const eliminarModal = document.getElementById("eliminarModal");
         const materialIdInput = document.getElementById("reporteIdEliminar");
@@ -377,6 +419,49 @@
             materialIdInput.value = materialId;
         });
     });
+
+    // MODAL GENERARPDF
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionar el botón Generar PDF del modal
+    document.querySelector('.btn-generar-pdf').addEventListener('click', async (e) => {
+        e.preventDefault();
+        
+        const mes = document.getElementById('reportMonth').value;
+        const year = document.getElementById('reportYear').value;
+
+        // Validación básica
+        if (!mes || !year) {
+            alert("Por favor, complete todos los campos.");
+            return;
+        }
+
+        try {
+            const response = await fetch(`/Reportes/GenerarPDF?mes=${mes}&year=${year}`);
+
+            if (!response.ok) {
+                const error = await response.text();
+                throw new Error(error);
+            }
+
+            // Descargar el PDF
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Reporte_${mes}_${year}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            // Cerrar el modal después de la descarga
+            bootstrap.Modal.getInstance(document.getElementById('generar')).hide();
+        } catch (error) {
+            console.error("Error:", error);
+            alert(`Error al generar el reporte: ${error.message}`);
+        }
+    });
+});
 
     //TARJETAS
              document.addEventListener('DOMContentLoaded', function() {
@@ -645,5 +730,7 @@ document.addEventListener('DOMContentLoaded', function () {
         	})
         	.catch(error => console.error('Error al obtener los datos:', error));
 });
+
+
 
 </script>
