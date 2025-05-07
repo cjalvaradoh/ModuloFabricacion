@@ -22,6 +22,7 @@
         public decimal CostoTotal => CostoMateriales + CostoManoObra;
         public decimal ProgresoPromedio => Seguimientos.Any() ? Seguimientos.Average(s => s.Avance) : 0m;
 
+        public object PrecioUnitario { get; internal set; }
     }
 
     public class ProductoDto

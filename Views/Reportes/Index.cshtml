@@ -111,7 +111,7 @@
                     data-id-producto="@item.ProductoId"
                     data-nombre="@item.Orden?.Estado">
                     <td>@(item.FechaGeneracion?.ToString("dd/MM/yyyy") ?? "Sin fecha")</td>
-                    <td>@item.Orden?.Estado</td>
+                    <td>@item.OrdenId</td>
                     <td>@item.Cantidad</td>
                     <td>@item.TiempoProduccion</td>
                     <td>@item.Estado</td>

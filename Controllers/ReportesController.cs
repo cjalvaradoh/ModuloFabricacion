@@ -14,6 +14,8 @@ using QuestPDF.Helpers;
 using caobaModeloFabricacion.DTOs.Graficas;
 using caobaModeloFabricacion.DTOs.Reporte;
 using System.Globalization;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 
 namespace caobaModeloFabricacion.Controllers
@@ -276,7 +278,6 @@ namespace caobaModeloFabricacion.Controllers
             return Ok(resultado);
         }
 
-
         public IActionResult GenerarPDF(string mes, string year)
         {
             QuestPDF.Settings.License = LicenseType.Community;
@@ -338,7 +339,8 @@ namespace caobaModeloFabricacion.Controllers
             }
 
             //PDF
-            var logo = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/icons/apple-touch-icon-180x180.png");
+            var logo = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/caobalogo.png");
+            var monedaGuatemala = new System.Globalization.CultureInfo("es-GT");
 
             var document = Document.Create(container =>
             {
@@ -349,92 +351,144 @@ namespace caobaModeloFabricacion.Controllers
                     page.PageColor(Colors.White);
                     page.DefaultTextStyle(x => x.FontSize(11));
 
+                    // Encabezado (logo y título)
                     page.Header().Column(header =>
                     {
-                        header.Item().PaddingVertical(5, Unit.Millimetre);
-                        header.Item().Row(headerRow =>
+                        header.Item().Row(row =>
                         {
-                            headerRow.RelativeItem().Text("REPORTE DE PRODUCCIÓN").FontSize(20).Bold().AlignCenter();
-                            headerRow.ConstantItem(100).Image(logo, ImageScaling.FitArea);
+                            row.ConstantItem(80).PaddingLeft(10).Image(logo, ImageScaling.FitArea);
                         });
+                        header.Item().PaddingTop(10, Unit.Millimetre).AlignCenter()
+                        .Text("REPORTE DE PRODUCCIÓN").FontSize(20).Bold();
+
+                        header.Item().PaddingBottom(20);
                     });
 
                     page.Content().Column(column =>
                     {
-                        // Información principal del producto y orden
+                        // Información del período y fecha de generación
                         column.Item().PaddingVertical(10).Row(row =>
                         {
-                            row.RelativeItem().Column(col =>
-                            {
-                                column.Item().AlignCenter().Text($"Período: {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)} {yearNum}").FontSize(12);
-                            });
-                            row.RelativeItem().Column(col =>
-                            {
-                                column.Item().AlignCenter().Text($"Fecha generación: {DateTime.Now:dd/MM/yyyy HH:mm}").FontSize(10);
-                            });
-                            row.RelativeItem().Column(col =>
-                            {
-                                column.Item().PaddingBottom(10).LineHorizontal(1);
-                            });
+                            row.RelativeItem().Text($"Período: {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)} {yearNum}").FontSize(12);
+                            column.Item().PaddingBottom(10);
+                            row.RelativeItem().AlignRight().Text($"Fecha generación: {DateTime.Now:dd/MM/yyyy HH:mm}").FontSize(12);
                         });
 
-                        foreach (var orden in reportData)
+                        // --- ESPACIO ---
+                        column.Item().PaddingVertical(10).Text("ÓRDENES DEL MES").FontSize(14).Bold();
+
+                        column.Item().PaddingBottom(20);
+
+                        column.Item().Table(table =>
                         {
-                            column.Item().PaddingVertical(10).Column(orderColumn =>
+                            column.Item().PaddingVertical(5, Unit.Millimetre);
+
+                            table.ColumnsDefinition(columns =>
                             {
-                                // Datos básicos de la orden
+                                columns.RelativeColumn();  // ID Orden
+                                columns.RelativeColumn(2); // Producto
+                                columns.RelativeColumn();   // Estado
+                                columns.RelativeColumn();   // Progreso
+                                columns.RelativeColumn();   // Costo Total
+                            });
+
+                            table.Header(header =>
+                            {
+                                header.Cell().Element(EstiloCelda).Text("ID").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Producto").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Estado").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Progreso").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Costo Total").Bold();
+                            });
+
+                            bool primeraOrden = true;
+
+                            foreach (var orden in reportData.Where(o => o.FechaInicio.Month == month && o.FechaInicio.Year == yearNum))
+                            {
+                                table.Cell().Element(EstiloCelda).Text(orden.OrdenId);
+                                table.Cell().Element(EstiloCelda).Text($"{orden.Producto?.Nombre ?? "N/A"}");
+                                table.Cell().Element(EstiloCelda).Text(orden.Estado);
+                                table.Cell().Element(EstiloCelda).Text($"{orden.ProgresoPromedio:F1}%").AlignCenter();
+                                table.Cell().Element(EstiloCelda).Text(orden.CostoTotal.ToString("C", monedaGuatemala)).AlignRight();
+                            }
+
+                            if (!primeraOrden)
+                            {
+                                column.Item().PageBreak(); // Fuerza nueva página para órdenes posteriores
+                            }
+                        });
+
+                        // --- DETALLE POR CADA ORDEN ---
+                        column.Item().PageBreak(); // Opcional: fuerza nueva página para el detalle
+                        column.Item().PaddingVertical(10).Text("DETALLE DE ÓRDENES").FontSize(16).Bold().AlignCenter();
+
+                        column.Item().PaddingBottom(20);
+
+                        bool isFirstOrder = true;
+
+                        foreach (var orden in reportData.Where(o => o.FechaInicio.Month == month && o.FechaInicio.Year == yearNum))
+                        {
+                            if (!isFirstOrder)
+                            {
+                                column.Item().PageBreak(); // ¡Aquí está la clave!
+                            }
+                            isFirstOrder = false;
+
+                            column.Item().PaddingVertical(15).Column(orderColumn =>
+                            {
+
+                                // Encabezado de la orden
                                 orderColumn.Item().Row(row =>
                                 {
-                                    row.RelativeItem().Text($"Orden #: {orden.OrdenId}").Bold();
+                                    row.RelativeItem().Text($"Orden #: {orden.OrdenId}").Bold().FontSize(14);
                                     row.RelativeItem().Text($"Estado: {orden.Estado}").AlignRight();
                                 });
 
                                 orderColumn.Item().Text($"Producto: {orden.Producto?.Codigo} - {orden.Producto?.Nombre}");
                                 orderColumn.Item().Text($"Descripción: {orden.Producto?.Descripcion}");
+
+                                // Fechas
                                 orderColumn.Item().Row(row =>
                                 {
-                                    row.RelativeItem().Text($"Fecha inicio: {orden.FechaInicio:dd/MM/yyyy}");
-                                    row.RelativeItem().Text(orden.FechaEntrega.HasValue ?
-                                        $"Fecha entrega: {orden.FechaEntrega.Value:dd/MM/yyyy}" :
-                                        "Fecha entrega: Pendiente").AlignRight();
-                                });
-
-                                // Progreso de producción
-                                orderColumn.Item().PaddingVertical(5).Text("PROGRESO DE PRODUCCIÓN").FontSize(14).Bold();
-
-                                orderColumn.Item().PaddingVertical(5).Row(row =>
-                                {
-                                    row.RelativeItem().Text("Progreso total:");
-                                    row.RelativeItem().Text($"{orden.ProgresoPromedio:F1}%").AlignRight();
+                                    row.RelativeItem().Text($"Inicio: {orden.FechaInicio:dd/MM/yyyy}");
+                                    row.RelativeItem().Text(orden.FechaEntrega.HasValue
+                                        ? $"Entrega: {orden.FechaEntrega.Value:dd/MM/yyyy}"
+                                        : "Entrega: Pendiente").AlignRight();
                                 });
 
 
-                                // Resumen de costos
-                                orderColumn.Item().PaddingVertical(5).Row(row =>
-                                {
-                                    row.RelativeItem().Text("Costo materiales:");
-                                    row.RelativeItem().Text($"{orden.CostoMateriales:C}").AlignRight();
-                                });
-
-                                orderColumn.Item().PaddingVertical(5).Row(row =>
-                                {
-                                    row.RelativeItem().Text("Costo mano de obra:");
-                                    row.RelativeItem().Text($"{orden.CostoManoObra:C}").AlignRight();
-                                });
-
-                                orderColumn.Item().PaddingVertical(5).Row(row =>
-                                {
-                                    row.RelativeItem().Text("Costo total:").Bold();
-                                    row.RelativeItem().Text($"{orden.CostoTotal:C}").Bold().AlignRight();
-                                });
-
-                                // Tabla de materiales
-                                orderColumn.Item().PaddingVertical(10).Text("MATERIALES UTILIZADOS").FontSize(12).Bold();
+                                // --- TABLA DE PROGRESO Y COSTOS ---
+                                orderColumn.Item().PaddingVertical(10).Text("RESUMEN DE PRODUCCIÓN").FontSize(12).Bold();
+                                column.Item().PaddingBottom(20);
                                 orderColumn.Item().Table(table =>
                                 {
                                     table.ColumnsDefinition(columns =>
                                     {
-                                        columns.RelativeColumn(3); // Nombre
+                                        columns.RelativeColumn(); // Concepto
+                                        columns.RelativeColumn(); // Valor
+                                    });
+
+                                    table.Cell().Element(EstiloCelda).Text("Progreso total:");
+                                    table.Cell().Element(EstiloCelda).Text($"{orden.ProgresoPromedio:F1}%").AlignRight();
+
+                                    table.Cell().Element(EstiloCelda).Text("Costo materiales:");
+                                    table.Cell().Element(EstiloCelda).Text(orden.CostoMateriales.ToString("C", monedaGuatemala)).AlignRight();
+
+                                    table.Cell().Element(EstiloCelda).Text("Costo mano de obra:");
+                                    table.Cell().Element(EstiloCelda).Text(orden.CostoManoObra.ToString("C", monedaGuatemala)).AlignRight();
+
+                                    table.Cell().Element(EstiloCelda).Text("Costo total:").Bold();
+                                    table.Cell().Element(EstiloCelda).Text(orden.CostoTotal.ToString("C", monedaGuatemala)).Bold().AlignRight();
+                                });
+
+                                // --- TABLA DE MATERIALES ---
+                                orderColumn.Item().PaddingVertical(10).Text("MATERIALES UTILIZADOS").FontSize(12).Bold();
+                                column.Item().PaddingBottom(10);
+                                orderColumn.Item().Table(table =>
+                                {
+                                    table.ColumnsDefinition(columns =>
+                                    {
+                                        columns.RelativeColumn(3); // Material
                                         columns.RelativeColumn();  // Código
                                         columns.RelativeColumn();  // Cantidad
                                         columns.RelativeColumn();  // Costo
@@ -442,10 +496,10 @@ namespace caobaModeloFabricacion.Controllers
 
                                     table.Header(header =>
                                     {
-                                        header.Cell().Element(EstiloCelda).Text("Material");
-                                        header.Cell().Element(EstiloCelda).Text("Código");
-                                        header.Cell().Element(EstiloCelda).Text("Cantidad");
-                                        header.Cell().Element(EstiloCelda).Text("Costo").AlignRight();
+                                        header.Cell().Element(EstiloCelda).Text("Material").Bold();
+                                        header.Cell().Element(EstiloCelda).Text("Código").Bold();
+                                        header.Cell().Element(EstiloCelda).Text("Cantidad").Bold();
+                                        header.Cell().Element(EstiloCelda).Text("Costo").Bold().AlignRight();
                                     });
 
                                     foreach (var material in orden.Materiales)
@@ -453,30 +507,31 @@ namespace caobaModeloFabricacion.Controllers
                                         table.Cell().Element(EstiloCelda).Text(material.Nombre ?? "N/A");
                                         table.Cell().Element(EstiloCelda).Text(material.Codigo ?? "N/A");
                                         table.Cell().Element(EstiloCelda).Text(material.Cantidad.ToString("F2"));
-                                        table.Cell().Element(EstiloCelda).Text(material.Costo.ToString("C")).AlignRight();
+                                        table.Cell().Element(EstiloCelda).Text(material.Costo.ToString("C", monedaGuatemala)).AlignRight();
                                     }
                                 });
 
-                                // Tabla de seguimientos
-                                orderColumn.Item().PaddingVertical(10).Text("REGISTRO DE SEGUIMIENTO").FontSize(12).Bold();
+                                // --- TABLA DE SEGUIMIENTO ---
+                                orderColumn.Item().PaddingVertical(10).Text("REGISTROS DE SEGUIMIENTO").FontSize(12).Bold();
+                                column.Item().PaddingBottom(20);
                                 orderColumn.Item().Table(table =>
                                 {
                                     table.ColumnsDefinition(columns =>
                                     {
                                         columns.RelativeColumn(2); // Operario
                                         columns.RelativeColumn();  // Avance
-                                        columns.RelativeColumn();  // Tiempo
+                                        columns.RelativeColumn();  // Horas
                                         columns.RelativeColumn(2); // Fecha
                                         columns.RelativeColumn();  // Estado
                                     });
 
                                     table.Header(header =>
                                     {
-                                        header.Cell().Element(EstiloCelda).Text("Operario");
-                                        header.Cell().Element(EstiloCelda).Text("Avance %");
-                                        header.Cell().Element(EstiloCelda).Text("Horas");
-                                        header.Cell().Element(EstiloCelda).Text("Fecha");
-                                        header.Cell().Element(EstiloCelda).Text("Estado");
+                                        header.Cell().Element(EstiloCelda).Text("Operario").Bold();
+                                        header.Cell().Element(EstiloCelda).Text("Avance %").Bold();
+                                        header.Cell().Element(EstiloCelda).Text("Horas").Bold();
+                                        header.Cell().Element(EstiloCelda).Text("Fecha").Bold();
+                                        header.Cell().Element(EstiloCelda).Text("Estado").Bold();
                                     });
 
                                     foreach (var seg in orden.Seguimientos.OrderByDescending(s => s.FechaActualizacion))
@@ -489,7 +544,7 @@ namespace caobaModeloFabricacion.Controllers
                                     }
                                 });
 
-                                orderColumn.Item().PaddingBottom(20).LineHorizontal(0.5f);
+                                orderColumn.Item().PaddingBottom(20).LineHorizontal(0.5f).LineColor(Colors.Grey.Lighten1);
                             });
                         }
                     });
@@ -513,7 +568,6 @@ namespace caobaModeloFabricacion.Controllers
             var stream = new MemoryStream();
             document.GeneratePdf(stream);
             stream.Position = 0;
-
             return File(stream, "application/pdf", $"ReporteProduccion_{month}_{yearNum}.pdf");
         }
     }
