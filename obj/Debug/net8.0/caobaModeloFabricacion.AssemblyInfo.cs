@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("caobaModeloFabricacion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58844251c0bf340dc888be2a9060be9da9040a61")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d58ef8c42ee920f7f1f3aa6acf8832be067deb1")]
 [assembly: System.Reflection.AssemblyProductAttribute("caobaModeloFabricacion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("caobaModeloFabricacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
