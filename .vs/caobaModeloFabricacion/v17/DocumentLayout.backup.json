@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\dtos\\reporte\\ordenreportepdfdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:dtos\\reporte\\ordenreportepdfdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\ces\\source\\repos\\caobamodelofabricacion\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,13 +46,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrdenReportePdfDto.cs",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\DTOs\\Reporte\\OrdenReportePdfDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Reporte\\OrdenReportePdfDto.cs",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\DTOs\\Reporte\\OrdenReportePdfDto.cs*",
+              "RelativeToolTip": "DTOs\\Reporte\\OrdenReportePdfDto.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:37:25.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ReportesController.cs",
+              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Controllers\\ReportesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReportesController.cs",
+              "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\Controllers\\ReportesController.cs*",
+              "RelativeToolTip": "Controllers\\ReportesController.cs*",
+              "ViewState": "AgIAAE8BAAAAAAAAAAAAAEABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:35:40.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": ".env",
               "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\.env",
               "RelativeDocumentMoniker": ".env",
               "ToolTip": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\.env",
               "RelativeToolTip": ".env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-05-13T00:10:47.985Z",
               "EditorCaption": ""

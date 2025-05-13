@@ -294,49 +294,30 @@ namespace caobaModeloFabricacion.Controllers
             }
 
             // Consulta principal mapeando a OrdenReportePdfDto
-            var reportData = _context.OrdenProduccion
-                .Where(op => op.FechaInicio.Month == month && op.FechaInicio.Year == yearNum)
-                .Include(op => op.Producto)
-                .Include(op => op.Materiales)
-                    .ThenInclude(om => om.Material)
-                .Include(op => op.Seguimientos)
-                    .ThenInclude(s => s.Operario)
-                .Select(op => new OrdenReportePdfDto
+            var datosReporte = _context.OrdenProduccion
+                .Where(o => o.FechaInicio.Month == month && o.FechaInicio.Year == yearNum)
+                .Where(o => new[] { "Finalizada", "En proceso", "Cancelada", "Pendiente" }.Contains(o.Estado))
+                .Include(o => o.Producto)
+                .GroupJoin(
+                    _context.Reporte,
+                    orden => orden.Ordenid,
+                    reporte => reporte.OrdenId,
+                    (orden, reportes) => new { orden, reporte = reportes.FirstOrDefault() }
+                )
+                .Select(x => new OrdenReportePdfDto
                 {
-                    OrdenId = op.Ordenid,
-                    Estado = op.Estado,
-                    FechaInicio = op.FechaInicio,
-                    FechaEntrega = op.FechaEntrega,
-                    Producto = new ProductoDto
-                    {
-                        Codigo = op.Producto.Codigo,
-                        Nombre = op.Producto.Nombre,
-                        Descripcion = op.Producto.Descripcion
-                    },
-                    Materiales = op.Materiales.Select(om => new MaterialDto
-                    {
-                        Codigo = om.Material.Codigo,
-                        Nombre = om.Material.Nombre,
-                        Cantidad = om.CantidadUtilizada,
-                        CostoUnitario = om.Material.PrecioUnidad
-                    }).ToList(),
-                    Seguimientos = op.Seguimientos.Select(s => new SeguimientoDto
-                    {
-                        OperarioNombre = s.Operario.Nombre,
-                        OperarioCarnet = s.Operario.Carnet,
-                        Avance = (decimal)s.Avance,
-                        TiempoTrabajado = (decimal)s.TiempoTrabajado,
-                        TarifaOperario = (decimal)s.Operario.TiempoHora,
-                        FechaActualizacion = (DateTime)s.FechaActualizacion,
-                        Estado = s.Estado
-                    }).ToList()
+                    OrdenId = x.orden.Ordenid,
+                    CodigoProducto = x.orden.Producto.Codigo,
+                    NombreProducto = x.orden.Producto.Nombre,
+                    Cantidad = x.orden.Cantidad,
+                    Estado = x.orden.Estado,
+                    FechaInicio = x.orden.FechaInicio,
+                    FechaEntrega = x.orden.FechaEntrega,
+                    TiempoProduccion = x.reporte != null ? x.reporte.TiempoProduccion : null,
+                    FechaGeneracion = x.reporte != null ? x.reporte.FechaGeneracion : null
                 })
+                .OrderBy(x => x.FechaInicio)
                 .ToList();
-
-            if (!reportData.Any())
-            {
-                return NotFound("No se encontraron órdenes para el período seleccionado");
-            }
 
             //PDF
             var logo = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/caobalogo.png");
@@ -385,36 +366,41 @@ namespace caobaModeloFabricacion.Controllers
 
                             table.ColumnsDefinition(columns =>
                             {
-                                columns.RelativeColumn();  // ID Orden
-                                columns.RelativeColumn(2); // Producto
-                                columns.RelativeColumn();   // Estado
-                                columns.RelativeColumn();   // Progreso
-                                columns.RelativeColumn();   // Costo Total
+                                columns.RelativeColumn(); // ID
+                                columns.RelativeColumn(); // Código
+                                columns.RelativeColumn(2); // Nombre
+                                columns.RelativeColumn(); // Cantidad
+                                columns.RelativeColumn(); // Estado
+                                columns.RelativeColumn(); // Inicio
+                                columns.RelativeColumn(); // Entrega
+                                columns.RelativeColumn(); // Tiempo Producción
+                                columns.RelativeColumn(); // Fecha Reporte
                             });
 
                             table.Header(header =>
                             {
                                 header.Cell().Element(EstiloCelda).Text("ID").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Código").Bold();
                                 header.Cell().Element(EstiloCelda).Text("Producto").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Cantidad").Bold();
                                 header.Cell().Element(EstiloCelda).Text("Estado").Bold();
-                                header.Cell().Element(EstiloCelda).Text("Progreso").Bold();
-                                header.Cell().Element(EstiloCelda).Text("Costo Total").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Inicio").Bold();
+                                header.Cell().Element(EstiloCelda).Text("Entrega").Bold();
+                                header.Cell().Element(EstiloCelda).Text("T.Prod").Bold();
+                                header.Cell().Element(EstiloCelda).Text("F.Rep").Bold();
                             });
 
-                            bool primeraOrden = true;
-
-                            foreach (var orden in reportData.Where(o => o.FechaInicio.Month == month && o.FechaInicio.Year == yearNum))
+                            foreach (var o in datosReporte)
                             {
-                                table.Cell().Element(EstiloCelda).Text(orden.OrdenId);
-                                table.Cell().Element(EstiloCelda).Text($"{orden.Producto?.Nombre ?? "N/A"}");
-                                table.Cell().Element(EstiloCelda).Text(orden.Estado);
-                                table.Cell().Element(EstiloCelda).Text($"{orden.ProgresoPromedio:F1}%").AlignCenter();
-                                table.Cell().Element(EstiloCelda).Text(orden.CostoTotal.ToString("C", monedaGuatemala)).AlignRight();
-                            }
-
-                            if (!primeraOrden)
-                            {
-                                column.Item().PageBreak(); // Fuerza nueva página para órdenes posteriores
+                                table.Cell().Element(EstiloCelda).Text(o.OrdenId);
+                                table.Cell().Element(EstiloCelda).Text(o.CodigoProducto ?? "-");
+                                table.Cell().Element(EstiloCelda).Text(o.NombreProducto ?? "-");
+                                table.Cell().Element(EstiloCelda).Text(o.Cantidad.ToString());
+                                table.Cell().Element(EstiloCelda).Text(o.Estado);
+                                table.Cell().Element(EstiloCelda).Text(o.FechaInicio.ToShortDateString());
+                                table.Cell().Element(EstiloCelda).Text(o.FechaEntrega?.ToShortDateString() ?? "-");
+                                table.Cell().Element(EstiloCelda).Text(o.TiempoProduccion?.ToString("F2") ?? "-");
+                                table.Cell().Element(EstiloCelda).Text(o.FechaGeneracion?.ToString("dd/MM/yyyy") ?? "-");
                             }
                         });
                     });
