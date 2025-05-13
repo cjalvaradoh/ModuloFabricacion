@@ -47,5 +47,7 @@ namespace caobaModeloFabricacion.Models
 
         [Column("foto_url")]
         public string? FotoUrl { get; set; }
+
+        public virtual ICollection<OrdenMaterial> OrdenMaterials { get; set; } = new List<OrdenMaterial>();
     }
 }

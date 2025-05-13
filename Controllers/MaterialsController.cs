@@ -9,6 +9,7 @@ using caobaModeloFabricacion.Data;
 using caobaModeloFabricacion.Models;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using Microsoft.Data.SqlClient;
 
 namespace caobaModeloFabricacion.Controllers
 {
@@ -167,42 +168,107 @@ namespace caobaModeloFabricacion.Controllers
             return RedirectToAction(nameof(Index)); // Siempre redirige al Index
         }
 
-        // GET: Materials/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var material = await _context.Material
-                .FirstOrDefaultAsync(m => m.MaterialId == id);
+        // GET: Materials/Delete/5
+        [HttpGet]
+        public async Task<IActionResult> CanDelete(int id)
+        {
+            // Verificar órdenes activas
+            var tieneOrdenesActivas = await _context.OrdenMaterial
+                .Where(om => om.Materialid == id)
+                .Join(_context.OrdenProduccion,
+                      om => om.Ordenid,
+                      op => op.Ordenid,
+                      (om, op) => op)
+                .AnyAsync(op => op.Estado != "Finalizada" && op.Estado != "Cancelada");
+
+            // Verificar si está usado en detalles de producto
+            var usadoEnProductos = await _context.DetalleProductoMaterial
+                .AnyAsync(dpm => dpm.MaterialId == id);
+
+            return Json(new
+            {
+                canDelete = !tieneOrdenesActivas && !usadoEnProductos,
+                message = tieneOrdenesActivas ?
+                    "No se puede eliminar por órdenes activas" :
+                    usadoEnProductos ?
+                    "No se puede eliminar por uso en productos" :
+                    "Puede eliminarse"
+            });
+        }
+
+        // POST: Materials/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            // 1. Verificar si el material existe
+            var material = await _context.Material.FindAsync(id);
             if (material == null)
             {
                 return NotFound();
             }
 
-            return View(material);
-        }
+            // 2. Verificar órdenes activas (misma lógica que tu consulta SQL)
+            var tieneOrdenesActivas = await _context.OrdenMaterial
+                .Where(om => om.Materialid == id)
+                .Join(_context.OrdenProduccion,
+                      om => om.Ordenid,
+                      op => op.Ordenid,
+                      (om, op) => op)
+                .AnyAsync(op => op.Estado != "Finalizada" && op.Estado != "Cancelada");
 
-        // POST: Materials/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var material = await _context.Material.FindAsync(id);
-            if (material != null)
+            if (tieneOrdenesActivas)
             {
-                _context.Material.Remove(material);
+                return BadRequest(new
+                {
+                    success = false,
+                    message = "No se puede eliminar el material porque está asociado a órdenes activas."
+                });
             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+            using var transaction = await _context.Database.BeginTransactionAsync();
 
-        private bool MaterialExists(int id)
-        {
-            return _context.Material.Any(e => e.MaterialId == id);
+            try
+            {
+                // 3. Eliminar PRIMERO todos los registros relacionados:
+
+                // a) Relación con orden_materiales
+                var ordenesMaterial = await _context.OrdenMaterial
+                    .Where(om => om.Materialid == id)
+                    .ToListAsync();
+                _context.OrdenMaterial.RemoveRange(ordenesMaterial);
+
+                // b) Relación con detalle_producto_material (NUEVO)
+                var detallesProducto = await _context.DetalleProductoMaterial
+                    .Where(dpm => dpm.MaterialId == id)
+                    .ToListAsync();
+                _context.DetalleProductoMaterial.RemoveRange(detallesProducto);
+
+                // 4. FINALMENTE eliminar el material
+                _context.Material.Remove(material);
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                TempData["SuccessMessage"] = "Material eliminado correctamente.";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateException ex)
+            {
+                await transaction.RollbackAsync();
+
+                string errorMessage = ex.InnerException?.Message.Contains("REFERENCE constraint") ?? false ?
+                    "No se puede eliminar el material porque está relacionado con otros registros no considerados." :
+                    "Ocurrió un error al intentar eliminar el material.";
+
+                return StatusCode(500, new
+                {
+                    success = false,
+                    message = errorMessage,
+                    detailedError = ex.InnerException?.Message
+                });
+            }
         }
     }
 }

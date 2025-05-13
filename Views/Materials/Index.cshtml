@@ -4,6 +4,8 @@
     ViewData["Title"] = "Materiales";
     Layout = "_LayoutLogged";
 }
+
+
 <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 <h3 class="mb-2 mt-2 fw-bold ms-4">Control de Materiales</h3>
 
@@ -343,29 +345,35 @@
 
 
 
-<!-- Modal Eliminar -->
-<div class="modal fade poppins-font" id="eliminarModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #EAEAEA;">
-                <h4 class="modal-title titulo-material">¿Estás Seguro?</h4>
-            </div>
-            <div class="modal-body">
-                <p class="text-center">Se eliminarán los datos del material completo. Esta acción es irreversible y no se podrán recuperar.</p>
-            </div>
-            <div class="modal-footer">
-                <div class="w-100 d-flex justify-content-between">
-                    <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
-                    <form id="formEliminar" asp-action="Delete" method="post">
-                        @Html.AntiForgeryToken()
-                        <input type="hidden" id="materialIdEliminar" name="id" />
-                        <button type="submit" class="btn btn-primary btn-eliminar">Eliminar</button>
-                    </form>
+    <!-- Modal Eliminar -->
+    <div class="modal fade poppins-font" id="eliminarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #EAEAEA;">
+                    <h4 class="modal-title titulo-material">¿Estás Seguro?</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="mensajeEliminacion">
+                        <p class="text-center">Se eliminarán los datos del material completo. Esta acción es irreversible y no se podrán recuperar.</p>
+                    </div>
+                    <div id="errorEliminacion" class="alert alert-warning d-none">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <span id="textoError"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100 d-flex justify-content-between">
+                        <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                        <form id="formEliminar" asp-action="Delete" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" id="materialIdEliminar" name="id" />
+                            <button type="submit" class="btn btn-primary btn-eliminar" id="botonEliminar">Eliminar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 
@@ -479,16 +487,65 @@
     });
 
     // ELIMINAR
-    document.addEventListener("DOMContentLoaded", function () {
-        const eliminarModal = document.getElementById("eliminarModal");
-        const materialIdInput = document.getElementById("materialIdEliminar");
+   document.addEventListener("DOMContentLoaded", function () {
+    const eliminarModal = document.getElementById("eliminarModal");
+    const materialIdInput = document.getElementById("materialIdEliminar");
+    const errorDiv = document.getElementById("errorEliminacion");
+    const textoError = document.getElementById("textoError");
+    const mensajeEliminacion = document.getElementById("mensajeEliminacion");
+    const botonEliminar = document.getElementById("botonEliminar");
 
-        eliminarModal.addEventListener("show.bs.modal", function (event) {
-            const button = event.relatedTarget;
-            const materialId = button.getAttribute("data-id");
+    eliminarModal.addEventListener("show.bs.modal", function (event) {
+        const button = event.relatedTarget;
+        const materialId = button.getAttribute("data-id");
+        materialIdInput.value = materialId;
 
-            materialIdInput.value = materialId;
+        // Resetear el estado del modal
+        errorDiv.classList.add("d-none");
+        mensajeEliminacion.style.display = "block";
+        botonEliminar.style.display = "block";
+
+        // Verificar si se puede eliminar
+        fetch(`/Materials/CanDelete/${materialId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.canDelete) {
+                    mensajeEliminacion.style.display = "none";
+                    textoError.textContent = data.message;
+                    errorDiv.classList.remove("d-none");
+                    botonEliminar.style.display = "none";
+                }
+            })
+            .catch(error => {
+                console.error("Error al verificar eliminación:", error);
+            });
+    });
+
+    // Manejar el envío del formulario
+    document.getElementById("formEliminar").addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(response => {
+            if (response.redirected) {
+                window.location.href = response.url;
+            } else {
+                return response.json();
+            }
+        })
+        .then(data => {
+            if (data && !data.success) {
+                textoError.textContent = data.message;
+                errorDiv.classList.remove("d-none");
+            }
+        })
+        .catch(error => {
+            console.error("Error al eliminar:", error);
         });
     });
+});
 
 </script>
