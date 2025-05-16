@@ -53,7 +53,7 @@ Sigue los siguientes pasos para instalar e integrar el módulo:
    dotnet run
     
 ## Requisitos previos
-- **.NET SDK
-- **SQL Server
-- **Visual Studio o Visual Studio Code
-- **Herramientas EF Core
+- .NET SDK
+- SQL Server
+- Visual Studio o Visual Studio Code
+- Herramientas EF Core
