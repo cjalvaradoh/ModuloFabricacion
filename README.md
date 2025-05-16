@@ -62,5 +62,7 @@ Sigue los siguientes pasos para instalar e integrar el módulo:
 ## Requisitos previos
 - .NET SDK
 - SQL Server
+- Docker
 - Visual Studio o Visual Studio Code
 - Herramientas EF Core
+  
