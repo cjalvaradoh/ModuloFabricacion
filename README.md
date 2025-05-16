@@ -1,6 +1,6 @@
 # Módulo de Fabricación
 
-El **Módulo de Fabricación** es una solución desarrollada para **gestionar y dar seguimiento a los procesos de producción** dentro de la empresa. Su objetivo es **centralizar la información de fabricación**, mejorar la **trazabilidad** y **optimizar la operación diaria** del área productiva. 
+El Módulo de Fabricación es una solución desarrollada para gestionar y dar seguimiento a los procesos de producción dentro de la empresa. Su objetivo es centralizar la información de fabricación, mejorar la trazabilidad y optimizar la operación diaria** del área productiva. 
 ---
 
 ## Funcionalidades principales
@@ -44,11 +44,11 @@ Sigue los siguientes pasos para instalar e integrar el módulo:
    ```bash
    git clone https://github.com/usuario/modulo-fabricacion.git
 2. **Abre el proyecto en tu entorno de desarrollo.**
-3. Configura la conexión a la base de datos en el archivo appsettings.json (o el archivo de configuración correspondiente).
-4. Ejecuta las migraciones (si aplica):
+3. **Configura la conexión a la base de datos en el archivo appsettings.json (o el archivo de configuración correspondiente).
+4. **Ejecuta las migraciones (si aplica):
     ```bash
    dotnet ef database update
-5. Ejecuta la aplicación:
+5. **Ejecuta la aplicación:
     ```bash
    dotnet run
     
