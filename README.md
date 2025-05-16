@@ -1,9 +1,6 @@
 # Módulo de Fabricación
 
-El **Módulo de Fabricación** es una solución desarrollada para **gestionar y dar seguimiento a los procesos de producción** dentro de la empresa.  
-Su objetivo es **centralizar la información de fabricación**, mejorar la **trazabilidad** y **optimizar la operación diaria** del área productiva.  
-Este módulo se **integra con el sistema existente** y proporciona una **interfaz intuitiva y eficiente** para los usuarios.
-
+El **Módulo de Fabricación** es una solución desarrollada para **gestionar y dar seguimiento a los procesos de producción** dentro de la empresa. Su objetivo es **centralizar la información de fabricación**, mejorar la **trazabilidad** y **optimizar la operación diaria** del área productiva. 
 ---
 
 ## Funcionalidades principales
