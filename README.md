@@ -32,7 +32,7 @@ Aquí se muestra un esquema básico del diseño y flujo del módulo, incluyendo 
 ## Seguimiento Produccion
 ![image](https://github.com/user-attachments/assets/1f5e8fa4-efb6-4a72-83be-a5699d3c0c5b)
 ## Materiales
-![image](https://github.com/user-attachments/assets/ec94589c-5fc0-4f2b-a2cf-1e8199b1f26c)
+![image](https://github.com/user-attachments/assets/3e387aba-2dae-49af-a153-6f4b9906ddc1)
 ## Reportes
 ![image](https://github.com/user-attachments/assets/cbe8900d-6d80-4d3f-bb4e-9d5a5bf89c2d)
 
