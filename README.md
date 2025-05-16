@@ -28,7 +28,7 @@ Aquí se muestra un esquema básico del diseño y flujo del módulo, incluyendo 
 ## Dashboard
 ![image](https://github.com/user-attachments/assets/4c91b463-3f15-47c8-a32d-14708655b009)
 ## Orden Produccion
-![image](https://github.com/user-attachments/assets/354a6b30-2cf5-48d5-a934-262dd9ece663)
+![image](https://github.com/user-attachments/assets/1b09f442-3306-4356-afbe-5e050d857e04)
 ## Seguimiento Produccion
 ![image](https://github.com/user-attachments/assets/1f5e8fa4-efb6-4a72-83be-a5699d3c0c5b)
 ## Materiales
