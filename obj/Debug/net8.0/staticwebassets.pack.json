@@ -5,16 +5,24 @@
       "PackagePath": "staticwebassets\\caobaModeloFabricacion.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\estilos.css",
-      "PackagePath": "staticwebassets\\css\\estilos.css"
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\Lsite.css",
+      "PackagePath": "staticwebassets\\css\\Lsite.css"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\Msite.css",
+      "PackagePath": "staticwebassets\\css\\Msite.css"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\RGsite.css",
+      "PackagePath": "staticwebassets\\css\\RGsite.css"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\Rsite.css",
+      "PackagePath": "staticwebassets\\css\\Rsite.css"
     },
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
-      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\style.css",
-      "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\favicon.ico",
@@ -55,6 +63,14 @@
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\imagesAuth\\LoginImagen.jpg",
+      "PackagePath": "staticwebassets\\imagesAuth\\LoginImagen.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\imagesAuth\\RegistroImagen.jpg",
+      "PackagePath": "staticwebassets\\imagesAuth\\RegistroImagen.jpg"
     },
     {
       "Id": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\images\\caobalogo.png",

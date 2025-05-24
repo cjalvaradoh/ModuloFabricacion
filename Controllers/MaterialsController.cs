@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using caobaModeloFabricacion.Data;
+using caobaModeloFabricacion.Services;
 using caobaModeloFabricacion.Models;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
@@ -16,12 +17,12 @@ namespace caobaModeloFabricacion.Controllers
     public class MaterialsController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly Cloudinary _cloudinary;
+        private readonly ICloudinaryService _cloudinaryService;
 
-        public MaterialsController(AppDbContext context, Cloudinary cloudinary)
+        public MaterialsController(AppDbContext context, ICloudinaryService cloudinaryService)
         {
             _context = context;
-            _cloudinary = cloudinary;
+            _cloudinaryService = cloudinaryService ?? throw new ArgumentNullException(nameof(cloudinaryService));
         }
 
         // GET: Materials
@@ -59,23 +60,23 @@ namespace caobaModeloFabricacion.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaterialId,Codigo,Nombre,Descripcion,Stock,PrecioUnidad,Ancho,Largo,Alto,Tipo,ThumbnailUrl,FotoUrl")] Material material, IFormFile FotoUrl)
+        public async Task<IActionResult> Create([Bind("MaterialId,Codigo,Nombre,Descripcion,Stock,PrecioUnidad,Ancho,Largo,Alto,Tipo,ThumbnailUrl,FotoUrl")] Material material, IFormFile FotoArchivo)
         {
             if (ModelState.IsValid)
             {
-                if (FotoUrl != null)
+                if (FotoArchivo != null)
                 {
                     var uploadParams = new ImageUploadParams()
                     {
-                        File = new FileDescription(FotoUrl.FileName, FotoUrl.OpenReadStream()),
+                        File = new FileDescription(FotoArchivo.FileName, FotoArchivo.OpenReadStream()),
                         Transformation = new Transformation().Width(500).Height(500).Crop("fill")
                     };
 
-                    var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+                    var uploadResult = await _cloudinaryService.UploadAsync(uploadParams);
                     material.FotoUrl = uploadResult.SecureUrl.ToString();
 
                     var thumbnailParams = new Transformation().Width(150).Height(150).Crop("thumb");
-                    material.ThumbnailUrl = _cloudinary.Api.UrlImgUp.Transform(thumbnailParams).BuildUrl(uploadResult.PublicId);
+                    material.ThumbnailUrl = _cloudinaryService.GetThumbnailUrl(uploadResult.PublicId, thumbnailParams);
                 }
                 _context.Add(material);
                 await _context.SaveChangesAsync();
@@ -106,66 +107,64 @@ namespace caobaModeloFabricacion.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Material material, IFormFile FotoUrl)
+        public async Task<IActionResult> Edit(Material material, IFormFile FotoArchivo)
         {
+            if (material == null)
+            {
+                TempData["Error"] = "Material no proporcionado";
+                return RedirectToAction(nameof(Index));
+            }
 
             var materialExistente = await _context.Material.FindAsync(material.MaterialId);
-
             if (materialExistente == null)
             {
                 TempData["Error"] = "Material no encontrado";
                 return RedirectToAction(nameof(Index));
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    // Actualizar propiedades manualmente
-                    materialExistente.Codigo = material.Codigo;
-                    materialExistente.Nombre = material.Nombre;
-                    materialExistente.Descripcion = material.Descripcion;
-                    materialExistente.Stock = material.Stock;
-                    materialExistente.PrecioUnidad = material.PrecioUnidad;
-                    materialExistente.Ancho = material.Ancho;
-                    materialExistente.Largo = material.Largo;
-                    materialExistente.Alto = material.Alto;
-                    materialExistente.Tipo = material.Tipo;
-                    materialExistente.ThumbnailUrl = material.ThumbnailUrl;
-                    materialExistente.FotoUrl = material.FotoUrl;
+                TempData["Error"] = "Error en los datos del material";
+                return RedirectToAction(nameof(Index));
+            }
 
-                    if (FotoUrl != null)
+            try
+            {
+                // Actualizar propiedades
+                materialExistente.Codigo = material.Codigo;
+                materialExistente.Nombre = material.Nombre;
+                materialExistente.Descripcion = material.Descripcion;
+                materialExistente.Stock = material.Stock;
+                materialExistente.PrecioUnidad = material.PrecioUnidad;
+                materialExistente.Ancho = material.Ancho;
+                materialExistente.Largo = material.Largo;
+                materialExistente.Alto = material.Alto;
+                materialExistente.Tipo = material.Tipo;
+
+                if (FotoArchivo != null && FotoArchivo.Length > 0)
+                {
+                    var uploadParams = new ImageUploadParams()
                     {
-                        // Subir la nueva imagen a Cloudinary
-                        var uploadParams = new ImageUploadParams()
-                        {
-                            File = new FileDescription(FotoUrl.FileName, FotoUrl.OpenReadStream()),
-                            Transformation = new Transformation().Width(500).Height(500).Crop("fill")
-                        };
+                        File = new FileDescription(FotoArchivo.FileName, FotoArchivo.OpenReadStream()),
+                        Transformation = new Transformation().Width(500).Height(500).Crop("fill")
+                    };
 
-                        var uploadResult = await _cloudinary.UploadAsync(uploadParams);
-                        materialExistente.FotoUrl = uploadResult.SecureUrl.ToString();
+                    var uploadResult = await _cloudinaryService.UploadAsync(uploadParams);
+                    materialExistente.FotoUrl = uploadResult.SecureUrl.ToString();
 
-                        // Generar la miniatura
-                        var thumbnailParams = new Transformation().Width(150).Height(150).Crop("thumb");
-                        materialExistente.ThumbnailUrl = _cloudinary.Api.UrlImgUp.Transform(thumbnailParams).BuildUrl(uploadResult.PublicId);
-                    }
-
-
-                    await _context.SaveChangesAsync();
-                    TempData["Success"] = "¡Guardado correctamente!";
+                    var thumbnailParams = new Transformation().Width(150).Height(150).Crop("thumb");
+                    materialExistente.ThumbnailUrl = _cloudinaryService.GetThumbnailUrl(uploadResult.PublicId, thumbnailParams);
                 }
-                catch (Exception ex)
-                {
-                    TempData["Error"] = $"Error: {ex.Message}";
-                }
+
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "¡Material actualizado correctamente!";
             }
-            else
+            catch (Exception ex)
             {
-                TempData["Error"] = "Error en los datos";
+                TempData["Error"] = $"Error al actualizar el material: {ex.Message}";
             }
 
-            return RedirectToAction(nameof(Index)); // Siempre redirige al Index
+            return RedirectToAction(nameof(Index));
         }
 
 

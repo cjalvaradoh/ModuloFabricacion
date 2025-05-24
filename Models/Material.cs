@@ -37,7 +37,7 @@ namespace caobaModeloFabricacion.Models
         [Column("alto")]
         public decimal? Alto { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El tipo es obligatorio")]
         [StringLength(20)]
         [Column("tipo")]
         public string Tipo { get; set; }

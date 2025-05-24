@@ -167,7 +167,7 @@
                     <!-- Imagen -->
                     <div class="mb-2">
                         <label for="FotoUrl" class="form-label small">Subir Imagen</label>
-                        <input type="file" class="form-control form-control-sm" name="FotoUrl" id="FotoUrl">
+                            <input type="file" class="form-control form-control-sm" name="FotoArchivo" id="FotoArchivo">
                     </div>
 
 
@@ -248,7 +248,7 @@
                     <!-- Imagen con validación manual -->
                     <div class="mb-2">
                         <label class="form-label small">Cambiar imagen</label>
-                        <input type="file" class="form-control form-control-sm" name="FotoUrl" id="editar-FotoUrl" required>
+                            <input type="file" class="form-control form-control-sm" name="FotoArchivo" id="editar-FotoArchivo" required>
                     </div>
 
                     <!-- Footer con botones -->
@@ -437,7 +437,7 @@
             // Imagen actual
             const imgPreview = document.getElementById('current-image-preview');
             if (imgPreview) {
-                imgPreview.src = boton.getAttribute('data-fotourl');
+                imgPreview.src = boton.getAttribute('data-FotoArchivo');
                 imgPreview.style.display = 'block';
             }
         });

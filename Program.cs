@@ -1,5 +1,6 @@
 using caobaModeloFabricacion.Data;
 using caobaModeloFabricacion.Models;
+using caobaModeloFabricacion.Services; 
 using CloudinaryDotNet;
 using dotenv.net;
 using Microsoft.AspNetCore.Identity;
@@ -14,13 +15,12 @@ namespace caobaModeloFabricacion
             DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
             var builder = WebApplication.CreateBuilder(args);
 
-            // Configuración de la cadena de conexión desde secrets.json
+            // Configuración de la cadena de conexión
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-
-            // Agregar Identity
+            // Identity (sin cambios)
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = true;
@@ -32,31 +32,34 @@ namespace caobaModeloFabricacion
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-            var cloudinaryAccount = new Account(Environment.GetEnvironmentVariable("CLOUDINARY_NAME"),
+            // ?? Configuración de Cloudinary (original)
+            var cloudinaryAccount = new Account(
+                Environment.GetEnvironmentVariable("CLOUDINARY_NAME"),
                 Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
                 Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET")
             );
 
-            builder.Services.AddSingleton(new Cloudinary(cloudinaryAccount));
+            var cloudinary = new Cloudinary(cloudinaryAccount);
+
+            // ?? Registra los servicios (NUEVO)
+            builder.Services.AddSingleton(cloudinary); // Registra Cloudinary directamente
+            builder.Services.AddScoped<ICloudinaryService, CloudinaryService>(); // Registra tu wrapper
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // Configuración del pipeline (sin cambios)
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.MapControllerRoute(
