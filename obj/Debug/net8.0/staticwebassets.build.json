@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZeZG9Hsuht4wBQTIdaf+6elkz9cY8W8FUD7y4FY1D8U=",
+  "Hash": "PHZifjIjrnEnmniAT8nU7gMYTz/p6oPnU8MXVzLmp9o=",
   "Source": "caobaModeloFabricacion",
   "BasePath": "_content/caobaModeloFabricacion",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "caobaModeloFabricacion\\wwwroot",
       "Source": "caobaModeloFabricacion",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\bundle\\caobaModeloFabricacion.styles.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\bundle\\caobaModeloFabricacion.styles.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "caobaModeloFabricacion.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\bundle\\caobaModeloFabricacion.styles.css"
+      "OriginalItemSpec": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\bundle\\caobaModeloFabricacion.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\caobaModeloFabricacion.bundle.scp.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\caobaModeloFabricacion.bundle.scp.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "caobaModeloFabricacion.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\caobaModeloFabricacion.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\caobaModeloFabricacion.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\Lsite.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\css\\Lsite.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "css/Lsite.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Lsite.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\Msite.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\css\\Msite.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "css/Msite.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Msite.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\RGsite.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\css\\RGsite.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "css/RGsite.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\RGsite.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\Rsite.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\css\\Rsite.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "css/Rsite.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Rsite.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\css\\site.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\favicon.ico",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-114x114.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-114x114.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-114x114.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-114x114.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-120x120.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-120x120.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-120x120.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-120x120.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-144x144.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-144x144.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-144x144.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-144x144.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-152x152.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-152x152.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-152x152.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-152x152.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-180x180.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-180x180.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-180x180.png",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-180x180.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-57x57.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-57x57.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-57x57.png",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-57x57.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-72x72.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-72x72.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-72x72.png",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-72x72.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\icons\\apple-touch-icon-76x76.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-76x76.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "icons/apple-touch-icon-76x76.png",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\apple-touch-icon-76x76.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\images\\caobalogo.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\images\\caobalogo.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "images/caobalogo.png",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\images\\caobalogo.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\imagesAuth\\LoginImagen.jpg",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\imagesAuth\\LoginImagen.jpg",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "imagesAuth/LoginImagen.jpg",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\imagesAuth\\LoginImagen.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\imagesAuth\\RegistroImagen.jpg",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\imagesAuth\\RegistroImagen.jpg",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "imagesAuth/RegistroImagen.jpg",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\imagesAuth\\RegistroImagen.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\js\\site.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1442,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1461,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1480,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1499,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonCrearNuevo.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonCrearNuevo.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/botonCrearNuevo.png",
       "AssetKind": "All",
@@ -1518,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\botonCrearNuevo.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonEditar.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonEditar.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/botonEditar.png",
       "AssetKind": "All",
@@ -1537,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\botonEditar.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonEliminar.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonEliminar.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/botonEliminar.png",
       "AssetKind": "All",
@@ -1556,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\botonEliminar.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonGenerarPdf.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonGenerarPdf.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/botonGenerarPdf.png",
       "AssetKind": "All",
@@ -1575,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\botonGenerarPdf.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonSearch.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonSearch.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/botonSearch.png",
       "AssetKind": "All",
@@ -1594,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\botonSearch.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\botonVistaPrevia.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonVistaPrevia.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/botonVistaPrevia.png",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\botonVistaPrevia.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\casaNegro.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\casaNegro.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/casaNegro.png",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\casaNegro.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\cerrarSesion.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\cerrarSesion.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/cerrarSesion.png",
       "AssetKind": "All",
@@ -1651,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\cerrarSesion.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\graficaFlecha.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\graficaFlecha.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/graficaFlecha.png",
       "AssetKind": "All",
@@ -1670,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\graficaFlecha.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\grafico.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\grafico.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/grafico.png",
       "AssetKind": "All",
@@ -1689,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\grafico.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\iconoUsuario.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\iconoUsuario.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/iconoUsuario.png",
       "AssetKind": "All",
@@ -1708,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\iconoUsuario.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\material.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\material.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/material.png",
       "AssetKind": "All",
@@ -1727,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\material.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\obrero.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\obrero.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/obrero.png",
       "AssetKind": "All",
@@ -1746,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\obrero.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\ordenesProduccion.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\ordenesProduccion.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/ordenesProduccion.png",
       "AssetKind": "All",
@@ -1765,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\ordenesProduccion.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\pausa.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\pausa.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/pausa.png",
       "AssetKind": "All",
@@ -1784,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\pausa.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\relojArena.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\relojArena.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/relojArena.png",
       "AssetKind": "All",
@@ -1803,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot\\spanIconos\\relojArena.png"
     },
     {
-      "Identity": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\spanIconos\\seguimientoProduccion.png",
+      "Identity": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\spanIconos\\seguimientoProduccion.png",
       "SourceId": "caobaModeloFabricacion",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\wwwroot\\",
       "BasePath": "_content/caobaModeloFabricacion",
       "RelativePath": "spanIconos/seguimientoProduccion.png",
       "AssetKind": "All",

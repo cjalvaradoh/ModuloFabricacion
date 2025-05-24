@@ -1,0 +1,4 @@
+﻿# Ignorar archivos sensibles
+appsettings.json
+appsettings.Development.json
+.vs/

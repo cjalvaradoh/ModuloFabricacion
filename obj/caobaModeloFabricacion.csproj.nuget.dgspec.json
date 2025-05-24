@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\caobaModeloFabricacion.csproj": {}
+    "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\caobaModeloFabricacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\caobaModeloFabricacion.csproj": {
+    "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\caobaModeloFabricacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\caobaModeloFabricacion.csproj",
+        "projectUniqueName": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\caobaModeloFabricacion.csproj",
         "projectName": "caobaModeloFabricacion",
-        "projectPath": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\caobaModeloFabricacion.csproj",
-        "packagesPath": "C:\\Users\\Ces\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ces\\source\\repos\\caobaModeloFabricacion\\obj\\",
+        "projectPath": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\caobaModeloFabricacion.csproj",
+        "packagesPath": "C:\\Users\\mmari\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mmari\\source\\repos\\ModuloFabricacion\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ces\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mmari\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -124,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

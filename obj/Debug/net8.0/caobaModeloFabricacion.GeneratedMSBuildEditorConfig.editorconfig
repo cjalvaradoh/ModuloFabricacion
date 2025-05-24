@@ -17,99 +17,103 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = caobaModeloFabricacion
 build_property.RootNamespace = caobaModeloFabricacion
-build_property.ProjectDir = C:\Users\Ces\source\repos\caobaModeloFabricacion\
+build_property.ProjectDir = C:\Users\mmari\source\repos\ModuloFabricacion\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Ces\source\repos\caobaModeloFabricacion
+build_property.MSBuildProjectDirectory = C:\Users\mmari\source\repos\ModuloFabricacion
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Auth/Login.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Auth/Register.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Home/Index.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Home/Privacy.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Materials/Index.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Materials/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/OrdenProduccion/Create.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/OrdenProduccion/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5Qcm9kdWNjaW9uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/OrdenProduccion/Delete.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/OrdenProduccion/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5Qcm9kdWNjaW9uXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/OrdenProduccion/Details.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/OrdenProduccion/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5Qcm9kdWNjaW9uXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/OrdenProduccion/Edit.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/OrdenProduccion/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5Qcm9kdWNjaW9uXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/OrdenProduccion/Index.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/OrdenProduccion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZW5Qcm9kdWNjaW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Reportes/Index.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Reportes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/SeguimientoProduccions/Create.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/SeguimientoProduccions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VndWltaWVudG9Qcm9kdWNjaW9uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/SeguimientoProduccions/Delete.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/SeguimientoProduccions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VndWltaWVudG9Qcm9kdWNjaW9uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/SeguimientoProduccions/Details.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/SeguimientoProduccions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VndWltaWVudG9Qcm9kdWNjaW9uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/SeguimientoProduccions/Edit.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/SeguimientoProduccions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VndWltaWVudG9Qcm9kdWNjaW9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/SeguimientoProduccions/Index.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/SeguimientoProduccions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VndWltaWVudG9Qcm9kdWNjaW9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Shared/Error.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/_ViewImports.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/_ViewStart.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Shared/_Layout.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bvwxkhnbs2
 
-[C:/Users/Ces/source/repos/caobaModeloFabricacion/Views/Shared/_LayoutLogged.cshtml]
+[C:/Users/mmari/source/repos/ModuloFabricacion/Views/Shared/_LayoutLogged.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dnZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zjpvmowwpz

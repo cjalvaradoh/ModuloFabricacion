@@ -1,0 +1,21 @@
+services:
+    database:
+        container_name: modulo-db
+        hostname: modulo-db
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        ports:
+            - '1433:1433'
+        environment:
+            ACCEPT_EULA: 'Y'
+            MSSQL_SA_PASSWORD: 'S2V@Cs2JOWgQ'
+        volumes:
+            - db:/var/opt/mssql
+        networks:
+            - application_network
+
+volumes:
+    db:
+
+networks:
+    application_network:
+        driver: bridge

@@ -26,7 +26,7 @@ namespace caobaModeloFabricacion.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 ViewData["Layout"] = "_LayoutLogged";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Dashboard");
             }
             else
             {
@@ -49,7 +49,7 @@ namespace caobaModeloFabricacion.Controllers
                     if (result.Succeeded)
                     {
                         ViewData["Layout"] = "_LayoutLogged";
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Dashboard");
                     }
                     else
                     {
@@ -67,8 +67,10 @@ namespace caobaModeloFabricacion.Controllers
 
         [HttpGet]
         public IActionResult Register()
+
         {
             return View();
+
         }
 
         [HttpPost]
@@ -89,14 +91,18 @@ namespace caobaModeloFabricacion.Controllers
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, model.Rol.ToString());
-
                     return RedirectToAction("Login", "Auth");
                 }
-                foreach (var error in result.Errors)
+                else
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    foreach (var error in result.Errors)
+                    {
+                        Console.WriteLine(error.Description);
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
                 }
             }
+
             return View(model);
         }
 
@@ -106,6 +112,7 @@ namespace caobaModeloFabricacion.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Auth");
         }
-    }
-}
 
+    }
+
+}

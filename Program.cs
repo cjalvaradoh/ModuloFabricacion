@@ -33,11 +33,13 @@ namespace caobaModeloFabricacion
             .AddDefaultTokenProviders();
 
             // ?? Configuración de Cloudinary (original)
-            var cloudinaryAccount = new Account(
-                Environment.GetEnvironmentVariable("CLOUDINARY_NAME"),
-                Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
+             var cloudinaryAccount = new Account(
+                 Environment.GetEnvironmentVariable("CLOUDINARY_NAME"),
+                 Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
                 Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET")
-            );
+             );
+             builder.Services.AddSingleton(new Cloudinary(cloudinaryAccount));
+
 
             var cloudinary = new Cloudinary(cloudinaryAccount);
 
