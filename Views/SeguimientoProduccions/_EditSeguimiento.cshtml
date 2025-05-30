@@ -1,0 +1,80 @@
+﻿@model caobaModeloFabricacion.Models.SeguimientoProduccion
+
+<form asp-action="Edit" method="post" id="editForm">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="SeguimientoId" />
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">Editar Seguimiento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+        <div class="row">
+            <select class="form-select" disabled>
+    @foreach (var item in (SelectList)ViewBag.OrdenProduccionId)
+    {
+        var selected = item.Value == Model.OrdenProduccionId.ToString() ? "selected" : "";
+        @:<option value="@item.Value" @selected>@item.Text</option>
+    }
+</select>
+<input type="hidden" asp-for="OrdenProduccionId" />
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="OperarioId" class="form-label fw-semibold">Operario</label>
+                <select asp-for="OperarioId" class="form-select" asp-items="ViewBag.OperarioId"></select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Avance" class="form-label fw-semibold">Avance (%)</label>
+                <input asp-for="Avance" class="form-control" />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="MaterialConsumido" class="form-label fw-semibold">Material Consumido (kg)</label>
+                <input asp-for="MaterialConsumido" class="form-control" />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="TiempoTrabajado" class="form-label fw-semibold">Tiempo Trabajado (hrs)</label>
+                <input asp-for="TiempoTrabajado" class="form-control" />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Estado" class="form-label fw-semibold">Estado</label>
+                <<select asp-for="Estado" class="form-select">
+                <option value="Pendiente">Pendiente</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Finalizada">Finalizada</option>
+                <option value="Cancelada">Cancelada</option>
+                </select>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Fecha de Inicio</label>
+                <input type="text" class="form-control" value="@(Model.OrdenProduccion != null ? Model.OrdenProduccion.FechaInicio.ToString("yyyy-MM-dd") : "")" disabled />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Fecha de Entrega</label>
+                <input type="text" class="form-control" value="@(Model.OrdenProduccion != null ? Model.OrdenProduccion.FechaEntrega.ToString("yyyy-MM-dd") : "")" disabled />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Comentarios" class="form-label fw-semibold">Comentarios</label>
+                <textarea asp-for="Comentarios" class="form-control" rows="2"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

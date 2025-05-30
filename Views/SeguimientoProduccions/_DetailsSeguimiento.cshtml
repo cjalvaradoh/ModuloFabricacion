@@ -1,0 +1,52 @@
+﻿@model caobaModeloFabricacion.Models.SeguimientoProduccion
+
+<div class="modal-header border-0">
+    <h5 class="modal-title fw-bold">Detalle de Seguimiento</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body">
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>ID Orden</strong><br />
+            @Model.OrdenProduccion?.Ordenid
+        </div>
+        <div class="col-6">
+            <strong>Operario</strong><br />
+            @Model.Operario?.Carnet
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>Avance</strong><br />
+            @Model.Avance %
+        </div>
+        <div class="col-6">
+            <strong>Material Consumido</strong><br />
+            @Model.MaterialConsumido kg
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>Tiempo Trabajado</strong><br />
+            @Model.TiempoTrabajado hrs
+        </div>
+        <div class="col-6">
+            <strong>Estado</strong><br />
+            <span class="text-primary"><i class="fas fa-circle me-1"></i> @Model.Estado</span>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>Fecha Actualización</strong><br />
+            @Model.FechaActualizacion?.ToString("yyyy-MM-dd")
+        </div>
+        <div class="col-6">
+            <strong>Comentarios</strong><br />
+            @Model.Comentarios
+        </div>
+    </div>
+</div>

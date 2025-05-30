@@ -1,0 +1,73 @@
+﻿@model caobaModeloFabricacion.Models.OrdenProduccion
+
+
+<form asp-action="Create" id="createForm">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label class="form-label">ID Orden</label>
+        <input class="form-control form-readonly" value="@ViewBag.CodigoGenerado" readonly />
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Productoid" class="form-label">Producto</label>
+            <select asp-for="Productoid" class="form-select" asp-items="ViewBag.Productoid"></select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="MaterialIds" class="form-label">Seleccionar materiales</label>
+            <select id="MaterialIds" name="MaterialIds" multiple class="form-select" style="height: 180px;">
+                @foreach (var mat in ViewBag.MaterialesDisponibles as List<SelectListItem>)
+                {
+                    <option value="@mat.Value">@mat.Text</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Cantidad" class="form-label">Cantidad</label>
+        <div class="input-group">
+            <input asp-for="Cantidad" class="form-control" />
+            <span class="input-group-text">uds.</span>
+        </div>
+        <span asp-validation-for="Cantidad" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Estado" class="form-label">Estado</label>
+            <select asp-for="Estado" class="form-select">
+                <option value="">Select</option>
+                <option value="Pendiente">Pendiente</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Finalizada">Finalizada</option>
+                <option value="Cancelada">Cancelada</option>
+            </select>
+            <span asp-validation-for="Estado" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="FechaInicio" class="form-label">Fecha</label>
+            <input asp-for="FechaInicio" class="form-control" />
+            <span asp-validation-for="FechaInicio" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="FechaEntrega" class="form-label">Fecha Entrega</label>
+        <input asp-for="FechaEntrega" class="form-control" />
+        <span asp-validation-for="FechaEntrega" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

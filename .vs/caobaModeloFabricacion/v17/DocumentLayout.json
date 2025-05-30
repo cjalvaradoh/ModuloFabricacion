@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\pc\\desktop\\modulofabricacion-master ultima version\\modulofabricacion-master ultima version\\modulofabricacion-master\\views\\seguimientoproduccions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:views\\seguimientoproduccions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|c:\\users\\pc\\desktop\\modulofabricacion-master ultima version\\modulofabricacion-master ultima version\\modulofabricacion-master\\views\\ordenproduccion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A02E6B8A-3BE6-4982-95D2-DC714C144F41}|caobaModeloFabricacion.csproj|solutionrelative:views\\ordenproduccion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master\\Views\\SeguimientoProduccions\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\SeguimientoProduccions\\Index.cshtml",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master\\Views\\SeguimientoProduccions\\Index.cshtml",
+              "RelativeToolTip": "Views\\SeguimientoProduccions\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwDMAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T21:57:09.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master\\Views\\OrdenProduccion\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\OrdenProduccion\\Index.cshtml",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master ULTIMA VERSION\\ModuloFabricacion-master\\Views\\OrdenProduccion\\Index.cshtml",
+              "RelativeToolTip": "Views\\OrdenProduccion\\Index.cshtml",
+              "ViewState": "AgIAANYAAAAAAAAAAAAUwPcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T21:56:28.347Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

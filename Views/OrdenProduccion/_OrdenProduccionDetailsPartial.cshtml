@@ -1,0 +1,68 @@
+﻿@model caobaModeloFabricacion.Models.OrdenProduccion
+
+<div class="modal-header border-bottom-0">
+    <h5 class="modal-title fw-semibold mx-auto">@($"IO{Model.Ordenid}")</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+</div>
+
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">ID Orden</label>
+            <div class="text-dark">@($"OP-{Model.Ordenid:00000}")</div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Producto</label>
+            <div class="text-dark">@Model.Producto?.Nombre</div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Materiales</label>
+            <div class="text-dark">
+                @if (Model.Materiales != null && Model.Materiales.Any())
+                {
+                    foreach (var mat in Model.Materiales)
+                    {
+                        <div>@mat.Material?.Nombre</div>
+                    }
+                }
+                else
+                {
+                    <span class="text-muted">Sin materiales asignados</span>
+                }
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Cantidad</label>
+            <div class="text-dark">@Model.Cantidad.ToString("0") uds.</div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Estado</label>
+            @{
+                string colorClase = Model.Estado switch
+                {
+                    "Pendiente" => "text-primary",
+                    "En proceso" => "text-info",
+                    "Finalizada" => "text-success",
+                    "Cancelada" => "text-danger",
+                    _ => "text-secondary"
+                };
+            }
+            <div class="text-dark">
+                <i class="fas fa-circle me-1 @colorClase"></i> @Model.Estado
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Fecha Inicio</label>
+            <div class="text-dark">@Model.FechaInicio.ToString("yyyy-MM-dd")</div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Fecha Entrega</label>
+            <div class="text-dark">@Model.FechaEntrega.ToString("yyyy-MM-dd")</div>
+        </div>
+    </div>
+</div>

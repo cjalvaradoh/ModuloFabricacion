@@ -1,0 +1,63 @@
+﻿﻿﻿﻿
+@model LoginViewModel;
+
+<div class="container mt-5">
+    <div style="max-width: 400px; margin-left: auto;">
+        <div class="mb-4 text-center">
+            <img src="~/images/caobalogo.png" alt="Logo" class="img-fluid" style="max-width: 150px;" />
+        </div>
+
+        <form asp-action="Login" method="post" class="p-4 rounded">
+            <div class="mb-5">
+                <label asp-for="Usuario" class="form-label">Usuario</label>
+                <input asp-for="Usuario" class="form-control" placeholder="Escribe tu nombre de usuario" />
+                <span asp-validation-for="Usuario" class="text-danger"></span>
+            </div>
+            <div class="mb-5">
+                <label asp-for="Password" class="form-label">Contraseña</label>
+                <div class="input-group">
+                    <input asp-for="Password" id="passwordInput" class="form-control" type="password" placeholder="Ingresa tu contraseña" />
+                    <button type="button" class="btn btn-outline-secondary" id="togglePassword" onclick="togglePasswordVisibility()">
+                        <i id="toggleIcon" class="bi bi-eye"></i>
+                    </button>
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+            <div class="mt-5 text-center">
+                <p>¿No tienes cuenta? <a asp-controller="Auth" asp-action="Register">Registrarse</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("passwordInput");
+            const toggleIcon = document.getElementById("toggleIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("bi-eye");
+                toggleIcon.classList.add("bi-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("bi-eye-slash");
+                toggleIcon.classList.add("bi-eye");
+            }
+        }
+    </script>
+}
+@if (!ViewData.ModelState.IsValid)
+
+{
+    <div class="text-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}

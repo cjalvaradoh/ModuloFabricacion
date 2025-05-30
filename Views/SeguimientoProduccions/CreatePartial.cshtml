@@ -1,0 +1,57 @@
+﻿@model caobaModeloFabricacion.Models.SeguimientoProduccion
+
+<form asp-action="CreatePartial" id="createForm">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="OrdenProduccionId" class="form-label">Orden Producción</label>
+            <select asp-for="OrdenProduccionId" class="form-select" asp-items="ViewBag.OrdenProduccionId"></select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="OperarioId" class="form-label">Operario</label>
+            <select asp-for="OperarioId" class="form-select" asp-items="ViewBag.OperarioId"></select>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="Avance" class="form-label">Avance</label>
+            <input asp-for="Avance" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="MaterialConsumido" class="form-label">Material Consumido</label>
+            <input asp-for="MaterialConsumido" class="form-control" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="TiempoTrabajado" class="form-label">Tiempo Trabajado (hrs)</label>
+            <input asp-for="TiempoTrabajado" class="form-control" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="Estado" class="form-label">Estado</label>
+            <select asp-for="Estado" class="form-select">
+                <option value="">Seleccionar</option>
+                <option>Pendiente</option>
+                <option>En proceso</option>
+                <option>Finalizado</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Comentarios" class="form-label">Comentarios</label>
+            <textarea asp-for="Comentarios" class="form-control"></textarea>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

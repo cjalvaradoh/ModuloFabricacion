@@ -1,0 +1,82 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.root-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.image-column {
+    width: 55%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    left: 0;
+    align-items: center;
+}
+
+.login-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: left center;
+    display: block;
+}
+
+
+.logo-container {
+    position: relative;
+    right: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    max-width: 150px;
+    margin-top: -5px;
+}
+
+.form-column {
+    width: 45%;
+    height: 100vh;
+    overflow-y: auto;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+
+.btn-primary {
+    background-color: #4C2F27 !important;
+    border-color: #4C2F27 !important;
+}
+
+    .btn-primary:hover {
+        background-color: #3A241F !important;
+        border-color: #3A241F !important;
+    }
+
+.form-column .form-container .text-center a {
+    color: #4C2F27;
+    text-decoration: none;
+}
+
+    .form-column .form-container .text-center a:hover {
+        color: #3A241F;
+        text-decoration: none;
+    }
