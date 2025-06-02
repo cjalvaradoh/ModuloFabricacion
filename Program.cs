@@ -1,6 +1,6 @@
-﻿using caobaModeloFabricacion.Data;
+using caobaModeloFabricacion.Data;
 using caobaModeloFabricacion.Models;
-using caobaModeloFabricacion.Services;
+using caobaModeloFabricacion.Services; 
 using CloudinaryDotNet;
 using dotenv.net;
 using Microsoft.AspNetCore.Identity;
@@ -10,17 +10,17 @@ namespace caobaModeloFabricacion
 {
     public class Program
     {
-        public static async Task Main(string[] args) // 👈 async para permitir await
+        public static void Main(string[] args)
         {
             DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
             var builder = WebApplication.CreateBuilder(args);
 
-            // Configuración de la cadena de conexión
+            // Configuraci�n de la cadena de conexi�n
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            // Configuración de Identity
+            // Identity (sin cambios)
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = true;
@@ -32,22 +32,27 @@ namespace caobaModeloFabricacion
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-            // Configuración de Cloudinary
-            var cloudinaryAccount = new Account(
-                Environment.GetEnvironmentVariable("CLOUDINARY_NAME"),
-                Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
+            // ?? Configuraci�n de Cloudinary (original)
+             var cloudinaryAccount = new Account(
+                 Environment.GetEnvironmentVariable("CLOUDINARY_NAME"),
+                 Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
                 Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET")
-            );
-            var cloudinary = new Cloudinary(cloudinaryAccount);
-            builder.Services.AddSingleton(cloudinary);
-            builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
+             );
+             builder.Services.AddSingleton(new Cloudinary(cloudinaryAccount));
 
-            // MVC
+
+            var cloudinary = new Cloudinary(cloudinaryAccount);
+
+            // ?? Registra los servicios (NUEVO)
+            builder.Services.AddSingleton(cloudinary); // Registra Cloudinary directamente
+            builder.Services.AddScoped<ICloudinaryService, CloudinaryService>(); // Registra tu wrapper
+
+            // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            // Middlewares
+            // Configuraci�n del pipeline (sin cambios)
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -63,23 +68,7 @@ namespace caobaModeloFabricacion
                 name: "default",
                 pattern: "{controller=Auth}/{action=Login}/{id?}");
 
-            // ✅ Crear roles automáticamente si no existen
-            using (var scope = app.Services.CreateScope())
-            {
-                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-                string[] roles = new[] { "Admin", "User" };
-
-                foreach (var role in roles)
-                {
-                    if (!await roleManager.RoleExistsAsync(role))
-                    {
-                        await roleManager.CreateAsync(new IdentityRole(role));
-                        Console.WriteLine($"Rol creado: {role}");
-                    }
-                }
-            }
-
-            await app.RunAsync(); // 👈 Necesario por async Main
+            app.Run();
         }
     }
 }

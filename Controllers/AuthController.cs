@@ -10,29 +10,29 @@ namespace caobaModeloFabricacion.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly AppDbContext _context;
-
         public AuthController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             AppDbContext context)
         {
+
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
         }
-
         [HttpGet]
         public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
             {
                 ViewData["Layout"] = "_LayoutLogged";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Dashboard");
             }
             else
             {
                 ViewData["Layout"] = "_Layout";
             }
+
 
             return View();
         }
@@ -49,7 +49,7 @@ namespace caobaModeloFabricacion.Controllers
                     if (result.Succeeded)
                     {
                         ViewData["Layout"] = "_LayoutLogged";
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Dashboard");
                     }
                     else
                     {
@@ -67,61 +67,40 @@ namespace caobaModeloFabricacion.Controllers
 
         [HttpGet]
         public IActionResult Register()
+
         {
             return View();
+
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                Console.WriteLine("❌ ModelState inválido:");
-                foreach (var kvp in ModelState)
+                var user = new ApplicationUser
                 {
-                    foreach (var error in kvp.Value.Errors)
-                    {
-                        Console.WriteLine($"- Campo: {kvp.Key} → Error: {error.ErrorMessage}");
-                    }
+                    UserName = model.Usuario,
+                    Email = model.Email,
+                    Nombre = model.Nombre,
+                    Rol = model.Rol.ToString()
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, model.Rol.ToString());
+                    return RedirectToAction("Login", "Auth");
                 }
-                return View(model);
-            }
-
-            var user = new ApplicationUser
-            {
-                UserName = model.Usuario,
-                Email = model.Email,
-                Nombre = model.Nombre,
-                Rol = model.Rol.ToString(),
-                EmailConfirmed = true
-            };
-
-            var result = await _userManager.CreateAsync(user, model.Password);
-            if (result.Succeeded)
-            {
-                var roleResult = await _userManager.AddToRoleAsync(user, model.Rol.ToString());
-
-                if (!roleResult.Succeeded)
+                else
                 {
-                    Console.WriteLine("❌ Error al asignar rol:");
-                    foreach (var error in roleResult.Errors)
+                    foreach (var error in result.Errors)
                     {
-                        Console.WriteLine($"- {error.Description}");
+                        Console.WriteLine(error.Description);
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
-                    return View(model);
                 }
-
-                Console.WriteLine("✅ Usuario creado correctamente");
-                return RedirectToAction("Login", "Auth");
-            }
-
-            Console.WriteLine("❌ Errores en CreateAsync:");
-            foreach (var error in result.Errors)
-            {
-                Console.WriteLine($"- {error.Description}");
-                ModelState.AddModelError(string.Empty, error.Description);
             }
 
             return View(model);
@@ -133,5 +112,7 @@ namespace caobaModeloFabricacion.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Auth");
         }
+
     }
+
 }

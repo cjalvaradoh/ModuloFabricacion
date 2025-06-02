@@ -31,9 +31,6 @@ namespace caobaModeloFabricacion.Models
         [Column("id_departamento")]
         public int? DepartamentoId { get; set; }
 
-        [NotMapped]
-        public string CodigoOperario => $"OPE{Id.ToString("D3")}";
-
         // Relaciones 
         // public Departamento Departamento { get; set; }
     }

@@ -1,379 +1,379 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\caobaModeloFabricacion.bundle.scp.css",
-      "PackagePath": "staticwebassets\\caobaModeloFabricacion.3l6mkwa3q8.bundle.scp.css"
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\caobaModeloFabricacion.bundle.scp.css",
+      "PackagePath": "staticwebassets\\caobaModeloFabricacion.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\css\\Lsite.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\css\\Lsite.css",
       "PackagePath": "staticwebassets\\css\\Lsite.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\css\\Msite.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\css\\Msite.css",
       "PackagePath": "staticwebassets\\css\\Msite.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\css\\RGsite.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\css\\RGsite.css",
       "PackagePath": "staticwebassets\\css\\RGsite.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\css\\Rsite.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\css\\Rsite.css",
       "PackagePath": "staticwebassets\\css\\Rsite.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-114x114.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-114x114.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-114x114.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-120x120.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-120x120.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-120x120.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-144x144.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-144x144.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-144x144.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-152x152.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-152x152.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-152x152.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-180x180.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-180x180.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-180x180.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-57x57.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-57x57.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-57x57.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-72x72.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-72x72.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-72x72.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon-76x76.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon-76x76.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon-76x76.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\icons\\apple-touch-icon.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\icons\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\icons\\apple-touch-icon.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\imagesAuth\\LoginImagen.jpg",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\imagesAuth\\LoginImagen.jpg",
       "PackagePath": "staticwebassets\\imagesAuth\\LoginImagen.jpg"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\imagesAuth\\RegistroImagen.jpg",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\imagesAuth\\RegistroImagen.jpg",
       "PackagePath": "staticwebassets\\imagesAuth\\RegistroImagen.jpg"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\images\\caobalogo.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\images\\caobalogo.png",
       "PackagePath": "staticwebassets\\images\\caobalogo.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\botonCrearNuevo.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonCrearNuevo.png",
       "PackagePath": "staticwebassets\\spanIconos\\botonCrearNuevo.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\botonEditar.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonEditar.png",
       "PackagePath": "staticwebassets\\spanIconos\\botonEditar.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\botonEliminar.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonEliminar.png",
       "PackagePath": "staticwebassets\\spanIconos\\botonEliminar.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\botonGenerarPdf.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonGenerarPdf.png",
       "PackagePath": "staticwebassets\\spanIconos\\botonGenerarPdf.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\botonSearch.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonSearch.png",
       "PackagePath": "staticwebassets\\spanIconos\\botonSearch.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\botonVistaPrevia.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\botonVistaPrevia.png",
       "PackagePath": "staticwebassets\\spanIconos\\botonVistaPrevia.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\casaNegro.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\casaNegro.png",
       "PackagePath": "staticwebassets\\spanIconos\\casaNegro.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\cerrarSesion.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\cerrarSesion.png",
       "PackagePath": "staticwebassets\\spanIconos\\cerrarSesion.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\graficaFlecha.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\graficaFlecha.png",
       "PackagePath": "staticwebassets\\spanIconos\\graficaFlecha.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\grafico.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\grafico.png",
       "PackagePath": "staticwebassets\\spanIconos\\grafico.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\iconoUsuario.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\iconoUsuario.png",
       "PackagePath": "staticwebassets\\spanIconos\\iconoUsuario.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\material.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\material.png",
       "PackagePath": "staticwebassets\\spanIconos\\material.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\obrero.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\obrero.png",
       "PackagePath": "staticwebassets\\spanIconos\\obrero.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\ordenesProduccion.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\ordenesProduccion.png",
       "PackagePath": "staticwebassets\\spanIconos\\ordenesProduccion.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\pausa.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\pausa.png",
       "PackagePath": "staticwebassets\\spanIconos\\pausa.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\relojArena.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\relojArena.png",
       "PackagePath": "staticwebassets\\spanIconos\\relojArena.png"
     },
     {
-      "Id": "C:\\Users\\PC\\Downloads\\TAREAS DE INGENIERIA DE SOFTWARE\\ModuloFabricacion-master (1)\\ModuloFabricacion-master\\wwwroot\\spanIconos\\seguimientoProduccion.png",
+      "Id": "C:\\Users\\Ces\\Source\\Repos\\ModuloFabricacion\\wwwroot\\spanIconos\\seguimientoProduccion.png",
       "PackagePath": "staticwebassets\\spanIconos\\seguimientoProduccion.png"
     },
     {
@@ -387,10 +387,6 @@
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.caobaModeloFabricacion.props",
       "PackagePath": "buildTransitive\\caobaModeloFabricacion.props"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.caobaModeloFabricacion.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.caobaModeloFabricacion.Microsoft.AspNetCore.StaticWebAssets.props",

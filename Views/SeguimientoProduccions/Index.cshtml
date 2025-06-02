@@ -1,167 +1,78 @@
 ﻿@model IEnumerable<caobaModeloFabricacion.Models.SeguimientoProduccion>
 
 @{
-    ViewData["Title"] = "Seguimiento de Producción";
+    ViewData["Title"] = "Index";
     Layout = "_LayoutLogged";
 }
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<h1>Seguimiento Produccion</h1>
 
-<div class="container-fluid px-5 pt-4">
-    <h1 class="fw-bold fs-3 mb-4">Seguimiento de Producción</h1>
-
-    <div class="input-group mb-4">
-        <span class="input-group-text bg-white border-end-0">
-            <i class="fas fa-search text-muted"></i>
-        </span>
-        <input type="text" id="searchInput" class="form-control border-start-0" placeholder="Buscar por número de orden o estado" />
-    </div>
-
-    <div class="d-flex justify-content-end mb-3">
-        <button class="btn btn-primary rounded-3" onclick="cargarFormularioCrear()" data-bs-toggle="modal" data-bs-target="#modalGlobal">
-            <i class="fas fa-plus me-2"></i> Crear Nuevo
-        </button>
-    </div>
-
-    <table class="table align-middle table-hover border-0 shadow-sm">
-        <thead class="table-light">
-            <tr class="text-muted small text-uppercase">
-                <th>ID Orden</th>
-                <th>Estado</th>
-                <th>Avance (%)</th>
-                <th>Tiempo</th>
-                <th>Material</th>
-                <th>Operario</th>
-                <th>Actualización</th>
-                <th class="text-center">CRUD</th>
-            </tr>
-        </thead>
-        <tbody id="tablaSeguimientoBody">
-            @foreach (var item in Model)
-            {
-                <tr class="seguimiento-row"
-                    data-orden="@item.OrdenProduccion?.Ordenid"
-                    data-estado="@item.Estado?.ToLower()">
-                    <td>@item.OrdenProduccion?.Ordenid</td>
-                    <td>
-                        <span class="d-flex align-items-center gap-2">
-                            <i class="fas fa-circle" style="color:
-                                    @(item.Estado == "Pendiente" ? "#0d6efd" :
-                                                                                       item.Estado == "En proceso" ? "#0dcaf0" :
-                                                                                       item.Estado == "Finalizada" ? "#198754" :
-                                                                                       item.Estado == "Cancelada" ? "#dc3545" :
-                                                                                       "#6c757d")"></i>
-                        @item.Estado
-                    </span>
-                </td>
-                <td>@item.Avance %</td>
-                <td>@item.TiempoTrabajado hrs</td>
-                <td>@item.MaterialConsumido kg</td>
-                <td>@item.Operario?.Carnet</td>
-                <td>@item.FechaActualizacion?.ToString("yyyy-MM-dd")</td>
-                <td class="text-center">
-                    <button class="btn btn-sm btn-light me-1" onclick="cargarFormularioDetalles(@item.SeguimientoId)" title="Ver">
-                        <i class="fas fa-eye text-secondary"></i>
-                    </button>
-                    <button class="btn btn-sm btn-light me-1" onclick="cargarFormularioEditar(@item.SeguimientoId)" title="Editar">
-                        <i class="fas fa-pen text-primary"></i>
-                    </button>
-                    <button class="btn btn-sm btn-light" onclick="cargarModalEliminar(@item.SeguimientoId)" title="Eliminar">
-                        <i class="fas fa-trash text-danger"></i>
-                    </button>
-                </td>
-            </tr>
-                        }
-        </tbody>
-    </table>
-</div>
-
-<!-- Modal único reutilizable -->
-<div class="modal fade" id="modalGlobal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body" id="modalGlobalBody">
-                <div class="text-center">Cargando...</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@section Scripts {
-    <script>
-        document.getElementById('searchInput').addEventListener('input', function () {
-            const valor = this.value.toLowerCase();
-            document.querySelectorAll('.seguimiento-row').forEach(row => {
-                const orden = row.getAttribute('data-orden')?.toLowerCase() || '';
-                const estado = row.getAttribute('data-estado') || '';
-                row.style.display = (orden.includes(valor) || estado.includes(valor)) ? '' : 'none';
-            });
-        });
-
-        function cargarFormularioCrear() {
-            fetch('/SeguimientoProduccions/CreatePartial')
-                .then(res => res.text())
-                .then(html => document.getElementById('modalGlobalBody').innerHTML = html)
-                .catch(() => document.getElementById('modalGlobalBody').innerHTML = '<div class="text-danger">Error al cargar</div>');
-        }
-
-        function cargarFormularioDetalles(id) {
-            fetch(`/SeguimientoProduccions/DetailsPartial/${id}`)
-                .then(res => res.text())
-                .then(html => {
-                    document.getElementById('modalGlobalBody').innerHTML = html;
-                    new bootstrap.Modal(document.getElementById('modalGlobal')).show();
-                });
-        }
-
-        function cargarFormularioEditar(id) {
-            fetch(`/SeguimientoProduccions/Edit/${id}`)
-                .then(res => res.text())
-                .then(html => {
-                    document.getElementById('modalGlobalBody').innerHTML = html;
-                    new bootstrap.Modal(document.getElementById('modalGlobal')).show();
-                });
-        }
-
-        function cargarModalEliminar(id) {
-            fetch(`/SeguimientoProduccions/Delete/${id}`)
-                .then(res => res.text())
-                .then(html => {
-                    document.getElementById('modalGlobalBody').innerHTML = html;
-                    new bootstrap.Modal(document.getElementById('modalGlobal')).show();
-                });
-        }
-
-        document.addEventListener("submit", function (e) {
-            if (e.target.tagName === "FORM") {
-                e.preventDefault();
-                const form = e.target;
-                const formData = new FormData(form);
-
-                fetch(form.action, {
-                    method: form.method,
-                    body: formData
-                })
-                .then(res => {
-                    if (!res.ok) return res.text().then(msg => { throw new Error(msg); });
-                    return res.text();
-                })
-                .then(html => {
-                    if (html.includes("form-control")) {
-                        document.getElementById('modalGlobalBody').innerHTML = html;
-                    } else {
-                        bootstrap.Modal.getInstance(document.getElementById('modalGlobal')).hide();
-                        fetch('/SeguimientoProduccions/TablePartial')
-                            .then(res => res.text())
-                            .then(html => {
-                                document.getElementById("tablaSeguimientoBody").innerHTML = html;
-                            });
-                    }
-                })
-                .catch(err => {
-                    alert("Error al guardar: " + err.message);
-                });
-            }
-        });
-    </script>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TiempoTrabajado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialConsumido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaActualizacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentarios)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrdenProduccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Operario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TiempoTrabajado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialConsumido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaActualizacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentarios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenProduccion.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operario.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SeguimientoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SeguimientoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SeguimientoId">Delete</a>
+            </td>
+        </tr>
 }
+    </tbody>
+</table>

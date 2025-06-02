@@ -25,7 +25,6 @@ namespace caobaModeloFabricacion.Models
         [Required]
         [Column("fecha_inicio")]
         public DateTime FechaInicio { get; set; }
-        public ICollection<Reporte> Reportes { get; set; } = new List<Reporte>();
 
         [Required]
         [Column("fecha_entrega")]
@@ -34,7 +33,7 @@ namespace caobaModeloFabricacion.Models
         [ForeignKey("Productoid")]
         public Producto? Producto { get; set; }
 
-        public ICollection<SeguimientoProduccion> Seguimientos { get; set; } = new List<SeguimientoProduccion>();
-        public ICollection<OrdenMaterial> Materiales { get; set; } = new List<OrdenMaterial>();
+        public ICollection<SeguimientoProduccion> Seguimientos { get; set; }
+        public ICollection<OrdenMaterial> Materiales { get; set; }
     }
 }

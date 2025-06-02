@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using caobaModeloFabricacion.Data;
@@ -15,169 +19,152 @@ namespace caobaModeloFabricacion.Controllers
             _context = context;
         }
 
-        // INDEX
+        // GET: SeguimientoProduccions
         public async Task<IActionResult> Index()
         {
-            var data = await _context.SeguimientoProduccion
-                .Include(s => s.Operario)
-                .Include(s => s.OrdenProduccion)
-                .ToListAsync();
-
-            return View(data);
+            var appDbContext = _context.SeguimientoProduccion.Include(s => s.Operario).Include(s => s.OrdenProduccion);
+            return View(await appDbContext.ToListAsync());
         }
 
-        // CREATE GET
-        public IActionResult CreatePartial()
+        // GET: SeguimientoProduccions/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Carnet");
-            ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Ordenid");
-            return PartialView("CreatePartial");
-        }
-
-        // CREATE POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreatePartial(SeguimientoProduccion model)
-        {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Carnet", model.OperarioId);
-                ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Ordenid", model.OrdenProduccionId);
-                return PartialView("CreatePartial", model);
+                return NotFound();
             }
 
-            _context.Add(model);
-            await _context.SaveChangesAsync();
-
-            return Content("OK");
-        }
-
-        // EDIT GET
-        [HttpGet]
-        public async Task<IActionResult> Edit(int id)
-        {
-            var entity = await _context.SeguimientoProduccion
+            var seguimientoProduccion = await _context.SeguimientoProduccion
                 .Include(s => s.Operario)
                 .Include(s => s.OrdenProduccion)
-                .FirstOrDefaultAsync(s => s.SeguimientoId == id);
-
-            if (entity == null) return NotFound();
-
-            ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Carnet", entity.OperarioId);
-            ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Ordenid", entity.OrdenProduccionId);
-
-            return PartialView("_EditSeguimiento", entity);
-        }
-
-        // EDIT POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(SeguimientoProduccion model)
-        {
-            Console.WriteLine(">>> POST Edit recibido:");
-            Console.WriteLine($"ID: {model.SeguimientoId}, Avance: {model.Avance}, Estado: {model.Estado}");
-
-            if (!ModelState.IsValid)
+                .FirstOrDefaultAsync(m => m.SeguimientoId == id);
+            if (seguimientoProduccion == null)
             {
-                ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Carnet", model.OperarioId);
-                ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Ordenid", model.OrdenProduccionId);
-                return PartialView("_EditSeguimiento", model);
+                return NotFound();
             }
 
-            try
+            return View(seguimientoProduccion);
+        }
+
+        // GET: SeguimientoProduccions/Create
+        public IActionResult Create()
+        {
+            ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Id");
+            ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Estado");
+            return View();
+        }
+
+        // POST: SeguimientoProduccions/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("SeguimientoId,OrdenProduccionId,OperarioId,Estado,Avance,TiempoTrabajado,MaterialConsumido,FechaActualizacion,Comentarios")] SeguimientoProduccion seguimientoProduccion)
+        {
+            if (ModelState.IsValid)
             {
-                // Validar que los IDs existan
-                bool operarioExiste = await _context.Operario.AnyAsync(o => o.Id == model.OperarioId);
-                bool ordenExiste = await _context.OrdenProduccion.AnyAsync(o => o.Ordenid == model.OrdenProduccionId);
-
-                if (!operarioExiste)
-                    return BadRequest("El operario seleccionado no existe.");
-
-                if (!ordenExiste)
-                    return BadRequest("La orden de producción seleccionada no existe.");
-
-                // Buscar el registro original
-                var seguimientoOriginal = await _context.SeguimientoProduccion.FindAsync(model.SeguimientoId);
-                if (seguimientoOriginal == null)
-                    return NotFound();
-
-                // Actualizar campos editables
-                seguimientoOriginal.OperarioId = model.OperarioId;
-                seguimientoOriginal.Avance = model.Avance;
-                seguimientoOriginal.MaterialConsumido = model.MaterialConsumido;
-                seguimientoOriginal.TiempoTrabajado = model.TiempoTrabajado;
-                seguimientoOriginal.Estado = model.Estado;
-                seguimientoOriginal.Comentarios = model.Comentarios;
-                seguimientoOriginal.FechaActualizacion = DateTime.Now;
-
+                _context.Add(seguimientoProduccion);
                 await _context.SaveChangesAsync();
-                return Content("OK");
+                return RedirectToAction(nameof(Index));
             }
-            catch (DbUpdateException dbEx)
-            {
-                var inner = dbEx.InnerException?.Message ?? dbEx.Message;
-                Console.WriteLine(">>> ERROR INTERNO AL GUARDAR:");
-                Console.WriteLine(inner);
-                return StatusCode(500, "Error al guardar: " + inner);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(">>> ERROR GENERAL:");
-                Console.WriteLine(ex.Message);
-                return StatusCode(500, "Error inesperado: " + ex.Message);
-            }
+            ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Id", seguimientoProduccion.OperarioId);
+            ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Estado", seguimientoProduccion.OrdenProduccionId);
+            return View(seguimientoProduccion);
         }
 
-        // DETAILS
-        public async Task<IActionResult> DetailsPartial(int id)
+        // GET: SeguimientoProduccions/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            var entity = await _context.SeguimientoProduccion
-                .Include(s => s.Operario)
-                .Include(s => s.OrdenProduccion)
-                .FirstOrDefaultAsync(s => s.SeguimientoId == id);
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            if (entity == null) return NotFound();
-
-            return PartialView("_DetailsSeguimiento", entity);
+            var seguimientoProduccion = await _context.SeguimientoProduccion.FindAsync(id);
+            if (seguimientoProduccion == null)
+            {
+                return NotFound();
+            }
+            ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Id", seguimientoProduccion.OperarioId);
+            ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Estado", seguimientoProduccion.OrdenProduccionId);
+            return View(seguimientoProduccion);
         }
 
-        // DELETE GET (CONFIRMACIÓN)
-        [HttpGet]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var entity = await _context.SeguimientoProduccion
-                .Include(s => s.Operario)
-                .Include(s => s.OrdenProduccion)
-                .FirstOrDefaultAsync(s => s.SeguimientoId == id);
-
-            if (entity == null) return NotFound();
-
-            return PartialView("_DeleteSeguimiento", entity);
-        }
-
-        // DELETE POST (CONFIRMADO)
+        // POST: SeguimientoProduccions/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int SeguimientoId)
+        public async Task<IActionResult> Edit(int id, [Bind("SeguimientoId,OrdenProduccionId,OperarioId,Estado,Avance,TiempoTrabajado,MaterialConsumido,FechaActualizacion,Comentarios")] SeguimientoProduccion seguimientoProduccion)
         {
-            var entity = await _context.SeguimientoProduccion.FindAsync(SeguimientoId);
-            if (entity == null) return NotFound();
+            if (id != seguimientoProduccion.SeguimientoId)
+            {
+                return NotFound();
+            }
 
-            _context.SeguimientoProduccion.Remove(entity);
-            await _context.SaveChangesAsync();
-
-            return Content("OK");
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(seguimientoProduccion);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!SeguimientoProduccionExists(seguimientoProduccion.SeguimientoId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["OperarioId"] = new SelectList(_context.Operario, "Id", "Id", seguimientoProduccion.OperarioId);
+            ViewData["OrdenProduccionId"] = new SelectList(_context.OrdenProduccion, "Ordenid", "Estado", seguimientoProduccion.OrdenProduccionId);
+            return View(seguimientoProduccion);
         }
-        // GET: Actualización parcial del cuerpo de la tabla
-        public async Task<IActionResult> TablePartial()
+
+        // GET: SeguimientoProduccions/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
-            var data = await _context.SeguimientoProduccion
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var seguimientoProduccion = await _context.SeguimientoProduccion
                 .Include(s => s.Operario)
                 .Include(s => s.OrdenProduccion)
-                .ToListAsync();
+                .FirstOrDefaultAsync(m => m.SeguimientoId == id);
+            if (seguimientoProduccion == null)
+            {
+                return NotFound();
+            }
 
-            return PartialView("_SeguimientoTableBody", data);
+            return View(seguimientoProduccion);
         }
 
+        // POST: SeguimientoProduccions/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var seguimientoProduccion = await _context.SeguimientoProduccion.FindAsync(id);
+            if (seguimientoProduccion != null)
+            {
+                _context.SeguimientoProduccion.Remove(seguimientoProduccion);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool SeguimientoProduccionExists(int id)
+        {
+            return _context.SeguimientoProduccion.Any(e => e.SeguimientoId == id);
+        }
     }
 }
