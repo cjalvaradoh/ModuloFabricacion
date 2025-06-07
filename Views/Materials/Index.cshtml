@@ -3,6 +3,12 @@
 @{
     ViewData["Title"] = "Materiales";
 
+
+
+
+
+
+
     Layout = "_LayoutLogged";
 }
 
@@ -45,6 +51,12 @@
             </thead>
             <tbody>
                 @foreach (var item in Model)
+
+
+
+
+
+
 
                 {
                     <tr class="material" data-nombre="@item.Nombre" data-codigo_material="@item.Codigo">
@@ -124,7 +136,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="nombre" class="form-label small">Nombre del Material</label>
-                                <input type="text" id="nombre" name="Nombre" class="form-control form-control-sm">
+                                <input type="text" id="nombre" name="Nombre" class="form-control form-control-sm" required>
                             </div>
                         </div>
 
@@ -141,12 +153,12 @@
 
                             <div class="col-md-4 mb-1">
                                 <label for="stock" class="form-label small">Stock</label>
-                                <input type="text" id="stock" name="Stock" class="form-control form-control-sm">
+                                <input type="number" id="stock" name="Stock" class="form-control form-control-sm" required>
                             </div>
 
                             <div class="col-md-4 mb-1">
                                 <label for="costo" class="form-label small">Costo por Unidad</label>
-                                <input type="text" id="costo" name="PrecioUnidad" class="form-control form-control-sm">
+                                <input type="number" id="costo" name="PrecioUnidad" class="form-control form-control-sm" required>
                             </div>
                         </div>
 
@@ -155,15 +167,15 @@
                         <div class="row mb-2">
                             <div class="col-md-4">
                                 <label for="ancho" class="form-label small">Ancho</label>
-                                <input type="text" id="ancho" name="Ancho" class="form-control form-control-sm">
+                                <input type="number" id="ancho" name="Ancho" class="form-control form-control-sm" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="largo" class="form-label small">Largo</label>
-                                <input type="text" id="largo" name="Largo" class="form-control form-control-sm">
+                                <input type="number" id="largo" name="Largo" class="form-control form-control-sm" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="alto" class="form-label small">Alto</label>
-                                <input type="text" id="alto" name="Alto" class="form-control form-control-sm">
+                                <input type="number" id="alto" name="Alto" class="form-control form-control-sm" required>
                             </div>
                         </div>
 
@@ -176,7 +188,7 @@
                         <!-- Imagen -->
                         <div class="mb-2">
                             <label for="FotoUrl" class="form-label small">Subir Imagen</label>
-                            <input type="file" class="form-control form-control-sm" name="FotoArchivo" id="FotoArchivo">
+                            <input type="file" class="form-control form-control-sm" name="FotoArchivo" id="FotoArchivo" required>
                         </div>
 
 
@@ -193,83 +205,83 @@
         </div>
     </div>
 
-    <!-- Modal Editar Material -->
-    <div class="modal fade poppins-font" id="editarNuevo" tabindex="-1" aria-labelledby="editarNuevoLabel" aria-hidden="true">
+    <!-- Modal Editar -->
+    <div class="modal fade poppins-font" id="editarNuevo" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #EAEAEA;">
                     <h4 class="modal-title titulo-material" id="editarNuevoLabel">Editar Material</h4>
                 </div>
-
                 <div class="modal-body">
-                    <form id="formEditarMaterial" asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <form asp-action="Edit" asp-controller="Materials" method="post" enctype="multipart/form-data">
                         @Html.AntiForgeryToken()
-                        <input type="hidden" id="edit-materialid" name="MaterialId">
-
+                        <input type="hidden" name="MaterialId" id="editar-materialid" required>
+                        <!-- Código y Nombre -->
                         <div class="row mb-2">
                             <div class="col-md-6">
-                                <label for="edit-codigo" class="form-label small required">Código</label>
-                                <input type="text" id="edit-codigo" name="Codigo" class="form-control form-control-sm" readonly>
+                                <label for="editar-codigo" class="form-label small">Código Material</label>
+                                <input type="text" id="editar-codigo" name="Codigo" class="form-control form-control-sm" readonly>
                             </div>
                             <div class="col-md-6">
-                                <label for="edit-nombre" class="form-label small required">Nombre</label>
-                                <input type="text" id="edit-nombre" name="Nombre" class="form-control form-control-sm" required>
+                                <label for="editar-nombre" class="form-label small">Nombre del Material</label>
+                                <input type="text" id="editar-nombre" name="Nombre" class="form-control form-control-sm" required>
                             </div>
                         </div>
 
+                        <!-- Descripcion, Stock y Costo -->
                         <div class="row mb-2">
                             <div class="col-md-4">
-                                <label for="edit-tipo" class="form-label small required">Tipo</label>
-                                <select id="edit-tipo" name="Tipo" class="form-select form-select-sm" required>
-                                    <option value="">Seleccionar...</option>
-                                    <option value="Materia Prima">Materia Prima</option>
-                                    <option value="Insumo">Insumo</option>
-                                </select>
+                                <label for="editar-descripcion" class="form-label small">Descripción</label>
+                                <input type="text" id="editar-descripcion" name="Descripcion" class="form-control form-control-sm" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="edit-stock" class="form-label small required">Stock</label>
-                                <input type="number" id="edit-stock" name="Stock" class="form-control form-control-sm" min="0" required>
+                                <label for="editar-stock" class="form-label small">Stock</label>
+                                <input type="number" id="editar-stock" name="Stock" class="form-control form-control-sm" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="edit-precio" class="form-label small required">Costo/Unidad</label>
-                                <input type="number" id="edit-precio" name="PrecioUnidad" class="form-control form-control-sm" step="0.01" min="0" required>
+                                <label for="editar-costo" class="form-label small">Costo por Unidad</label>
+                                <input type="number" id="editar-costo" name="PrecioUnidad" class="form-control form-control-sm" required>
                             </div>
                         </div>
 
-
+                        <!-- Ancho, Largo, Alto -->
                         <div class="row mb-2">
                             <div class="col-md-4">
-                                <label for="edit-ancho" class="form-label small">Ancho (cm)</label>
-                                <input type="number" id="edit-ancho" name="Ancho" class="form-control form-control-sm" step="0.01">
+                                <label for="editar-ancho" class="form-label small">Ancho</label>
+                                <input type="number" id="editar-ancho" name="Ancho" class="form-control form-control-sm" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="edit-largo" class="form-label small">Largo (cm)</label>
-                                <input type="number" id="edit-largo" name="Largo" class="form-control form-control-sm" step="0.01">
+                                <label for="editar-largo" class="form-label small">Largo</label>
+                                <input type="number" id="editar-largo" name="Largo" class="form-control form-control-sm" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="edit-alto" class="form-label small">Alto (cm)</label>
-                                <input type="number" id="edit-alto" name="Alto" class="form-control form-control-sm" step="0.01">
+                                <label for="editar-alto" class="form-label small">Alto</label>
+                                <input type="number" id="editar-alto" name="Alto" class="form-control form-control-sm" required>
                             </div>
                         </div>
 
-                        <!-- Sección 4: Descripción e Imagen -->
+                        <!-- Tipo  -->
                         <div class="mb-2">
-                            <label for="edit-descripcion" class="form-label small">Descripción</label>
-                            <textarea id="edit-descripcion" name="Descripcion" class="form-control form-control-sm" rows="2"></textarea>
+                            <label for="editar-tipo" class="form-label small">Tipo</label>
+                            <select id="editar-tipo" name="Tipo" class="form-select form-select-sm" required>
+                                <option value="">Seleccione un tipo</option>
+                                <option value="Insumo">Insumo</option>
+                                <option value="Materia Prima">Materia Prima</option>
+                            </select>
                         </div>
 
+
+                        <!-- Imagen con validación manual -->
                         <div class="mb-2">
-                            <label for="edit-FotoUrl" class="form-label small">Imagen</label>
-                            <div class="d-flex align-items-center">
-                                <input type="file" id="edit-FotoUrl" name="FotoArchivo" class="form-control form-control-sm" accept="image/*">
-                            </div>
+                            <label class="form-label small">Cambiar imagen</label>
+                            <input type="file" class="form-control form-control-sm" name="FotoArchivo" id="editar-FotoArchivo" required>
                         </div>
 
-                        <!-- Botones -->
+                        <!-- Footer con botones -->
                         <div class="modal-footer">
                             <div class="w-100 d-flex justify-content-between">
                                 <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary btn-guardar">Guardar Cambios</button>
+                                <button type="submit" class="btn btn-primary btn-guardar">Guardar</button>
                             </div>
                         </div>
                     </form>
@@ -440,59 +452,82 @@
     window.addEventListener('DOMContentLoaded', mostrarFilasIniciales);
     searchInput.addEventListener('input', filtrarMateriales);
 
+    // CREAR
+    const ValidarModalMaterial = (() => {
+        const form = document.querySelector('#crearNuevo form');
+        const errores = [];
+
+        const esNumeroPositivo = (valor) => {
+            const num = parseFloat(valor);
+            return !isNaN(num) && num > 0;
+        };
+
+        const validarFormulario = (e) => {
+            errores.length = 0; // Limpiar errores
+
+            const nombre = document.querySelector('[name="Nombre"]').value.trim();
+            const tipo = document.querySelector('[name="Tipo"]').value;
+            const stock = document.querySelector('[name="Stock"]').value.trim();
+            const costo = document.querySelector('[name="PrecioUnidad"]').value.trim();
+            const ancho = document.querySelector('[name="Ancho"]').value.trim();
+            const largo = document.querySelector('[name="Largo"]').value.trim();
+            const alto = document.querySelector('[name="Alto"]').value.trim();
+            const descripcion = document.querySelector('[name="Descripcion"]').value.trim();
+            const archivo = document.querySelector('[name="FotoArchivo"]').files[0];
+
+            if (nombre === "") errores.push("El nombre es obligatorio.");
+            if (tipo === "") errores.push("Debe seleccionar un tipo de material.");
+            if (!esNumeroPositivo(stock)) errores.push("Stock debe ser un número válido.");
+            if (!esNumeroPositivo(costo)) errores.push("Costo por unidad debe ser mayor que 0.");
+            if (!esNumeroPositivo(ancho)) errores.push("Ancho debe ser un número válido.");
+            if (!esNumeroPositivo(largo)) errores.push("Largo debe ser un número válido.");
+            if (!esNumeroPositivo(alto)) errores.push("Alto debe ser un número válido.");
+            if (descripcion === "") errores.push("La descripción es obligatoria.");
+            if (!archivo) errores.push("Debe subir una imagen.");
+
+            if (errores.length > 0) {
+                e.preventDefault(); // Detener envío
+                alert("Errores:\n" + errores.join("\n"));
+            }
+        };
+
+        const init = () => {
+            form.addEventListener('submit', validarFormulario);
+        };
+
+        return { init };
+    })();
+
+    document.addEventListener('DOMContentLoaded', ValidarModalMaterial.init);
+
+
+    // Inicializa al cargar el DOM
+    document.addEventListener('DOMContentLoaded', () => {
+        MaterialFormValidator.init();
+    });
+
     // EDITAR
-    document.addEventListener('DOMContentLoaded', function () {
-        // Usa delegación de eventos para manejar botones dinámicos
-        document.addEventListener('click', function (e) {
-            const botonEditar = e.target.closest('.edit-button');
+    document.querySelectorAll('.edit-button').forEach(boton => {
+        boton.addEventListener('click', () => {
 
-            if (botonEditar) {
-                // Debug: ver datos del botón
-                console.log('Datos del material a editar:', {
-                    id: botonEditar.dataset.id,
-                    nombre: botonEditar.dataset.nombre,
-                    imagen: botonEditar.dataset.fotourl
-                });
+            document.getElementById('editar-materialid').value = boton.getAttribute('data-id');
 
-                // Función auxiliar para asignar valores de forma segura
-                function setValue(id, value) {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.value = value || '';
-                        console.log(`Asignado ${value} a ${id}`);
-                    } else {
-                        console.error(`Elemento no encontrado: ${id}`);
-                    }
-                }
+            // Resto de campos
+            document.getElementById('editar-codigo').value = boton.getAttribute('data-codigo');
+            document.getElementById('editar-nombre').value = boton.getAttribute('data-nombre');
+            document.getElementById('editar-descripcion').value = boton.getAttribute('data-descripcion');
+            document.getElementById('editar-stock').value = boton.getAttribute('data-stock');
+            document.getElementById('editar-costo').value = boton.getAttribute('data-precio');
+            document.getElementById('editar-ancho').value = boton.getAttribute('data-ancho');
+            document.getElementById('editar-largo').value = boton.getAttribute('data-largo');
+            document.getElementById('editar-alto').value = boton.getAttribute('data-alto');
+            document.getElementById('editar-tipo').value = boton.getAttribute('data-tipo');
 
-                // Asignar todos los valores
-                setValue('edit-materialid', botonEditar.dataset.id);
-                setValue('edit-codigo', botonEditar.dataset.codigo);
-                setValue('edit-nombre', botonEditar.dataset.nombre);
-                setValue('edit-descripcion', botonEditar.dataset.descripcion);
-                setValue('edit-stock', botonEditar.dataset.stock);
-                setValue('edit-precio', botonEditar.dataset.precio);
-                setValue('edit-ancho', botonEditar.dataset.ancho);
-                setValue('edit-largo', botonEditar.dataset.largo);
-                setValue('edit-alto', botonEditar.dataset.alto);
-                setValue('edit-tipo', botonEditar.dataset.tipo);
-
-                // Manejar la imagen de vista previa
-                const previewImg = document.getElementById('edit-imagen-preview');
-                if (previewImg) {
-                    const imgUrl = botonEditar.dataset.fotourl;
-                    if (imgUrl) {
-                        previewImg.src = imgUrl;
-                        previewImg.style.display = 'block';
-                        console.log('Imagen cargada:', imgUrl);
-                    } else {
-                        previewImg.style.display = 'none';
-                    }
-                }
-
-                // Debug: verificar un campo específico
-                const nombreInput = document.getElementById('edit-nombre');
-                console.log('Valor en campo nombre:', nombreInput ? nombreInput.value : 'Elemento no encontrado');
+            // Imagen actual
+            const imgPreview = document.getElementById('current-image-preview');
+            if (imgPreview) {
+                imgPreview.src = boton.getAttribute('data-FotoArchivo');
+                imgPreview.style.display = 'block';
             }
         });
     });

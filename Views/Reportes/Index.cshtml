@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Reportes";
 
+
+
     Layout = "_LayoutLogged";
 
 }
@@ -114,6 +116,8 @@
             <tbody>
                 @foreach (var item in Model)
 
+
+
                 {
                     <tr class="reporte"
                         data-id-orden="@item.OrdenId"
@@ -129,16 +133,21 @@
                                 var claseEstado = item.Estado switch
 
 
-
                                 {
+
 
                                     "Pendiente" => "estado estado-pendiente",
 
+
                                     "En proceso" => "estado estado-proceso",
+
+
 
                                     "Finalizada" => "estado estado-finalizada",
 
+
                                     "Cancelada" => "estado estado-cancelada",
+
 
                                     _ => "estado estado-default"
 
@@ -153,20 +162,6 @@
 
                         <td>
                             <div class="btn-group btn-group-sm">
-                                <a href="#"
-                                   class="edit-button btn p-1"
-                                   data-bs-toggle="modal"
-                                   data-bs-target="#editarNuevo"
-                                   data-id-reporte="@item.ReporteId"
-                                   data-id-orden="@item.OrdenId"
-                                   data-id-producto="@item.ProductoId"
-                                   data-cantidad="@item.Cantidad"
-                                   data-tiempo-produccion="@item.TiempoProduccion"
-                                   data-estado="@item.Estado"
-                                   data-fecha-generacion="@DateTime.Parse(item.FechaGeneracion.ToString()).ToString("yyyy-MM-ddTHH:mm:ss")">
-                                    <img src="~/spanIconos/botonEditar.png" alt="Editar" class="icon icon-hover" width="24" height="24">
-                                </a>
-
                                 <a href="#"
                                    class="vista-button btn p-1"
                                    data-bs-toggle="modal"
@@ -207,7 +202,7 @@
 
                     <!-- Campo de fecha (oculto para el envío y visible solo para mostrar) -->
                     <div class="row mb-3">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label for="fechaGeneracion" class="form-label small">Fecha de Generación</label>
                             <input type="text" name="FechaGeneracion" id="fechaGeneracion"
                                    class="form-control form-control-sm"
@@ -217,105 +212,35 @@
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col-md-4">
-                            <label for="idOrden" class="form-label small">Id Orden</label>
-                            <input type="text" name="OrdenId" id="idOrden"
-                                   class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="idProducto" class="form-label small">Id Producto</label>
-                            <input type="text" name="ProductoId" id="idProducto"
-                                   class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="cantidad" class="form-label small">Cantidad</label>
-                            <input type="text" name="Cantidad" id="cantidad" class="form-control form-control-sm">
+                        <div class="col-md-12">
+                            <label class="form-label small">Orden</label>
+                            <select name="OrdenId" id="OrdenId" class="form-select form-select-sm" required
+                                    asp-items="@(ViewData["OrdenId"] as List<SelectListItem>)">
+                                <option value="">Seleccione una orden</option>
+                            </select>
                         </div>
                     </div>
 
-                    <div class="row mb-2">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="idProducto" class="form-label small">Id Producto</label>
+                            <input type="text" name="ProductoId" id="idProducto"
+                                   class="form-control form-control-sm" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cantidad" class="form-label small">Cantidad</label>
+                            <input type="text" name="Cantidad" id="cantidad" class="form-control form-control-sm" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="tiempo" class="form-label small">Tiempo</label>
                             <input type="text" name="TiempoProduccion" id="tiempo" class="form-control form-control-sm">
                         </div>
-                        <div class="col-md-4 mb-1">
-                            <label class="form-label small">Estado</label>
-                            <select name="Estado" id="estado" class="form-select form-select-sm" required>
-                                <option value="">Seleccione un Estado</option>
-                                <option value="Pendiente"> Pendiente</option>
-                                <option value="En proceso"> En proceso </option>
-                                <option value="Finalizada"> Finalizada</option>
-                                <option value="Cancelada"> Cancelada</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100 d-flex justify-content-between">
-                            <button type="button" class="btn btn-primary btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary btn-guardar">Guardar</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal Editar -->
-<div class="modal fade poppins-font" id="editarNuevo" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #EAEAEA;">
-                <h4 class="modal-title titulo-reporte" id="vistaLabel">Editar Reporte</h4>
-            </div>
-            <div class="modal-body">
-                <form asp-action="Edit" asp-controller="Reportes" method="post" enctype="multipart/form-data">
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" name="ReporteId" id="editar-reporteid" required>
-
-                    <!-- Campo de fecha (solo lectura) -->
-                    <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="editar-fechaGeneracion" class="form-label small">Fecha de Generación</label>
-                            <input type="text" name="FechaGeneracionDisplay" id="editar-fechaGeneracion"
-                                   class="form-control form-control-sm" readonly>
-                            <input type="hidden" name="FechaGeneracion" id="editar-fechaGeneracionHidden">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <label for="editar-idOrden" class="form-label small">Id Orden</label>
-                            <input type="text" name="OrdenId" id="editar-idOrden"
-                                   class="form-control form-control-sm" readonly>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="editar-idProducto" class="form-label small">Id Producto</label>
-                            <input type="text" name="ProductoId" id="editar-idProducto"
-                                   class="form-control form-control-sm" readonly>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="editar-cantidad" class="form-label small">Cantidad</label>
-                            <input type="text" name="Cantidad" id="editar-cantidad" class="form-control form-control-sm">
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-6">
-                            <label for="editar-tiempo" class="form-label small">Tiempo</label>
-                            <input type="text" name="TiempoProduccion" id="editar-tiempo" class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-4 mb-1">
-                            <label class="form-label small">Estado</label>
-                            <select name="Estado" id="editar-estado" class="form-select form-select-sm" required>
-                                <option value="">Seleccione un Estado</option>
-                                <option value="Pendiente"> Pendiente</option>
-                                <option value="En proceso"> En proceso </option>
-                                <option value="Finalizada"> Finalizada</option>
-                                <option value="Cancelada"> Cancelada</option>
-                            </select>
+                            <label for="estado" class="form-label small">Estado</label>
+                            <input type="text" name="Estado" id="estado" class="form-control form-control-sm" readonly>
                         </div>
                     </div>
 
@@ -390,7 +315,7 @@
                 <h4 class="modal-title titulo-reporte">¿Estás Seguro?</h4>
             </div>
             <div class="modal-body">
-                <p class="text-center">Se eliminarán los datos del material completo. Esta acción es irreversible y no se podrán recuperar.</p>
+                <p class="text-center">Se eliminarán los datos del Reporte completo. Esta acción es irreversible y no se podrán recuperar.</p>
             </div>
             <div class="modal-footer">
                 <div class="w-100 d-flex justify-content-between">
@@ -506,24 +431,50 @@
     searchInput.addEventListener('input', filtrarReporte);
 
 
-    // MODAL EDITAR
-    document.querySelectorAll('.edit-button').forEach(boton => {
-        boton.addEventListener('click', () => {
-            const fechaGeneracion = boton.getAttribute('data-fecha-generacion');
-            const fechaFormateada = new Date(fechaGeneracion).toLocaleString();
+    // MODAL CREAR
+    var modalCrearNuevo = document.getElementById('crearNuevo');
 
-            document.getElementById('editar-reporteid').value = boton.getAttribute('data-id-reporte');
-            document.getElementById('editar-idOrden').value = boton.getAttribute('data-id-orden');
-            document.getElementById('editar-idProducto').value = boton.getAttribute('data-id-producto');
-            document.getElementById('editar-cantidad').value = boton.getAttribute('data-cantidad');
-            document.getElementById('editar-tiempo').value = boton.getAttribute('data-tiempo-produccion');
-            document.getElementById('editar-estado').value = boton.getAttribute('data-estado');
+    modalCrearNuevo.addEventListener('shown.bs.modal', function () {
+        const ordenSelect = document.getElementById("OrdenId");
+        const productoInput = document.getElementById("idProducto");
+        const cantidadInput = document.getElementById("cantidad");
+        const estadoSelect = document.getElementById("estado");
 
-            document.getElementById('editar-fechaGeneracion').value = fechaFormateada;
-            document.getElementById('editar-fechaGeneracionHidden').value = new Date(fechaGeneracion).toISOString();
+        // Remueve listeners previos para evitar duplicados
+        ordenSelect.replaceWith(ordenSelect.cloneNode(true));
 
+        const newOrdenSelect = document.getElementById("OrdenId");
+        newOrdenSelect.addEventListener("change", function () {
+            const ordenId = this.value;
+
+            if (!ordenId) {
+                productoInput.value = "";
+                cantidadInput.value = "";
+                estadoSelect.value = "";
+                return;
+            }
+
+            fetch(`/Reportes/ObtenerDatosOrden?ordenId=${ordenId}`)
+                .then(response => {
+                    if (!response.ok) throw new Error("Error al obtener datos");
+                    return response.json();
+                })
+                .then(data => {
+                    if (!data.success) {
+                        productoInput.value = "";
+                        cantidadInput.value = "";
+                        estadoSelect.value = "";
+                        document.getElementById("tiempo").value = "";
+                        return;
+                    }
+                    productoInput.value = data.data.productoId ?? "";
+                    cantidadInput.value = data.data.cantidad ?? "";
+                    estadoSelect.value = data.data.estado ?? "";
+                    document.getElementById("tiempo").value = data.data.tiempoTrabajado ?? "";
+                })
         });
     });
+
 
     //MODAL VISTA
     document.addEventListener('DOMContentLoaded', function () {
@@ -553,27 +504,26 @@
     // MODAL ELIMINAR
     document.addEventListener("DOMContentLoaded", function () {
         const eliminarModal = document.getElementById("eliminarModal");
-        const materialIdInput = document.getElementById("reporteIdEliminar");
+        const inputId = document.getElementById("reporteIdEliminar");
 
         eliminarModal.addEventListener("show.bs.modal", function (event) {
             const button = event.relatedTarget;
-            const materialId = button.getAttribute("data-id");
+            const reporteId = button.getAttribute("data-id-reporte");
 
-            materialIdInput.value = materialId;
+            inputId.value = reporteId;
         });
     });
+
 
     // MODAL GENERARPDF
 
     document.addEventListener('DOMContentLoaded', function () {
-        // Seleccionar el botón Generar PDF del modal
         document.querySelector('.btn-generar-pdf').addEventListener('click', async (e) => {
             e.preventDefault();
 
             const mes = document.getElementById('reportMonth').value;
             const year = document.getElementById('reportYear').value;
 
-            // Validación básica
             if (!mes || !year) {
                 alert("Por favor, complete todos los campos.");
                 return;
@@ -583,28 +533,39 @@
                 const response = await fetch(`/Reportes/GenerarPDF?mes=${mes}&year=${year}`);
 
                 if (!response.ok) {
-                    const error = await response.text();
-                    throw new Error(error);
+                    const errorText = await response.text();
+                    throw new Error(errorText);
                 }
 
-                // Descargar el PDF
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `Reporte_${mes}_${year}.pdf`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+                const contentType = response.headers.get('Content-Type');
 
-                // Cerrar el modal después de la descarga
-                bootstrap.Modal.getInstance(document.getElementById('generar')).hide();
+                if (contentType && contentType.includes('application/json')) {
+                    // La respuesta es JSON => No hay órdenes, mostrar mensaje
+                    const data = await response.json();
+                    alert(data.message || `El mes ${mes} no tiene órdenes activas.`);
+                } else if (contentType && contentType.includes('application/pdf')) {
+                    // Respuesta es PDF => Descargar
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `Reporte_${mes}_${year}.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                    // Cerrar modal después de descargar
+                    bootstrap.Modal.getInstance(document.getElementById('generar')).hide();
+                } else {
+                    throw new Error('Tipo de contenido no esperado en la respuesta.');
+                }
             } catch (error) {
                 console.error("Error:", error);
                 alert(`Error al generar el reporte: ${error.message}`);
             }
         });
     });
+
 
     //TARJETAS
     document.addEventListener('DOMContentLoaded', function () {
@@ -732,10 +693,10 @@
                 const valores = data.map(item => item.cantidadOrdenes);
 
                 const colores = [
-                    'rgba(75, 192, 192, 0.7)',   // Finalizada
-                    'rgba(255, 99, 132, 0.7)',   // Cancelada
-                    'rgba(255, 205, 86, 0.7)',    // En proceso
-                    'rgba(54, 162, 235, 0.7)'     // Pendiente
+                    'rgba(54, 162, 235, 0.7)',   // Pendiente
+                    'rgba(255, 205, 86, 0.7)',   // En proceso
+                    'rgba(75, 192, 192, 0.7)',    // Finalizada
+                    'rgba(255, 83, 86, 0.7)'     // Cancelada
                 ];
 
                 const ctx = document.getElementById('graficoEstados').getContext('2d');

@@ -117,6 +117,7 @@ namespace caobaModeloFabricacion.Controllers
         }
 
 
+
         // GET: Materials/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -130,16 +131,8 @@ namespace caobaModeloFabricacion.Controllers
             {
                 return NotFound();
             }
-
-            // Lista de tipos disponibles
-            ViewBag.Tipos = new List<string>
-              {
-                "Materia Prima",
-                "Insumo"
-              };
-            return View();
+            return View(material);
         }
-
         // POST: Materials/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -204,7 +197,6 @@ namespace caobaModeloFabricacion.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
 
         // GET: Materials/Delete/5
         [HttpGet]

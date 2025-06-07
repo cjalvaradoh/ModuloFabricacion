@@ -57,6 +57,25 @@ namespace caobaModeloFabricacion.Controllers
                 })
                 .ToListAsync();
 
+            // Trae los IDs de las órdenes que ya tienen reporte
+            var ordenesConReporte = _context.Reporte
+                .Select(r => r.OrdenId)
+                .Distinct()
+                .ToList();
+
+            var ordenesDisponibles = _context.OrdenProduccion
+             .Where(o => !ordenesConReporte.Contains(o.Ordenid))
+             .Select(o => new SelectListItem
+             {
+                 Value = o.Ordenid.ToString(),
+                 Text = o.Ordenid.ToString()
+             })
+            .ToList();
+
+
+            ViewData["OrdenId"] = ordenesDisponibles;
+            ViewData["ProductoId"] = new SelectList(_context.Producto, "ProductoId", "Codigo");
+
             ViewBag.Fechas = fechas;
             ViewBag.Estados = estados;
             ViewBag.IdOrdenes = ordenes;
@@ -64,6 +83,7 @@ namespace caobaModeloFabricacion.Controllers
 
             return View(reportes);
         }
+
 
 
         // GET: Reportes/Details/5
@@ -83,7 +103,6 @@ namespace caobaModeloFabricacion.Controllers
                 return NotFound();
             }
 
-            // Lista de tipos disponibles
             ViewBag.Estado = new List<string>
               {
                 "Pendiente",
@@ -94,6 +113,32 @@ namespace caobaModeloFabricacion.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<JsonResult> ObtenerDatosOrden(int ordenId)
+        {
+            var ordenConTiempo = await _context.OrdenProduccion
+                .Where(o => o.Ordenid == ordenId)
+                .Select(o => new
+                {
+                    ProductoId = o.Productoid,
+                    Cantidad = o.Cantidad,
+                    Estado = o.Estado,
+                    TiempoTrabajado = _context.SeguimientoProduccion
+                        .Where(s => s.OrdenProduccionId == ordenId)
+                        .Sum(s => (decimal?)s.TiempoTrabajado) ?? 0
+                })
+                .FirstOrDefaultAsync();
+
+            if (ordenConTiempo == null)
+            {
+                return Json(new { success = false });
+            }
+
+            return Json(new { success = true, data = ordenConTiempo });
+        }
+
+
+
         // GET: Reportes/Create
         public IActionResult Create()
         {
@@ -102,6 +147,7 @@ namespace caobaModeloFabricacion.Controllers
             ViewData["ProductoId"] = new SelectList(_context.Producto, "ProductoId", "Codigo");
             return View();
         }
+
 
         // POST: Reportes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -120,6 +166,7 @@ namespace caobaModeloFabricacion.Controllers
             ViewData["ProductoId"] = new SelectList(_context.Producto, "ProductoId", "Codigo", reporte.ProductoId);
             return View(reporte);
         }
+
 
         // GET: Reportes/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -265,17 +312,15 @@ namespace caobaModeloFabricacion.Controllers
         public async Task<ActionResult<List<EstadoOrdenProduccionReporteDTO>>> ObtenerReporteEstadoOrdenes()
         {
             var resultado = await _context.OrdenProduccion
-                .GroupBy(o => o.Estado)
+                .GroupBy(o => o.Estado == "Completada" ? "Finalizada" : o.Estado)
                 .Select(g => new EstadoOrdenProduccionReporteDTO
                 {
                     Estado = g.Key,
                     CantidadOrdenes = g.Count()
                 })
-                .OrderByDescending(r => r.CantidadOrdenes) // Opcional: ordenar por cantidad
                 .ToListAsync();
 
-            // Asegurarse de que siempre aparezcan todos los estados, incluso con 0
-            var estadosRequeridos = new List<string> { "Pendiente", "En proceso", "Finalizada", "Completada", "Cancelada" };
+            var estadosRequeridos = new List<string> { "Pendiente", "En proceso", "Finalizada", "Cancelada" };
 
             var resultadoCompleto = estadosRequeridos
                 .Select(estado => new EstadoOrdenProduccionReporteDTO
@@ -344,6 +389,13 @@ namespace caobaModeloFabricacion.Controllers
                 .OrderBy(x => x.FechaInicio)
                 .ToList();
 
+            if (!datosReporte.Any())
+            {
+                var nombreMes = new CultureInfo("es-GT").DateTimeFormat.GetMonthName(month);
+                return Json(new { message = $"No hay órdenes registradas para {nombreMes} {yearNum}." });
+            }
+
+
             //PDF
             var logo = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/caobalogo.png");
             var monedaGuatemala = new System.Globalization.CultureInfo("es-GT");
@@ -382,6 +434,7 @@ namespace caobaModeloFabricacion.Controllers
 
                         // --- ESPACIO ---
                         column.Item().PaddingVertical(10).Text("ÓRDENES DEL MES").FontSize(14).Bold();
+                        column.Item().Text($"Total de órdenes: {datosReporte.Count}").FontSize(12).Italic();
 
                         column.Item().PaddingBottom(20);
 
