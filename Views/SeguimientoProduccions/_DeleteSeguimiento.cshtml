@@ -1,0 +1,24 @@
+﻿@model caobaModeloFabricacion.Models.SeguimientoProduccion
+
+<form asp-action="DeleteConfirmed" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="SeguimientoId" />
+
+    <div class="modal-body text-center px-5 py-4">
+        <div class="mb-3">
+            <i class="fas fa-triangle-exclamation fa-2x text-danger mb-2"></i>
+            <h5 class="fw-bold text-dark">¿Estás Seguro?</h5>
+        </div>
+
+        <p class="mb-4 text-secondary">
+            Se eliminará el seguimiento de producción con ID <strong>@Model.OrdenProduccion?.Ordenid</strong>.
+            <br />
+            <strong>Esta acción es irreversible y no se podrán recuperar los datos.</strong>
+        </p>
+
+        <div class="d-flex justify-content-center gap-3">
+            <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger px-4">Eliminar</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,284 @@
+﻿@model IEnumerable<caobaModeloFabricacion.Models.OrdenProduccion>
+
+@{
+    ViewData["Title"] = "Órdenes de Producción";
+    Layout = "_LayoutLogged";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<div class="container-fluid px-5 pt-4">
+    <h1 class="fw-bold fs-3 mb-4">Órdenes de Producción</h1>
+
+    @if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle me-2"></i> @TempData["Mensaje"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="input-group mb-4">
+        <span class="input-group-text bg-white border-end-0">
+            <i class="fas fa-search text-muted"></i>
+        </span>
+        <input type="text" id="searchInput" class="form-control border-start-0" placeholder="Buscar por código, producto o estado" />
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-primary rounded-3" onclick="cargarFormularioCrear()">
+            <i class="fas fa-plus me-2"></i> Crear Nuevo
+        </button>
+    </div>
+
+    <table class="table align-middle table-hover border-0 shadow-sm">
+        <thead class="table-light">
+            <tr class="text-muted small text-uppercase">
+                <th>Código Producto</th>
+                <th>Producto</th>
+                <th>Materiales</th>
+                <th>Cantidad</th>
+                <th>Estado</th>
+                <th>Fecha inicio</th>
+                <th>Fecha entrega</th>
+                <th class="text-center">CRUD</th>
+            </tr>
+        </thead>
+        <tbody id="tablaOrdenes">
+            @foreach (var item in Model)
+            {
+                <tr class="orden-row"
+                    data-codigo="@item.Producto?.Codigo"
+                    data-producto="@item.Producto?.Nombre"
+                    data-estado="@item.Estado">
+                    <td>@item.Producto?.Codigo</td>
+                    <td>@item.Producto?.Nombre</td>
+                    <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
+                        @if (item.Materiales != null && item.Materiales.Any())
+                        {
+                            var primerMaterial = item.Materiales.FirstOrDefault()?.Material?.Nombre;
+                            var tieneMas = item.Materiales.Count > 1;
+                            @($"{primerMaterial}{(tieneMas ? "..." : "")}")
+                        }
+                        else
+                        {
+                            <span class="text-muted">—</span>
+                        }
+                </td>
+                <td>@item.Cantidad.ToString("0") uds.</td>
+                <td>
+                    <span class="d-flex align-items-center gap-2">
+                        <i class="fas fa-circle" style="color:
+                                @(item.Estado == "Pendiente" ? "#0d6efd" :
+                                                                                 item.Estado == "En proceso" ? "#0dcaf0" :
+                                                                                 item.Estado == "Finalizada" ? "#198754" :
+                                                                                 item.Estado == "Cancelada" ? "#dc3545" : "#6c757d")"></i>
+                        @item.Estado
+                    </span>
+                </td>
+                <td>@item.FechaInicio.ToString("yyyy-MM-dd")</td>
+                <td>@item.FechaEntrega.ToString("yyyy-MM-dd")</td>
+                <td class="text-center">
+                    <button onclick="cargarFormularioDetalles(@item.Ordenid)" class="btn btn-sm btn-light me-1" title="Ver">
+                        <i class="fas fa-eye text-secondary"></i>
+                    </button>
+                    <button onclick="cargarFormularioEditar(@item.Ordenid)" class="btn btn-sm btn-light me-1" title="Editar">
+                        <i class="fas fa-pen text-primary"></i>
+                    </button>
+                    <button onclick="cargarFormularioEliminar(@item.Ordenid)" class="btn btn-sm btn-light" title="Eliminar">
+                        <i class="fas fa-trash text-danger"></i>
+                    </button>
+                </td>
+            </tr>
+                        }
+        </tbody>
+    </table>
+</div>
+
+<!-- MODALES -->
+<div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="modalCrearLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="modalCrearLabel">Nueva Orden</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body" id="modalCrearBody">
+                <div class="text-center">Cargando formulario...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold" id="modalEditarLabel">Editar Orden</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body" id="modalEditarBody">
+                <div class="text-center">Cargando formulario...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDetalles" tabindex="-1" aria-labelledby="modalDetallesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body" id="modalDetallesBody">
+                <div class="text-center">Cargando detalles...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEliminar" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="modalEliminarBody">
+            <div class="text-center p-4">
+                <div class="text-muted">Cargando...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Función: Cargar formulario de creación
+        function cargarFormularioCrear() {
+            fetch('/OrdenProduccion/Create')
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('modalCrearBody').innerHTML = html;
+                    new bootstrap.Modal(document.getElementById('modalCrear')).show();
+                });
+        }
+
+        // Función: Cargar formulario de edición
+        function cargarFormularioEditar(id) {
+            fetch(`/OrdenProduccion/Edit/${id}`)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('modalEditarBody').innerHTML = html;
+                    new bootstrap.Modal(document.getElementById('modalEditar')).show();
+                });
+        }
+
+        // Función: Cargar detalles
+        function cargarFormularioDetalles(id) {
+            fetch(`/OrdenProduccion/Details/${id}`)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('modalDetallesBody').innerHTML = html;
+                    new bootstrap.Modal(document.getElementById('modalDetalles')).show();
+                });
+        }
+
+        // Función: Cargar modal de eliminación
+        function cargarFormularioEliminar(id) {
+            fetch(`/OrdenProduccion/Delete/${id}`)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("modalEliminarBody").innerHTML = html;
+                    new bootstrap.Modal(document.getElementById("modalEliminar")).show();
+                });
+        }
+
+        // Función: Interceptar envíos de formularios AJAX
+        document.addEventListener("submit", async function (e) {
+            const form = e.target;
+
+            // Formularios válidos: create, edit, eliminar
+            const validIds = ["createForm", "editForm", "formEliminar"];
+            if (!validIds.includes(form.id)) return;
+
+            e.preventDefault();
+
+            // Validación personalizada para fechas en editar
+            if (form.id === "editForm") {
+                const fechaInicio = new Date(form.querySelector('[name="FechaInicio"]')?.value);
+                const fechaEntrega = new Date(form.querySelector('[name="FechaEntrega"]')?.value);
+
+                if (isNaN(fechaInicio) || isNaN(fechaEntrega)) return;
+
+                if (fechaEntrega < fechaInicio) {
+                    // Quitar alertas viejas
+                    form.querySelectorAll(".alert-fechas").forEach(el => el.remove());
+
+                    // Agregar nueva alerta
+                    const alerta = document.createElement("div");
+                    alerta.className = "alert alert-danger alert-dismissible fade show alert-fechas";
+                    alerta.role = "alert";
+                    alerta.innerHTML = `
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        La fecha de entrega no puede ser anterior a la de inicio.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                    `;
+                    form.querySelector(".modal-footer")?.before(alerta);
+                    return;
+                }
+            }
+
+            // Enviar formulario por fetch
+            const formData = new FormData(form);
+            try {
+                const res = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { "X-Requested-With": "XMLHttpRequest" }
+                });
+
+                const html = await res.text();
+
+                if (html.includes("form-control")) {
+                    const targetId = form.id === "createForm" ? "modalCrearBody" :
+                                     form.id === "editForm" ? "modalEditarBody" : "";
+                    if (targetId) document.getElementById(targetId).innerHTML = html;
+                    return;
+                }
+
+                // Cerrar el modal
+                const modalId = form.id === "createForm" ? "modalCrear" :
+                                form.id === "editForm" ? "modalEditar" :
+                                form.id === "formEliminar" ? "modalEliminar" : null;
+
+                if (modalId) {
+                    bootstrap.Modal.getInstance(document.getElementById(modalId))?.hide();
+                    document.getElementById(modalId + "Body").innerHTML = "";
+                }
+
+                // Recargar tabla de órdenes
+                const tablaRes = await fetch('/OrdenProduccion/TablePartial');
+                const tablaHtml = await tablaRes.text();
+                document.getElementById("tablaOrdenes").innerHTML = tablaHtml;
+
+                // Mostrar alerta de éxito
+                const alerta = document.createElement("div");
+                alerta.className = "alert alert-success alert-dismissible fade show";
+                alerta.role = "alert";
+                alerta.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i> Operación realizada correctamente
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                `;
+                document.querySelector(".container-fluid").prepend(alerta);
+            } catch (err) {
+                alert("Error al procesar el formulario: " + err.message);
+            }
+        });
+
+        // Función: Filtro de búsqueda
+        document.getElementById('searchInput').addEventListener('input', function () {
+            const valor = this.value.toLowerCase();
+            document.querySelectorAll('.orden-row').forEach(row => {
+                const codigo = row.getAttribute('data-codigo')?.toLowerCase() || '';
+                const producto = row.getAttribute('data-producto')?.toLowerCase() || '';
+                const estado = row.getAttribute('data-estado')?.toLowerCase() || '';
+
+                row.style.display = (codigo.includes(valor) || producto.includes(valor) || estado.includes(valor)) ? '' : 'none';
+            });
+        });
+    </script>
+}
+

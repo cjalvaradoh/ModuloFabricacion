@@ -1,0 +1,63 @@
+﻿@model caobaModeloFabricacion.Models.OrdenProduccion
+
+<form id="editForm" asp-action="Edit" asp-controller="OrdenProduccion" method="post">
+    <input type="hidden" asp-for="Ordenid" />
+    <input type="hidden" asp-for="Productoid" />
+    <input type="hidden" asp-for="DepartamentoId" />
+
+
+    <div class="row px-4 pt-2">
+        <div class="col-12 text-muted mb-3">
+            @Model.Ordenid
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Producto</label>
+            <input type="text" class="form-control text-dark" value="@Model.Producto?.Nombre" readonly />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Materiales</label>
+            @* Los materiales no se editan aquí, solo mostramos los nombres *@
+            <select class="form-select text-dark" disabled>
+                @foreach (var mat in Model.Materiales)
+
+                {
+                    <option selected>@mat.Material?.Nombre</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Cantidad</label>
+            @* Aunque esté en modo lectura, usa asp-for para que lo envíe *@
+            <input asp-for="Cantidad" class="form-control text-dark" readonly />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Estado</label>
+            <select asp-for="Estado" class="form-select text-dark">
+                <option value="">Seleccionar</option>
+                <option value="Pendiente">Pendiente</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Finalizada">Finalizada</option>
+                <option value="Cancelada">Cancelada</option>
+            </select>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Fecha Inicio</label>
+            <input asp-for="FechaInicio" class="form-control text-dark" type="date" />
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="fw-semibold text-muted">Fecha Entrega</label>
+            <input asp-for="FechaEntrega" class="form-control text-dark" type="date" />
+        </div>
+    </div>
+
+    <div class="modal-footer border-top-0 px-4 pb-3">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>

@@ -1,0 +1,139 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - WebPOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .no-caret::after {
+            display: none !important;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden; /* Evita scroll global */
+        }
+
+        .col.py-3 {
+            height: 100vh;
+            overflow-y: auto; /* Scroll solo en esta sección */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <!-- Sidebar -->
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 sidebar">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-dark min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                        <img src="~/images/caobalogo.png" alt="Logo" class="img-fluid d-none d-sm-inline mt-4 mb-5 ms-3 " style="max-width: 100px;" />
+
+                    </a>
+
+                    <!-- Lista del Menú -->
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0  align-items-center align-items-sm-start" id="menu">
+                        <!-- Menú Superior -->
+                        <li class="nav-item mb-4 ms-2">
+
+                            <a href="@Url.Action("Index", "Dashboard")" class="nav-link custom-nav-link d-flex align-items-center">
+                                <img src="~/spanIconos/casaNegro.png" alt="Dashboard" class="icon icon-hover me-2" width="18" height="18">
+                                <span class="dashboard-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 ms-2">
+                            <a href="@Url.Action("Index", "OrdenProduccion")" class="nav-link custom-nav-link d-flex align-items-center">
+                                <img src="~/spanIconos/ordenesProduccion.png" alt="Orden" class="icon icon-hover me-2" width="18" height="18">
+                                <span class="Orden-label">Ordenes</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 ms-2">
+                            <a href="@Url.Action("Index", "SeguimientoProduccions")" class="nav-link custom-nav-link d-flex align-items-center">
+                                <img src="~/spanIconos/seguimientoProduccion.png" alt="Produccion" class="icon icon-hover me-2" width="18" height="18">
+                                <span class="Produccion-label">Produccion</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 ms-2">
+                            <a href="@Url.Action("Index", "Materials")" class="nav-link custom-nav-link d-flex align-items-center">
+                                <img src="~/spanIconos/material.png" alt="Material" class="icon icon-hover me-2" width="18" height="18">
+                                <span class="Material-label">Materiales</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 ms-2">
+
+                            <a href="@Url.Action("Index", "Reportes")" class="nav-link custom-nav-link d-flex align-items-center">
+                                <img src="~/spanIconos/grafico.png" alt="Reporte" class="icon icon-hover me-2" width="18" height="18">
+                                <span class="Reporte-label">Reportes</span>
+                            </a>
+                        </li>
+                        <li style="margin-top: 5rem;" class="ms-2">
+                            <a href="@Url.Action("Logout", "Auth")" class="nav-link custom-nav-link custom-special-link d-flex align-items-center">
+                                <img src="~/spanIconos/cerrarSesion.png" alt="Cerrar" class="icon icon-hover me-2" width="18" height="18">
+                                <span class="Cerrar-label">Cerrar Sesión</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <!-- Main content -->
+            <div class="col py-3">
+                <!-- Header -->
+                <div class="d-flex justify-content-end align-items-center mb-3 mt-2 me-4">
+                    <div class="dropdown mb-4">
+                        <button class="dropdown-toggle no-caret d-flex align-items-center bg-transparent border-0"
+                                style="font-size: 1.1rem; color: #3E3E3E;"
+                                type="button"
+                                id="userDropdown"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            <img src="~/spanIconos/iconoUsuario.png" alt="User Icon" class="me-2" style="width: 30px; height: 30px; border-radius: 50%;">
+                            @if (User.Identity.IsAuthenticated)
+
+                            {
+                                <span>@User.Identity.Name</span>
+                            }
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="@Url.Action("Profile", "User")">Profile</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Settings", "User")">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Logout", "Auth")">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page content -->
+                <main>
+                    @RenderBody() <!-- Aquí se renderizará el contenido de la vista específica -->
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- SweetAlert2 para alertas -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

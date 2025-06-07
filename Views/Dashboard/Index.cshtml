@@ -1,0 +1,176 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_LayoutLogged";
+}
+
+<div class="container-fluid">
+    <h2 class="fw-bold">Dashboard</h2>
+    <p class="text-muted">Bienvenido, Administrador</p>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card p-3 shadow-sm text-center">
+                <h6 class="text-muted">Órdenes</h6>
+                <h3 class="fw-bold">@ViewBag.TotalOrdenes</h3>
+                <canvas id="ordenesChart" style="height:150px"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 shadow-sm text-center">
+                <h6 class="text-muted">Costo Producción</h6>
+                <h3 class="fw-bold">@($"Q{((decimal)ViewBag.CostoTotalProduccion):N2}")</h3>
+                <canvas id="costoChart" style="height:150px"></canvas>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3 shadow-sm text-center">
+                <h6 class="text-muted">Eficiencia de Producción</h6>
+                <h3 class="fw-bold">@ViewBag.EficienciaProduccion%</h3>
+                <canvas id="eficienciaChart" style="height:150px"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="fw-bold">Operarios</h4>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Carnet</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Tiempo</th>
+                <th>Departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var op in ViewBag.Operarios)
+            {
+                <tr>
+                    <td><img src="@op.ImagenUrl" width="35" height="35" class="rounded-circle" /></td>
+                    <td>@op.Carnet</td>
+                    <td>@op.Nombre</td>
+                    <td>
+                        @if (op.Activo)
+                        {
+                            <span class="badge bg-success">Activo</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Inactivo</span>
+                        }
+                    </td>
+                    <td>@op.TiempoProduccion</td>
+                    <td>@op.Departamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const chartData = @Html.Raw(ViewBag.OrdenesChart ?? "{}");
+        const costoData = @Html.Raw(ViewBag.CostoChart ?? "{}");
+
+        const ordenesChart = new Chart(document.getElementById('ordenesChart'), {
+            type: 'bar',
+            data: {
+                labels: chartData.labels || [],
+                datasets: [{
+                    label: chartData.datasets?.[0]?.label || "Órdenes",
+                    data: chartData.datasets?.[0]?.data || [],
+                    backgroundColor: chartData.datasets?.[0]?.backgroundColor || "#4d2c26",
+                    detalle: chartData.datasets?.[0]?.detalle || []
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItems) {
+                                return 'Mes: ' + tooltipItems[0].label;
+                            },
+                            label: function (tooltipItem) {
+                                const detalles = ordenesChart.data.datasets[0].detalle?.[tooltipItem.dataIndex];
+                                if (!detalles || detalles.length === 0) return "Sin datos";
+                                return detalles.map(d => `${d.Producto}: ${d.Cantidad} orden(es)`);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Cantidad de Órdenes' }
+                    }
+                }
+            }
+        });
+
+        const costoChart = new Chart(document.getElementById('costoChart'), {
+            type: 'bar',
+            data: {
+                labels: costoData.labels || [],
+                datasets: [{
+                    label: costoData.datasets?.[0]?.label || "Costo Producción",
+                    data: costoData.datasets?.[0]?.data || [],
+                    backgroundColor: costoData.datasets?.[0]?.backgroundColor || "#f8a623"
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return `Q${context.parsed.y.toFixed(2)}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Q Totales' }
+                    }
+                }
+            }
+        });
+
+        const eficienciaData = @Html.Raw(ViewBag.EficienciaChart);
+        const eficienciaChart = new Chart(document.getElementById('eficienciaChart'), {
+            type: 'line',
+            data: eficienciaData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.parsed.y.toFixed(2) + "%";
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Eficiencia (%)'
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+}

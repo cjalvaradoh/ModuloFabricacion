@@ -1,0 +1,129 @@
+﻿@model caobaModeloFabricacion.Models.OrdenProduccion
+
+<form id="createForm" action="/OrdenProduccion/Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    @if (ViewData["ErrorMensaje"] != null)
+    {
+        <div class="alert alert-danger">@ViewData["ErrorMensaje"]</div>
+    }
+
+    <!-- 🔴 Alerta de validación personalizada -->
+    <div id="form-error-msg" class="text-danger fw-semibold mb-3" style="display: none;">
+        <i class="fas fa-exclamation-circle me-1"></i> <span id="form-error-text"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Número de Orden</label>
+        <input class="form-control" value="@ViewBag.CodigoGenerado?.ToString().Replace("PR", "")" readonly />
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Productoid" class="form-label">Producto</label>
+        <select asp-for="Productoid" class="form-select" asp-items="ViewBag.Productoid">
+            <option value="">Seleccione un producto</option>
+        </select>
+        <span asp-validation-for="Productoid" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Seleccionar materiales</label>
+        <div style="max-height: 250px; overflow-y: auto; border: 1px solid #ced4da; border-radius: 0.375rem; padding: 10px;">
+            @{
+                var materiales = ViewBag.MaterialesDisponibles as List<SelectListItem> ?? new List<SelectListItem>();
+            }
+
+            @foreach (var mat in materiales)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="MaterialIds" value="@mat.Value" id="material_@mat.Value" />
+                    <label class="form-check-label" for="material_@mat.Value">@mat.Text</label>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Cantidad" class="form-label">Cantidad</label>
+        <div class="input-group">
+            <input asp-for="Cantidad" class="form-control" />
+            <span class="input-group-text">uds.</span>
+        </div>
+        <span asp-validation-for="Cantidad" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DepartamentoId" class="form-label">Departamento</label>
+        <select asp-for="DepartamentoId" class="form-select" asp-items="ViewBag.Departamentos">
+            <option value="">Seleccione un departamento</option>
+        </select>
+        <span asp-validation-for="DepartamentoId" class="text-danger"></span>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label asp-for="FechaInicio" class="form-label">Fecha Inicio</label>
+            <input asp-for="FechaInicio" type="datetime-local" class="form-control" id="fechaInicio" />
+            <span asp-validation-for="FechaInicio" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label asp-for="FechaEntrega" class="form-label">Fecha Entrega</label>
+            <input asp-for="FechaEntrega" type="datetime-local" class="form-control" id="fechaEntrega" />
+            <span asp-validation-for="FechaEntrega" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("createForm");
+            const errorMsg = document.getElementById("form-error-msg");
+            const errorText = document.getElementById("form-error-text");
+
+            form.addEventListener("submit", function (e) {
+                errorMsg.style.display = "none";
+                errorText.textContent = "";
+
+                const producto = form.querySelector("[name='Productoid']").value;
+                const departamento = form.querySelector("[name='DepartamentoId']").value;
+                const cantidad = parseFloat(form.querySelector("[name='Cantidad']").value);
+                const fechaInicioValor = form.querySelector("#fechaInicio").value;
+                const fechaEntregaValor = form.querySelector("#fechaEntrega").value;
+                const materiales = form.querySelectorAll("[name='MaterialIds']:checked");
+
+                let error = false;
+
+                if (!producto || !departamento || isNaN(cantidad) || cantidad <= 0 ||
+                    !fechaInicioValor || !fechaEntregaValor || materiales.length === 0) {
+                    error = true;
+                }
+
+                const fechaInicio = new Date(fechaInicioValor);
+                const fechaEntrega = new Date(fechaEntregaValor);
+
+                if (fechaEntrega < fechaInicio) {
+                    error = true;
+                }
+
+                if (error) {
+                    e.preventDefault();
+                    mostrarError("Datos inválidos. Por favor complete todos los campos correctamente.");
+                }
+
+                function mostrarError(mensaje) {
+                    errorText.textContent = mensaje;
+                    errorMsg.style.display = "block";
+                }
+            });
+        });
+    </script>
+}

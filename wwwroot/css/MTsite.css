@@ -1,0 +1,195 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+}
+
+.text-gray-custom {
+    color: #747474;
+}
+
+.btn-guardar {
+    background-color: #00AEFF;
+    border-color: #00AEFF;
+}
+
+    .btn-guardar:hover {
+        background-color: #0095db;
+        border-color: #0095db;
+    }
+
+
+.btn-eliminar {
+    background-color: #B83225;
+    border-color: #B83225;
+}
+
+    .btn-eliminar:hover {
+        background-color: #982A1F; /* un poco más oscuro para el efecto hover */
+        border-color: #982A1F;
+    }
+
+.btn-cancelar {
+    background-color: #B4B4B4;
+    border-color: #B4B4B4;
+}
+
+    .btn-cancelar:hover {
+        background-color: #a0a0a0; /* un poco más oscuro para el efecto hover */
+        border-color: #a0a0a0;
+    }
+
+.btn-cancelar,
+.btn-eliminar {
+    height: auto;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    font-size: 0.875rem;
+}
+
+.titulo-material {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+    color: #747474;
+    font-size: 18px;
+}
+
+/* ======== TABLA GENERAL ======== */
+
+.text-gray-custom {
+    color: #747474;
+}
+
+.table {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+    .table thead th {
+        color: #000000; /* Negro para títulos */
+        font-weight: normal;
+    }
+
+    .table td, .table th {
+        color: #747474;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: #EFE6E6;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #F3F3F3;
+    }
+
+.tabla-con-fondo {
+    background-color: #F3F3F3;
+}
+
+    .tabla-con-fondo .table {
+        background-color: #F3F3F3;
+        margin-bottom: 0;
+    }
+
+/* ======== BOTONES Y ENLACES ======== */
+.btn:focus, .btn:active, .btn:focus-visible,
+.form-control:focus, .form-control:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-control:focus, .form-control:focus-visible {
+    border-color: #ced4da !important;
+}
+
+/* ======== CREATE NEW LINK ======== */
+.create-new-link {
+    color: #747474 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    background-color: white !important;
+}
+
+    .create-new-link:hover {
+        color: #00AEFF !important;
+        background-color: white !important;
+    }
+
+/* ======== BOTÓN DE EDITAR ======== */
+.edit-button {
+    color: #747474 !important;
+    background-color: transparent !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 4px;
+}
+
+    .edit-button:hover {
+        color: #FFA322 !important;
+        background-color: transparent !important;
+    }
+
+/* ======== BOTÓN DE VISTA O DETALLES ======== */
+.vista-button {
+    color: #747474 !important;
+    background-color: transparent !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 4px;
+}
+
+    .vista-button:hover {
+        color: #00AEFF !important;
+        background-color: transparent !important;
+    }
+
+/* ======== BOTÓN DE ELIIMINAR ======== */
+.eliminar-button {
+    color: #747474 !important;
+    background-color: transparent !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 4px;
+}
+
+    .eliminar-button:hover {
+        color: #B83225 !important;
+        background-color: transparent !important;
+    }
+
+/* ======== ÍCONOS ======== */
+.icon-hover {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(4%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(85%);
+    transition: filter 0.3s ease;
+}
+
+.create-new-link:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(2476%) hue-rotate(176deg) brightness(100%) contrast(101%);
+}
+
+.edit-button:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(63%) sepia(55%) saturate(1487%) hue-rotate(2deg) brightness(102%) contrast(101%);
+}
+
+.vista-button:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(2476%) hue-rotate(176deg) brightness(100%) contrast(101%);
+}
+
+.eliminar-button:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(2889%) hue-rotate(351deg) brightness(95%) contrast(101%);
+}

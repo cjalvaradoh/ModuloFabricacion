@@ -1,0 +1,73 @@
+﻿@model caobaModeloFabricacion.Models.SeguimientoProduccion
+
+<form asp-action="Edit" method="post" id="editForm">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="SeguimientoId" />
+    <input type="hidden" asp-for="OrdenProduccionId" />
+    <input type="hidden" asp-for="DepartamentoId" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">Editar Seguimiento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+        <div class="row mb-3">
+            <label class="form-label fw-semibold">Orden de Producción</label>
+            <input class="form-control" value="@Model.OrdenProduccionId" disabled />
+        </div>
+
+        <div class="row mb-3">
+            <label class="form-label fw-semibold">Operario</label>
+            <input class="form-control" value="@ViewBag.NombreOperario" disabled />
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="Avance" class="form-label fw-semibold">Avance (%)</label>
+                <input asp-for="Avance" class="form-control" />
+                <span asp-validation-for="Avance" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="MaterialConsumido" class="form-label fw-semibold">Material Consumido (kg)</label>
+                <input asp-for="MaterialConsumido" class="form-control" />
+                <span asp-validation-for="MaterialConsumido" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="TiempoTrabajado" class="form-label fw-semibold">Tiempo Trabajado (hrs)</label>
+                <input asp-for="TiempoTrabajado" class="form-control" />
+                <span asp-validation-for="TiempoTrabajado" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Estado" class="form-label fw-semibold">Estado</label>
+                <select asp-for="Estado" class="form-select">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Finalizada">Finalizada</option>
+                    <option value="Cancelada">Cancelada</option>
+                </select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Comentarios" class="form-label fw-semibold">Comentarios</label>
+            <textarea asp-for="Comentarios" class="form-control"></textarea>
+            <span asp-validation-for="Comentarios" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

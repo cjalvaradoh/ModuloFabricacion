@@ -1,0 +1,72 @@
+﻿﻿﻿﻿
+@model LoginViewModel;
+<link rel="stylesheet" href="~/css/Lsite.css" asp-append-version="true" />
+
+<div class="root-container">
+
+    <div class="image-column">
+        <img src="~/imagesAuth/LoginImagen.jpg" alt="Login Image" class="login-image">
+    </div>
+
+    <div class="form-column">
+        <div class="form-container">
+            <div class="logo-container text-center">
+                <img src="~/images/caobalogo.png" alt="Logo" class="img-fluid" style="max-width: 150px;" />
+            </div>
+
+            <form asp-action="Login" method="post">
+                <div class="mb-4">
+                    <label asp-for="Usuario" class="form-label">Usuario</label>
+                    <input asp-for="Usuario" class="form-control" placeholder="Escribe tu nombre de usuario" />
+                    <span asp-validation-for="Usuario" class="text-danger"></span>
+                </div>
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label">Contraseña</label>
+                    <div class="input-group">
+                        <input asp-for="Password" id="passwordInput" class="form-control" type="password" placeholder="Ingresa tu contraseña" />
+                        <button type="button" class="btn btn-outline-secondary" id="togglePassword" onclick="togglePasswordVisibility()">
+                            <i id="toggleIcon" class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Iniciar Sesión</button>
+                <div class="text-center">
+                    <p>¿No tienes cuenta? <a asp-controller="Auth" asp-action="Register">Registrarse</a></p>
+                </div>
+            </form>
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger mt-3">
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <p class="mb-1">@error.ErrorMessage</p>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("passwordInput");
+            const toggleIcon = document.getElementById("toggleIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("bi-eye");
+                toggleIcon.classList.add("bi-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("bi-eye-slash");
+                toggleIcon.classList.add("bi-eye");
+            }
+        }
+
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+    </script>
+}

@@ -1,0 +1,124 @@
+﻿@model caobaModeloFabricacion.ViewModels.SeguimientoProduccionViewModel
+
+<form asp-action="Create" method="post" id="createForm">
+    @Html.AntiForgeryToken()
+
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label asp-for="OrdenProduccionId" class="form-label">Orden de Producción</label>
+            <select asp-for="OrdenProduccionId" class="form-select @(ViewData.ModelState["OrdenProduccionId"]?.Errors.Any() == true ? "is-invalid" : "")" id="OrdenProduccionId">
+                <option value="">Seleccione una orden</option>
+                @foreach (var orden in ViewBag.OrdenProduccionId as SelectList)
+                {
+                    <option value="@orden.Value">@orden.Text</option>
+                }
+            </select>
+            <span asp-validation-for="OrdenProduccionId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label">Departamento</label>
+            <select id="DepartamentoId" name="DepartamentoId" class="form-select @(ViewData.ModelState["DepartamentoId"]?.Errors.Any() == true ? "is-invalid" : "")">
+                <option value="">Seleccione departamento</option>
+                @foreach (var d in (SelectList)ViewBag.DepartamentoList)
+                {
+                    <option value="@d.Value">@d.Text</option>
+                }
+            </select>
+            <span class="text-danger" id="departamentoError"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label for="OperarioId" class="form-label">Operario</label>
+            <select id="OperarioId" name="OperarioId" class="form-select @(ViewData.ModelState["OperarioId"]?.Errors.Any() == true ? "is-invalid" : "")">
+                <option value="">Seleccione operario</option>
+            </select>
+            <span asp-validation-for="OperarioId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label asp-for="Avance" class="form-label"></label>
+            <input asp-for="Avance" class="form-control @(ViewData.ModelState["Avance"]?.Errors.Any() == true ? "is-invalid" : "")" />
+            <span asp-validation-for="Avance" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label asp-for="TiempoTrabajado" class="form-label"></label>
+            <input asp-for="TiempoTrabajado" class="form-control @(ViewData.ModelState["TiempoTrabajado"]?.Errors.Any() == true ? "is-invalid" : "")" />
+            <span asp-validation-for="TiempoTrabajado" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="MaterialConsumido" class="form-label"></label>
+            <input asp-for="MaterialConsumido" class="form-control @(ViewData.ModelState["MaterialConsumido"]?.Errors.Any() == true ? "is-invalid" : "")" />
+            <span asp-validation-for="MaterialConsumido" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label asp-for="Estado" class="form-label"></label>
+            <select asp-for="Estado" class="form-select @(ViewData.ModelState["Estado"]?.Errors.Any() == true ? "is-invalid" : "")">
+                <option value="">Seleccione estado</option>
+                <option>Pendiente</option>
+                <option>En proceso</option>
+                <option>Finalizada</option>
+                <option>Cancelada</option>
+            </select>
+            <span asp-validation-for="Estado" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Comentarios" class="form-label"></label>
+            <textarea asp-for="Comentarios" class="form-control"></textarea>
+            <span asp-validation-for="Comentarios" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary px-4">Guardar</button>
+    </div>
+</form>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const depSelect = document.getElementById("DepartamentoId");
+        if (!depSelect) return;
+
+        depSelect.addEventListener("change", function () {
+            const depId = this.value;
+            const operarioSelect = document.getElementById("OperarioId");
+
+            if (!depId) {
+                operarioSelect.innerHTML = '<option value="">Seleccione operario</option>';
+                return;
+            }
+
+            operarioSelect.innerHTML = '<option>Cargando...</option>';
+
+            fetch(`/SeguimientoProduccions/GetOperariosPorDepartamento/${encodeURIComponent(depId)}`)
+                .then(response => response.json())
+                .then(data => {
+                    operarioSelect.innerHTML = '<option value="">Seleccione operario</option>';
+                    data.forEach(o => {
+                        const option = document.createElement("option");
+                        option.value = o.value;
+                        option.text = o.text;
+                        operarioSelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error al cargar operarios:", error);
+                });
+        });
+    });
+</script>

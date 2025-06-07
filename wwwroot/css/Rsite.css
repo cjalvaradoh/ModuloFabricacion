@@ -1,0 +1,332 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+}
+
+.text-gray-custom {
+    color: #747474;
+}
+
+.btn-guardar {
+    background-color: #00AEFF;
+    border-color: #00AEFF;
+}
+
+    .btn-guardar:hover {
+        background-color: #0095db;
+        border-color: #0095db;
+    }
+
+
+.btn-eliminar {
+    background-color: #B83225;
+    border-color: #B83225;
+}
+
+    .btn-eliminar:hover {
+        background-color: #982A1F; /* un poco más oscuro para el efecto hover */
+        border-color: #982A1F;
+    }
+
+.btn-cancelar {
+    background-color: #B4B4B4;
+    border-color: #B4B4B4;
+}
+
+    .btn-cancelar:hover {
+        background-color: #a0a0a0; /* un poco más oscuro para el efecto hover */
+        border-color: #a0a0a0;
+    }
+
+.btn-cancelar,
+.btn-eliminar {
+    height: auto;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    font-size: 0.875rem;
+}
+
+.titulo-reporte {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+    color: #747474;
+    font-size: 18px;
+}
+
+
+/* ======== TABLA GENERAL ======== */
+
+.text-gray-custom {
+    color: #747474;
+}
+
+.table {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+    .table thead th {
+        color: #000000; /* Negro para títulos */
+        font-weight: normal;
+    }
+
+    .table td, .table th {
+        color: #747474;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: #EFE6E6;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #F3F3F3;
+    }
+
+.tabla-con-fondo {
+    background-color: #F3F3F3;
+}
+
+    .tabla-con-fondo .table {
+        background-color: #F3F3F3;
+        margin-bottom: 0;
+    }
+
+.tabla-con-fondo {
+    background-color: #F3F3F3;
+    max-width: 100%; /* O puedes usar 1200px por ejemplo */
+    overflow-x: auto; /* Para scroll si se excede */
+}
+
+    .tabla-con-fondo .table {
+        width: 100%; /* <-- ocupa todo el ancho disponible */
+        background-color: #F3F3F3;
+        margin-bottom: 0;
+        table-layout: fixed; /* opcional, distribuye columnas equitativamente */
+    }
+
+
+/* ======== BOTONES Y ENLACES ======== */
+.btn:focus, .btn:active, .btn:focus-visible,
+.form-control:focus, .form-control:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-control:focus, .form-control:focus-visible {
+    border-color: #ced4da !important;
+}
+
+/* ======== GENERAR PDF ======== */
+.generar-new-link {
+    color: #747474 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    background-color: white !important;
+}
+
+    .generar-new-link:hover {
+        color: #00AEFF !important;
+        background-color: white !important;
+    }
+
+
+/* ======== CREATE NEW LINK ======== */
+.create-new-link {
+    color: #747474 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    background-color: white !important;
+}
+
+    .create-new-link:hover {
+        color: #00AEFF !important;
+        background-color: white !important;
+    }
+
+/* ======== BOTÓN DE EDITAR ======== */
+.edit-button {
+    color: #747474 !important;
+    background-color: transparent !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 4px;
+}
+
+    .edit-button:hover {
+        color: #FFA322 !important;
+        background-color: transparent !important;
+    }
+
+/* ======== BOTÓN DE VISTA O DETALLES ======== */
+.vista-button {
+    color: #747474 !important;
+    background-color: transparent !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 4px;
+}
+
+    .vista-button:hover {
+        color: #00AEFF !important;
+        background-color: transparent !important;
+    }
+
+/* ======== BOTÓN DE ELIIMINAR ======== */
+.eliminar-button {
+    color: #747474 !important;
+    background-color: transparent !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 4px;
+}
+
+    .eliminar-button:hover {
+        color: #B83225 !important;
+        background-color: transparent !important;
+    }
+
+/* ======== ÍCONOS ======== */
+.icon-hover {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(4%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(85%);
+    transition: filter 0.3s ease;
+}
+
+.generar-new-link:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(2476%) hue-rotate(176deg) brightness(100%) contrast(101%);
+}
+
+.create-new-link:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(2476%) hue-rotate(176deg) brightness(100%) contrast(101%);
+}
+
+.edit-button:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(63%) sepia(55%) saturate(1487%) hue-rotate(2deg) brightness(102%) contrast(101%);
+}
+
+.vista-button:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(2476%) hue-rotate(176deg) brightness(100%) contrast(101%);
+}
+
+.eliminar-button:hover .icon-hover {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(2889%) hue-rotate(351deg) brightness(95%) contrast(101%);
+}
+
+/* ======== CARDS ======== */
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    min-height: 50px;
+    background: #EFEFEF;
+    position: relative;
+    border: none;
+}
+
+    .card .textBox {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+    }
+
+.cardBox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 10px 10px;
+}
+
+    .cardBox .card {
+        background: #EFEFEF;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: row; /* Cambiado a fila para alinear horizontalmente */
+        align-items: center; /* Centra verticalmente todo el contenido */
+        padding: 8px 12px;
+        min-height: 70px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        position: relative; /* Necesario para el posicionamiento absoluto del icono */
+    }
+
+.card .numbers {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-right: 8px; /* Espacio entre número y texto */
+}
+
+.card .cardName {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.9em;
+    color: #555;
+    margin-right: auto; /* Empuja el iconBox a la derecha */
+}
+
+.card .iconBox {
+    position: absolute;
+    right: 12px; /* Distancia desde el borde derecho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+    .card .iconBox img {
+        width: 38px;
+        height: 38px;
+    }
+
+/* ESTADO TABLA */
+.estado {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #747474; /* o el color base que uses para el texto */
+}
+
+.estado-circulo {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+}
+
+.estado-pendiente .estado-circulo {
+    background-color: #F0AD4E;
+}
+
+.estado-proceso .estado-circulo {
+    background-color: #0AAAF4;
+}
+
+.estado-finalizada .estado-circulo {
+    background-color: #0d6efd;
+}
+
+.estado-cancelada .estado-circulo {
+    background-color: #B83225;
+}
+
+.estado-default .estado-circulo {
+    background-color: #6c757d;
+}

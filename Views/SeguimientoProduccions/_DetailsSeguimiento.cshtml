@@ -1,0 +1,61 @@
+﻿@model caobaModeloFabricacion.Models.SeguimientoProduccion
+
+<div class="modal-header border-0">
+    <h5 class="modal-title fw-bold">Detalle de Seguimiento</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body">
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>ID Orden</strong><br />
+            @Model.OrdenProduccion?.Ordenid
+        </div>
+        <div class="col-6">
+            <strong>Operario a cargo</strong><br />
+            @Model.OperarioNombre
+        </div>
+
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>Avance</strong><br />
+            @Model.Avance %
+        </div>
+        <div class="col-6">
+            <strong>Material Consumido</strong><br />
+            @Model.MaterialConsumido kg
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>Tiempo Trabajado</strong><br />
+            @Model.TiempoTrabajado hrs
+        </div>
+        <div class="col-6">
+            <strong>Estado</strong><br />
+            <span class="d-flex align-items-center gap-2">
+                <i class="fas fa-circle me-1" style="color:
+        @(Model.Estado == "Pendiente" ? "#0d6efd" :
+        Model.Estado == "En proceso" ? "#0dcaf0" :
+        Model.Estado == "Finalizada" ? "#198754" :
+        Model.Estado == "Cancelada" ? "#dc3545" :
+        "#6c757d")"></i>
+                @Model.Estado
+            </span>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-6">
+            <strong>Fecha Actualización</strong><br />
+            @Model.FechaActualizacion?.ToString("yyyy-MM-dd")
+        </div>
+        <div class="col-6">
+            <strong>Comentarios</strong><br />
+            @Model.Comentarios
+        </div>
+    </div>
+</div>
